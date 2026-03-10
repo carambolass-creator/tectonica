@@ -6,117 +6,182 @@
     <title>Tectónica Editorial</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --azul-tectonico: #1a3a6c; /* Color basado en tu logo */
-            --fondo: #ffffff;
-            --texto: #1a1a1a;
+            --azul-tectonico: #1a3a6c; /* Color exacto de tu logo */
+            --hueso: #fcfaf7; /* Fondo tipo papel */
+            --texto: #222222;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--fondo);
+            background-color: var(--hueso);
             color: var(--texto);
             margin: 0;
-            line-height: 1.6;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
+        /* Hero / Cabecera */
         header {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eaeaea;
         }
 
         .logo {
-            max-width: 200px;
+            max-width: 250px; /* Un poco más grande para que luzca */
             height: auto;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
+            margin-bottom: 30px;
         }
 
         h1 {
-            font-family: 'Crimson Pro', serif;
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
             color: var(--azul-tectonico);
+            margin: 0 0 10px 0;
             letter-spacing: -1px;
-            margin-bottom: 10px;
         }
 
         .tagline {
-            font-size: 1.2rem;
-            color: #666;
+            font-size: 1.3rem;
+            color: #555;
             font-weight: 300;
-            margin-bottom: 40px;
+            font-style: italic;
         }
 
-        .manifesto {
-            font-family: 'Crimson Pro', serif;
-            font-size: 1.4rem;
+        /* Contenido Principal */
+        main {
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Sección Manifesto - Aquí viene "El Diseño" */
+        .manifesto-block {
+            position: relative;
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            line-height: 1.5;
             text-align: justify;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
-            padding: 40px 0;
-            margin: 40px 0;
         }
 
-        .contact-box {
-            background-color: #f8f9fa;
-            padding: 30px;
-            border-radius: 8px;
-            margin-top: 60px;
+        /* "La Grieta": Una línea decorativa que se rompe */
+        .manifesto-block::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 3px;
+            background-color: var(--azul-tectonico);
+        }
+
+        .manifesto-block::after {
+            content: '';
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 100px;
+            height: 3px;
+            background-color: var(--azul-tectonico);
+            opacity: 0.5; /* Línea rota de respaldo */
+        }
+
+        .quote-icon {
+            color: var(--azul-tectonico);
+            font-size: 3rem;
+            position: absolute;
+            opacity: 0.2;
+        }
+
+        /* Sección Contacto */
+        .contact-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+            border-top: 1px solid #eaeaea;
+        }
+
+        h3.contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--azul-tectonico);
         }
 
         .btn-email {
             display: inline-block;
             background-color: var(--azul-tectonico);
             color: white;
-            padding: 12px 25px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 30px; /* Más moderno */
             font-weight: 600;
-            margin-top: 15px;
-            transition: opacity 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(26, 58, 108, 0.2);
         }
 
         .btn-email:hover {
-            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(26, 58, 108, 0.3);
         }
 
+        /* Footer */
         footer {
             padding: 40px;
+            text-align: center;
+            background-color: #f1f1f1;
             font-size: 0.8rem;
-            color: #999;
+            color: #777;
             text-transform: uppercase;
             letter-spacing: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .manifesto-block { font-size: 1.3rem; padding: 30px; }
+            .logo { max-width: 180px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo.png" alt="Tectónica Editorial" class="logo">
-        <p class="tagline">Movimientos en la estructura del pensamiento.</p>
+        <img src="logo.png" alt="Tectónica Editorial - Movimiento de ideas" class="logo">
+        <p class="tagline">Publicando las grietas del pensamiento contemporáneo.</p>
     </header>
 
-    <div class="container">
-        <div class="manifesto">
-            "Entendemos el conocimiento no como una estructura estática, sino como un terreno en constante fricción. Tectónica Editorial nace para publicar las grietas, los sismos y las nuevas formaciones en la filosofía, la sociología y los fenómenos humanos emergentes."
+    <main>
+        <div class="manifesto-block">
+            <span class="quote-icon" style="top: 10px; left: 10px;">&ldquo;</span>
+            <p>
+                Entendemos el conocimiento no como una estructura estática, sino como un terreno en constante fricción. Tectónica Editorial nace para publicar los sismos, las fallas y las nuevas formaciones en la filosofía, la sociología y los fenómenos humanos emergentes.
+            </p>
+            <span class="quote-icon" style="bottom: 10px; right: 10px;">&bdquo;</span>
         </div>
 
-        <div class="contact-box">
-            <h3>Contacto Editorial</h3>
-            <p>¿Tienes un manuscrito o una propuesta de investigación? Estamos abiertos a nuevas voces en el pensamiento crítico.</p>
-            <a href="mailto:contacto@tectonicaeditorial.com" class="btn-email">Enviar Correo</a>
+        <div class="contact-section">
+            <h3 class="contact-title">¿Tienes un manuscrito?</h3>
+            <p>Buscamos voces críticas dispuestos a mover las placas tectónicas del saber.</p>
+            <a href="mailto:contacto@tectonicaeditorial.com" class="btn-email">Enviar Propuesta</a>
         </div>
-    </div>
+    </main>
 
-    <footer style="text-align: center;">
-        &copy; 2026 Tectónica Editorial | México
+    <footer>
+        &copy; 2026 Tectónica Editorial | Filosofía & Sociedad | México
     </footer>
 
 </body>

@@ -30,28 +30,50 @@
             min-height: 100vh;
         }
 
-        /* --- VISTA 1: LA BIBLIOTECA --- */
+        /* --- VISTA 1: LA BIBLIOTECA (Escritorio) --- */
         #vista-biblioteca {
-            width: 90%;
+            width: 95%;
             max-width: 1000px;
             padding: 40px 0;
-            display: block; /* Aseguramos que sea visible desde el inicio */
+            display: block;
         }
 
         .mision-vision {
             background: var(--papel);
             color: var(--texto);
-            padding: 40px;
+            padding: 50px 40px;
             border-radius: 4px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.8);
             margin-bottom: 50px;
             text-align: center;
             border-bottom: 8px solid var(--dorado);
+            box-sizing: border-box;
         }
 
-        .mision-vision h1 { font-size: 3.5rem; color: var(--azul); margin: 0; }
-        .mision-vision h2 { font-family: 'Special Elite'; font-size: 1.2rem; color: #666; letter-spacing: 3px; }
-        .mision-vision p { font-size: 1.6rem; line-height: 1.5; font-style: italic; color: #333; }
+        /* Título elástico para que no se salga en móviles */
+        .mision-vision h1 { 
+            font-size: clamp(1.8rem, 8vw, 3.5rem); 
+            color: var(--azul); 
+            margin: 0; 
+            line-height: 1.1;
+            word-wrap: break-word;
+        }
+
+        .mision-vision h2 { 
+            font-family: 'Special Elite'; 
+            font-size: clamp(0.9rem, 4vw, 1.2rem); 
+            color: #666; 
+            letter-spacing: 3px; 
+            margin-top: 10px;
+        }
+
+        .mision-vision p { 
+            font-size: clamp(1.2rem, 5vw, 1.6rem); 
+            line-height: 1.5; 
+            font-style: italic; 
+            color: #333; 
+            margin-top: 30px;
+        }
 
         .estante {
             display: flex;
@@ -95,16 +117,17 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
+            gap: 10px;
         }
 
         .btn-nav {
             background: var(--azul);
             color: white;
             border: 2px solid var(--dorado);
-            padding: 15px 25px;
+            padding: 12px 20px;
             font-family: 'Special Elite';
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         .book {
@@ -117,7 +140,7 @@
         .page-left {
             flex: 1;
             background: var(--papel);
-            padding: 50px;
+            padding: 40px;
             border-radius: 5px 0 0 5px;
             box-shadow: -10px 10px 30px rgba(0,0,0,0.5);
             display: flex;
@@ -142,7 +165,7 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            padding: 40px 50px;
+            padding: 40px;
             box-sizing: border-box;
             background: var(--papel);
             display: flex;
@@ -151,34 +174,39 @@
             color: var(--texto);
         }
         
+        .face::-webkit-scrollbar { display: none; }
         .front { border-radius: 0 5px 5px 0; box-shadow: 10px 10px 30px rgba(0,0,0,0.5); }
         .back { transform: rotateY(180deg); border-radius: 5px 0 0 5px; background: #e8e5dc; }
 
-        .cover-img { max-height: 320px; align-self: center; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .cover-img { max-height: 300px; align-self: center; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .description { font-size: 1.35rem; line-height: 1.6; text-align: justify; }
+        
         .capitular::first-letter {
-            float: left; font-size: 4.5rem; line-height: 0.8; padding-top: 10px; padding-right: 15px; color: var(--azul); font-weight: 600;
+            float: left; font-size: 4rem; line-height: 0.8; padding-top: 10px; padding-right: 15px; color: var(--azul); font-weight: 600;
         }
 
         .indicador-giro {
             position: absolute;
             bottom: 20px;
-            right: 40px;
+            right: 30px;
             font-family: 'Special Elite';
             color: var(--azul);
             font-weight: bold;
             cursor: pointer;
         }
 
-        .contenedor-botones { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
-        .btn-descarga { border: 2px solid var(--azul); color: var(--azul); padding: 15px; text-decoration: none; font-family: 'Special Elite'; text-align: center; font-weight: bold; }
-        .btn-contacto { background: var(--azul); color: white; padding: 15px; text-decoration: none; font-family: 'Special Elite'; text-align: center; }
+        .contenedor-botones { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
+        .btn-descarga { border: 2px solid var(--azul); color: var(--azul); padding: 12px; text-decoration: none; font-family: 'Special Elite'; text-align: center; font-weight: bold; }
+        .btn-contacto { background: var(--azul); color: white; padding: 12px; text-decoration: none; font-family: 'Special Elite'; text-align: center; }
 
+        /* AJUSTES PARA CELULARES */
         @media (max-width: 850px) {
+            .mision-vision { padding: 30px 20px; }
             .book { flex-direction: column; height: auto; }
-            .page-left { border-radius: 5px 5px 0 0; }
+            .page-left { border-radius: 5px 5px 0 0; padding: 30px; }
             .flip-container { height: 750px; transform-origin: top; }
             .flipped { transform: rotateX(-180deg); }
+            .barra-navegacion { flex-wrap: wrap; justify-content: center; }
         }
     </style>
 </head>
@@ -186,7 +214,7 @@
 
     <div id="vista-biblioteca">
         <div class="mision-vision">
-            <img src="logo.png" alt="Logo Tectónica" style="max-width: 140px; margin-bottom: 15px;">
+            <img src="logo.png" alt="Logo Tectónica" style="max-width: 120px; margin-bottom: 20px;">
             <h1>TECTÓNICA EDITORIAL</h1>
             <h2>MISIÓN Y VISIÓN</h2>
             <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Cartografiar la identidad y el conocimiento con rigor académico, bajo la perspectiva humanista biosférica."</p>
@@ -206,28 +234,28 @@
 
     <div id="vista-lector">
         <div class="barra-navegacion">
-            <button class="btn-nav" onclick="irABiblioteca()">⬅ VOLVER AL ESCRITORIO</button>
+            <button class="btn-nav" onclick="irABiblioteca()">⬅ ESCRITORIO</button>
             <div>
-                <button class="btn-nav" onclick="cambiarLibroRelativo(-1)">ANTERIOR</button>
-                <button class="btn-nav" onclick="cambiarLibroRelativo(1)">SIGUIENTE</button>
+                <button class="btn-nav" onclick="cambiarLibroRelativo(-1)">ANT.</button>
+                <button class="btn-nav" onclick="cambiarLibroRelativo(1)">SIG.</button>
             </div>
         </div>
 
         <div class="book">
             <div class="page-left">
                 <div>
-                    <img src="logo.png" alt="Logo" style="max-width: 110px;">
-                    <h2 id="meta-vol" style="font-family:'Special Elite'; color:var(--azul); margin:15px 0; font-size: 1.5rem;"></h2>
+                    <img src="logo.png" alt="Logo" style="max-width: 100px;">
+                    <h2 id="meta-vol" style="font-family:'Special Elite'; color:var(--azul); margin:15px 0; font-size: 1.4rem;"></h2>
                 </div>
-                <div id="meta-datos" style="text-align: left; font-family: 'Special Elite'; font-size: 1rem; border-left: 4px solid var(--azul); padding-left: 20px; color: #444;">
+                <div id="meta-datos" style="text-align: left; font-family: 'Special Elite'; font-size: 0.95rem; border-left: 4px solid var(--azul); padding-left: 20px; color: #444;">
                     </div>
             </div>
 
             <div class="flip-container" id="bookSheet">
                 <div class="face front">
                     <img id="libro-img" src="" class="cover-img">
-                    <h2 id="libro-titulo" style="margin:0; font-size: 2.5rem; color: var(--azul);"></h2>
-                    <p id="libro-sub" style="font-style:italic; color:#555; margin-bottom:20px; font-size: 1.1rem;"></p>
+                    <h2 id="libro-titulo" style="margin:0; font-size: 2.2rem; color: var(--azul);"></h2>
+                    <p id="libro-sub" style="font-style:italic; color:#555; margin-bottom:15px; font-size: 1rem;"></p>
                     <div id="libro-intro" class="description capitular"></div>
                     <div class="indicador-giro" onclick="giro()">GIRAR PÁGINA 👉</div>
                 </div>

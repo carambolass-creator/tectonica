@@ -3,186 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial</title>
+    <title>Tectónica Editorial | El Codex</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
         :root {
-            --azul-tectonico: #1a3a6c; /* Color exacto de tu logo */
-            --hueso: #fcfaf7; /* Fondo tipo papel */
-            --texto: #222222;
+            --azul-tectonico: #1a3a6c;
+            --papel: #f4f1ea;
+            --mesa: #121212; /* Fondo oscuro para que el libro resalte */
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--hueso);
-            color: var(--texto);
+            background-color: var(--mesa);
+            background-image: radial-gradient(#222 1px, transparent 1px);
+            background-size: 20px 20px;
             margin: 0;
-            padding: 0;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             min-height: 100vh;
+            font-family: 'Cormorant Garamond', serif;
         }
 
-        /* Hero / Cabecera */
-        header {
-            padding: 80px 20px;
+        /* El Libro */
+        .book {
+            width: 90%;
+            max-width: 1000px;
+            background: var(--papel);
+            box-shadow: 
+                0 0 100px rgba(0,0,0,0.5),
+                20px 20px 60px rgba(0,0,0,0.8),
+                inset 0 0 100px rgba(0,0,0,0.05);
+            display: flex;
+            position: relative;
+            padding: 40px 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        /* La costura central del libro */
+        .book::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        /* Páginas */
+        .page {
+            flex: 1;
+            padding: 40px 60px;
+            position: relative;
+        }
+
+        /* Textura de papel */
+        .page::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Columna Izquierda: Identidad */
+        .left-page {
+            border-right: 1px solid rgba(0,0,0,0.05);
             text-align: center;
-            background-color: #ffffff;
-            border-bottom: 1px solid #eaeaea;
         }
 
         .logo {
-            max-width: 250px; /* Un poco más grande para que luzca */
-            height: auto;
+            max-width: 180px;
+            filter: grayscale(0.2) contrast(1.1);
             margin-bottom: 30px;
+            transform: rotate(-1deg); /* Efecto orgánico */
         }
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             color: var(--azul-tectonico);
-            margin: 0 0 10px 0;
-            letter-spacing: -1px;
+            margin: 10px 0;
+            border-bottom: 1px double rgba(0,0,0,0.1);
+            display: inline-block;
         }
 
-        .tagline {
-            font-size: 1.3rem;
-            color: #555;
-            font-weight: 300;
+        .edition-info {
+            font-family: 'Special Elite', cursive;
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 50px;
+            text-align: left;
+        }
+
+        /* Columna Derecha: Manifiesto */
+        .right-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .manifesto-text {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: #333;
             font-style: italic;
-        }
-
-        /* Contenido Principal */
-        main {
-            flex: 1;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Sección Manifesto - Aquí viene "El Diseño" */
-        .manifesto-block {
-            position: relative;
-            background-color: #ffffff;
-            padding: 50px;
-            border-radius: 4px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            line-height: 1.5;
             text-align: justify;
         }
 
-        /* "La Grieta": Una línea decorativa que se rompe */
-        .manifesto-block::before {
-            content: '';
+        /* El Separador de Libros (Botón de Contacto) */
+        .bookmark {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 50px;
-            height: 3px;
-            background-color: var(--azul-tectonico);
-        }
-
-        .manifesto-block::after {
-            content: '';
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            width: 100px;
-            height: 3px;
-            background-color: var(--azul-tectonico);
-            opacity: 0.5; /* Línea rota de respaldo */
-        }
-
-        .quote-icon {
-            color: var(--azul-tectonico);
-            font-size: 3rem;
-            position: absolute;
-            opacity: 0.2;
-        }
-
-        /* Sección Contacto */
-        .contact-section {
-            text-align: center;
-            margin-top: 80px;
-            padding: 40px;
-            border-top: 1px solid #eaeaea;
-        }
-
-        h3.contact-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--azul-tectonico);
-        }
-
-        .btn-email {
-            display: inline-block;
-            background-color: var(--azul-tectonico);
+            top: -10px;
+            right: 50px;
+            background: #a31d1d; /* Rojo clásico de separador */
             color: white;
-            padding: 15px 30px;
+            padding: 20px 15px 40px 15px;
             text-decoration: none;
-            border-radius: 30px; /* Más moderno */
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(26, 58, 108, 0.2);
-        }
-
-        .btn-email:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(26, 58, 108, 0.3);
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px;
-            text-align: center;
-            background-color: #f1f1f1;
-            font-size: 0.8rem;
-            color: #777;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.7rem;
+            writing-mode: vertical-rl;
             text-transform: uppercase;
             letter-spacing: 2px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
         }
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .manifesto-block { font-size: 1.3rem; padding: 30px; }
-            .logo { max-width: 180px; }
+        .bookmark:hover {
+            top: 0px;
+            background: var(--azul-tectonico);
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            right: 60px;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.7rem;
+            color: #999;
+        }
+
+        /* Responsive para celulares (se apilan las hojas) */
+        @media (max-width: 800px) {
+            .book { flex-direction: column; padding: 20px 0; width: 95%; }
+            .book::before { display: none; }
+            .page { padding: 30px; }
+            .bookmark { writing-mode: horizontal-tb; clip-path: none; top: 0; right: 0; width: 100%; text-align: center; padding: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="logo.png" alt="Tectónica Editorial - Movimiento de ideas" class="logo">
-        <p class="tagline">Publicando las grietas del pensamiento contemporáneo.</p>
-    </header>
+    <div class="book">
+        <a href="mailto:contacto@tectonicaeditorial.com" class="bookmark">Enviar Manuscrito</a>
 
-    <main>
-        <div class="manifesto-block">
-            <span class="quote-icon" style="top: 10px; left: 10px;">&ldquo;</span>
-            <p>
-                Entendemos el conocimiento no como una estructura estática, sino como un terreno en constante fricción. Tectónica Editorial nace para publicar los sismos, las fallas y las nuevas formaciones en la filosofía, la sociología y los fenómenos humanos emergentes.
+        <div class="page left-page">
+            <img src="logo.png" alt="Tectónica Logo" class="logo">
+            <br>
+            <h1>Tectónica</h1>
+            <p style="letter-spacing: 3px; color: #666; font-size: 0.9rem;">E D I T O R I A L</p>
+            
+            <div class="edition-info">
+                <p>REGISTRO: 2026-MX</p>
+                <p>TEMAS: FILOSOFÍA, SOCIEDAD, ANTROPOCENO.</p>
+                <p>ESTADO: EN PRENSA.</p>
+            </div>
+        </div>
+
+        <div class="page right-page">
+            <div class="manifesto-text">
+                "La realidad no es un suelo firme, sino una serie de capas en fricción. Nuestra misión es documentar el ruido que hacen los paradigmas al romperse."
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 1.1rem; color: #555;">
+                Buscamos autores que no teman al sismo intelectual. Si tu obra desafía la estructura, tiene un lugar en nuestro catálogo.
             </p>
-            <span class="quote-icon" style="bottom: 10px; right: 10px;">&bdquo;</span>
-        </div>
 
-        <div class="contact-section">
-            <h3 class="contact-title">¿Tienes un manuscrito?</h3>
-            <p>Buscamos voces críticas dispuestos a mover las placas tectónicas del saber.</p>
-            <a href="mailto:contacto@tectonicaeditorial.com" class="btn-email">Enviar Propuesta</a>
+            <footer>
+                MÉXICO &bull; MMXXVI
+            </footer>
         </div>
-    </main>
-
-    <footer>
-        &copy; 2026 Tectónica Editorial | Filosofía & Sociedad | México
-    </footer>
+    </div>
 
 </body>
 </html>

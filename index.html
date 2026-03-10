@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -71,8 +71,8 @@
             width: 100%;
             /* --- NUEVO: TAMAÑO UNIFORME Y ELÁSTICO --- */
             aspect-ratio: 3 / 4; /* Proporción estándar de portada de libro vertical. */
-            object-fit: cover; /* Asegura que la imagen llene el espacio sin estirarse desproporcionadamente. Recortará el exceso. */
-            object-position: center; /* Centramos el recorte. */
+            object-fit: contain; /* Asegura que la imagen completa llene el espacio sin cortarse desproporcionadamente. */
+            object-position: center; /* Centramos la imagen. */
             /* --- FIN NUEVO --- */
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
@@ -160,7 +160,7 @@
         }
 
         .capitular::first-letter {
-            float: left; font-size: 6rem; line-height: 0.7; padding-top: 15px; padding-right: 20px; color: var(--azul); font-weight: bold;
+            float: left; font-size: 6rem; line-height: 0.7; padding-top: 10px; padding-right: 20px; color: var(--azul); font-weight: bold;
         }
 
         .separador {

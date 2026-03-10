@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
-    <meta name="description" content="Web oficial de Tectónica Editorial. Investigaciones académicas de Gabriel Alcántara Tovar: El fenómeno Therian y el análisis integral de Alejandro III de Macedonia bajo un enfoque dialéctico-cartesiano.">
-    <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, Fenómeno Therian, Alejandro III de Macedonia, Alejandro Magno, Análisis Académico, Identidad Animal, Historia, México 2026">
-    <meta name="author" content="Gabriel Alcántara Tovar">
-
-    <meta property="og:title" content="Tectónica Editorial | Códice de Investigaciones">
-    <meta property="og:description" content="Explora el catálogo de Gabriel Alcántara Tovar: Investigaciones sobre identidad y figuras históricas.">
-    <meta property="og:image" content="portada-therians.jpg">
-    <meta property="og:url" content="https://tectonicaeditorial.com">
+    <meta name="description" content="Web oficial de Tectónica Editorial. Investigaciones académicas de Gabriel Alcántara Tovar: El fenómeno Therian y Alejandro III de Macedonia.">
+    <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, Therians, Alejandro Magno, Investigación Académica">
 
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     
@@ -30,87 +24,74 @@
             margin: 0;
             padding: 0;
             font-family: 'Cormorant Garamond', serif;
-            color: var(--papel);
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
         }
 
         /* --- VISTA 1: LA BIBLIOTECA --- */
         #vista-biblioteca {
-            width: 100%;
-            max-width: 1200px;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: fadeIn 1s ease-in;
+            width: 90%;
+            max-width: 1000px;
+            padding: 40px 0;
+            display: block; /* Aseguramos que sea visible desde el inicio */
         }
 
         .mision-vision {
             background: var(--papel);
             color: var(--texto);
-            padding: 40px 60px;
-            border-radius: 2px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.8);
             margin-bottom: 50px;
             text-align: center;
-            border-bottom: 5px solid var(--dorado);
-            max-width: 800px;
+            border-bottom: 8px solid var(--dorado);
         }
 
-        .mision-vision h1 { font-size: 3rem; color: var(--azul); margin: 0; }
-        .mision-vision h2 { font-family: 'Special Elite'; font-size: 1rem; letter-spacing: 5px; color: #888; margin-bottom: 30px; }
-        .mision-vision p { font-size: 1.4rem; line-height: 1.6; font-style: italic; }
+        .mision-vision h1 { font-size: 3.5rem; color: var(--azul); margin: 0; }
+        .mision-vision h2 { font-family: 'Special Elite'; font-size: 1.2rem; color: #666; letter-spacing: 3px; }
+        .mision-vision p { font-size: 1.6rem; line-height: 1.5; font-style: italic; color: #333; }
 
         .estante {
             display: flex;
             gap: 40px;
             justify-content: center;
             flex-wrap: wrap;
-            width: 100%;
         }
 
         .libro-objeto {
-            width: 280px;
+            width: 260px;
             cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
+            transition: transform 0.3s;
         }
+
+        .libro-objeto:hover { transform: scale(1.05); }
 
         .libro-objeto img {
             width: 100%;
             border-radius: 2px 5px 5px 2px;
-            box-shadow: 5px 15px 30px rgba(0,0,0,0.6);
-            border-left: 10px solid rgba(0,0,0,0.2);
-        }
-
-        .libro-objeto:hover {
-            transform: translateY(-20px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.7);
+            border-left: 8px solid rgba(0,0,0,0.3);
         }
 
         .libro-objeto p {
             margin-top: 15px;
             font-family: 'Special Elite';
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--dorado);
         }
 
         /* --- VISTA 2: EL LECTOR --- */
         #vista-lector {
             display: none;
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            animation: slideUp 0.6s ease-out;
+            width: 95%;
+            max-width: 1100px;
+            padding: 20px 0;
         }
 
         .barra-navegacion {
-            width: 100%;
-            max-width: 1100px;
             display: flex;
             justify-content: space-between;
             margin-bottom: 20px;
@@ -120,18 +101,14 @@
             background: var(--azul);
             color: white;
             border: 2px solid var(--dorado);
-            padding: 12px 20px;
+            padding: 15px 25px;
             font-family: 'Special Elite';
             cursor: pointer;
-            font-size: 1.1rem;
-            transition: 0.3s;
+            font-size: 1.2rem;
         }
-        .btn-nav:hover { background: var(--dorado); color: var(--mesa); }
 
         .book {
             display: flex;
-            width: 95%;
-            max-width: 1100px;
             height: 780px;
             position: relative;
             perspective: 2000px;
@@ -140,25 +117,22 @@
         .page-left {
             flex: 1;
             background: var(--papel);
-            padding: 60px;
+            padding: 50px;
             border-radius: 5px 0 0 5px;
-            box-shadow: inset -15px 0 30px rgba(0,0,0,0.05), -20px 20px 60px rgba(0,0,0,0.5);
+            box-shadow: -10px 10px 30px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            text-align: center;
-            z-index: 1;
-            border-right: 1px solid rgba(0,0,0,0.1);
             color: var(--texto);
+            border-right: 1px solid rgba(0,0,0,0.1);
         }
 
         .flip-container {
             flex: 1;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transition: transform 0.8s ease-in-out;
             transform-origin: left center;
-            z-index: 10;
         }
 
         .flipped { transform: rotateY(-180deg); }
@@ -168,3 +142,171 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
+            padding: 40px 50px;
+            box-sizing: border-box;
+            background: var(--papel);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            color: var(--texto);
+        }
+        
+        .front { border-radius: 0 5px 5px 0; box-shadow: 10px 10px 30px rgba(0,0,0,0.5); }
+        .back { transform: rotateY(180deg); border-radius: 5px 0 0 5px; background: #e8e5dc; }
+
+        .cover-img { max-height: 320px; align-self: center; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .description { font-size: 1.35rem; line-height: 1.6; text-align: justify; }
+        .capitular::first-letter {
+            float: left; font-size: 4.5rem; line-height: 0.8; padding-top: 10px; padding-right: 15px; color: var(--azul); font-weight: 600;
+        }
+
+        .indicador-giro {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-family: 'Special Elite';
+            color: var(--azul);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contenedor-botones { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+        .btn-descarga { border: 2px solid var(--azul); color: var(--azul); padding: 15px; text-decoration: none; font-family: 'Special Elite'; text-align: center; font-weight: bold; }
+        .btn-contacto { background: var(--azul); color: white; padding: 15px; text-decoration: none; font-family: 'Special Elite'; text-align: center; }
+
+        @media (max-width: 850px) {
+            .book { flex-direction: column; height: auto; }
+            .page-left { border-radius: 5px 5px 0 0; }
+            .flip-container { height: 750px; transform-origin: top; }
+            .flipped { transform: rotateX(-180deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="vista-biblioteca">
+        <div class="mision-vision">
+            <img src="logo.png" alt="Logo Tectónica" style="max-width: 140px; margin-bottom: 15px;">
+            <h1>TECTÓNICA EDITORIAL</h1>
+            <h2>MISIÓN Y VISIÓN</h2>
+            <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Cartografiar la identidad y el conocimiento con rigor académico, bajo la perspectiva humanista biosférica."</p>
+        </div>
+
+        <div class="estante">
+            <div class="libro-objeto" onclick="abrirLibro('therians')">
+                <img src="portada-therians.jpg" alt="Volumen 001">
+                <p>VOL. 001: THERIANS</p>
+            </div>
+            <div class="libro-objeto" onclick="abrirLibro('alejandro')">
+                <img src="portada-alejandro.jpg" alt="Volumen 002">
+                <p>VOL. 002: ALEJANDRO III</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="vista-lector">
+        <div class="barra-navegacion">
+            <button class="btn-nav" onclick="irABiblioteca()">⬅ VOLVER AL ESCRITORIO</button>
+            <div>
+                <button class="btn-nav" onclick="cambiarLibroRelativo(-1)">ANTERIOR</button>
+                <button class="btn-nav" onclick="cambiarLibroRelativo(1)">SIGUIENTE</button>
+            </div>
+        </div>
+
+        <div class="book">
+            <div class="page-left">
+                <div>
+                    <img src="logo.png" alt="Logo" style="max-width: 110px;">
+                    <h2 id="meta-vol" style="font-family:'Special Elite'; color:var(--azul); margin:15px 0; font-size: 1.5rem;"></h2>
+                </div>
+                <div id="meta-datos" style="text-align: left; font-family: 'Special Elite'; font-size: 1rem; border-left: 4px solid var(--azul); padding-left: 20px; color: #444;">
+                    </div>
+            </div>
+
+            <div class="flip-container" id="bookSheet">
+                <div class="face front">
+                    <img id="libro-img" src="" class="cover-img">
+                    <h2 id="libro-titulo" style="margin:0; font-size: 2.5rem; color: var(--azul);"></h2>
+                    <p id="libro-sub" style="font-style:italic; color:#555; margin-bottom:20px; font-size: 1.1rem;"></p>
+                    <div id="libro-intro" class="description capitular"></div>
+                    <div class="indicador-giro" onclick="giro()">GIRAR PÁGINA 👉</div>
+                </div>
+                <div class="face back">
+                    <h3 style="font-family:'Special Elite'; color:var(--azul); margin-top:0;">SINOPSIS COMPLETA</h3>
+                    <div id="libro-cuerpo" class="description"></div>
+                    <div class="contenedor-botones">
+                        <a id="btn-pdf" href="#" download class="btn-descarga">DESCARGAR FRAGMENTO (PDF)</a>
+                        <a href="mailto:contacto@tectonicaeditorial.com" class="btn-contacto">CONTACTAR AL AUTOR</a>
+                    </div>
+                    <div class="indicador-giro" style="right:auto; left:40px;" onclick="giro()">VOLVER 👈</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const catalogo = [
+            {
+                id: 'therians',
+                vol: '001',
+                autor: 'GABRIEL ALCÁNTARA TOVAR',
+                titulo: 'THERIANS',
+                sub: 'Identidad animal en la era digital',
+                img: 'portada-therians.jpg',
+                intro: 'La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje es vasto.',
+                cuerpo: 'Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian es una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.',
+                pdf: 'fragmento-therians.pdf'
+            },
+            {
+                id: 'alejandro',
+                vol: '002',
+                autor: 'GABRIEL ALCÁNTARA TOVAR',
+                titulo: 'ALEJANDRO III',
+                sub: 'Análisis Académico Integral',
+                img: 'portada-alejandro.jpg',
+                intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren.',
+                cuerpo: 'Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas con los diarios astronómicos de Babilonia. La perspectiva humanista biosférica asegura que el rigor no sacrifique la ética.',
+                pdf: 'fragmento-alejandro.pdf'
+            }
+        ];
+
+        let indiceActual = 0;
+
+        function abrirLibro(id) {
+            indiceActual = catalogo.findIndex(l => l.id === id);
+            renderizarLibro();
+            document.getElementById('vista-biblioteca').style.display = 'none';
+            document.getElementById('vista-lector').style.display = 'flex';
+            window.scrollTo(0,0);
+        }
+
+        function irABiblioteca() {
+            document.getElementById('vista-biblioteca').style.display = 'block';
+            document.getElementById('vista-lector').style.display = 'none';
+            document.getElementById('bookSheet').classList.remove('flipped');
+        }
+
+        function renderizarLibro() {
+            const l = catalogo[indiceActual];
+            document.getElementById('meta-vol').innerText = 'VOL: ' + l.vol;
+            document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>MÉXICO, 2026</p><p style="color:var(--azul); margin-top:15px; font-weight:bold;">[ EN PRENSA ]</p>`;
+            document.getElementById('libro-img').src = l.img;
+            document.getElementById('libro-titulo').innerText = l.titulo;
+            document.getElementById('libro-sub').innerText = l.sub;
+            document.getElementById('libro-intro').innerText = l.intro;
+            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
+            document.getElementById('btn-pdf').href = l.pdf;
+            document.getElementById('bookSheet').classList.remove('flipped');
+        }
+
+        function cambiarLibroRelativo(delta) {
+            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
+            renderizarLibro();
+        }
+
+        function giro() {
+            document.getElementById('bookSheet').classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>

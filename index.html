@@ -36,6 +36,7 @@
             position: relative;
             padding: 40px 0;
             border-radius: 5px;
+            margin: 20px;
         }
 
         .book::before {
@@ -93,9 +94,14 @@
         .book-cover {
             max-width: 280px;
             align-self: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             border-radius: 2px;
             margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .book-cover:hover {
+            transform: scale(1.02);
         }
 
         .book-title {
@@ -114,96 +120,10 @@
         }
 
         .description {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             line-height: 1.5;
             text-align: justify;
             color: #333;
         }
 
-        .description p:first-child::first-letter {
-            float: left;
-            font-size: 3.2rem;
-            line-height: 1;
-            padding-right: 8px;
-            color: var(--azul-tectonico);
-        }
-
-        /* Botón/Separador */
-        .bookmark {
-            position: absolute;
-            top: -10px;
-            right: 40px;
-            background: var(--rojo-lacre);
-            color: white;
-            padding: 15px 12px 35px 12px;
-            text-decoration: none;
-            font-family: 'Special Elite', cursive;
-            font-size: 0.7rem;
-            writing-mode: vertical-rl;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
-        }
-
-        .bookmark:hover { top: 0px; height: 120px; }
-
-        footer {
-            margin-top: auto;
-            font-family: 'Special Elite', cursive;
-            font-size: 0.7rem;
-            color: #999;
-            text-align: right;
-        }
-
-        @media (max-width: 850px) {
-            .book { flex-direction: column; width: 95%; padding: 20px 0; }
-            .book::before { display: none; }
-            .page { padding: 40px; }
-            .bookmark { writing-mode: horizontal-tb; clip-path: none; top: 0; right: 0; width: 100%; text-align: center; }
-            .book-cover { max-width: 100%; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="book">
-        <a href="mailto:contacto@tectonicaeditorial.com" class="bookmark">Contactar Autor</a>
-
-        <div class="page left-page">
-            <img src="logo.png" alt="Tectónica Logo" class="logo">
-            <h1 class="editorial-title">Tectónica</h1>
-            <p style="letter-spacing: 4px; color: #888; font-size: 0.8rem; margin-top: 5px;">EDITORIAL</p>
-            
-            <div class="meta-info">
-                <p>COLECCIÓN: Territorios Emergentes</p>
-                <p>VOLUMEN: 001</p>
-                <p>CIUDAD: MÉXICO, 2026</p>
-                <p>ESTADO: DISPONIBLE PARA REVISIÓN</p>
-            </div>
-        </div>
-
-        <div class="page right-page">
-            <img src="https://image-placeholder.com/image_6.png" alt="Portada THERIANS: Identidad animal en la era digital" class="book-cover">
-            
-            <h2 class="book-title">THERIANS</h2>
-            <p class="book-subtitle">Identidad animal en la era digital</p>
-            
-            <div class="description">
-                <p>
-                    La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto.
-                </p>
-                <p style="font-size: 1rem; color: #555; text-align: left; margin-top: 15px;">
-                    Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian, que para muchos adultos aparece como una novedad desconcertante en el entorno digital o escolar, es en realidad una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.
-                </p>
-            </div>
-
-            <footer>
-                Tectónica Editorial &bull; MMXXVI
-            </footer>
-        </div>
-    </div>
-
-</body>
-</html>
+        .description p:first-child

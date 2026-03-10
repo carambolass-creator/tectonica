@@ -4,48 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tectónica Editorial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --azul-tectonico: #1a3a6c; /* Color basado en tu logo */
+            --fondo: #ffffff;
+            --texto: #1a1a1a;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            background-color: #fdfdfd;
-            color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--fondo);
+            color: var(--texto);
             margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 60px 20px;
             text-align: center;
         }
+
+        .logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
         .container {
-            border-top: 2px solid #1a1a1a;
-            border-bottom: 2px solid #1a1a1a;
-            padding: 40px 20px;
-            max-width: 600px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
+
         h1 {
-            font-weight: normal;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin: 0 0 10px 0;
+            font-family: 'Crimson Pro', serif;
+            font-size: 2.5rem;
+            color: var(--azul-tectonico);
+            letter-spacing: -1px;
+            margin-bottom: 10px;
         }
-        p {
-            font-style: italic;
+
+        .tagline {
             font-size: 1.2rem;
-            color: #555;
+            color: #666;
+            font-weight: 300;
+            margin-bottom: 40px;
         }
-        .footer {
-            margin-top: 20px;
+
+        .manifesto {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            text-align: justify;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 40px 0;
+            margin: 40px 0;
+        }
+
+        .contact-box {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 60px;
+        }
+
+        .btn-email {
+            display: inline-block;
+            background-color: var(--azul-tectonico);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-email:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            padding: 40px;
             font-size: 0.8rem;
+            color: #999;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <img src="logo.png" alt="Tectónica Editorial" class="logo">
+        <p class="tagline">Movimientos en la estructura del pensamiento.</p>
+    </header>
+
     <div class="container">
-        <h1>Tectónica Editorial</h1>
-        <p>Movimientos en la estructura del pensamiento.</p>
-        <div class="footer">Próximamente | Filosofía y Fenómenos Sociales</div>
+        <div class="manifesto">
+            "Entendemos el conocimiento no como una estructura estática, sino como un terreno en constante fricción. Tectónica Editorial nace para publicar las grietas, los sismos y las nuevas formaciones en la filosofía, la sociología y los fenómenos humanos emergentes."
+        </div>
+
+        <div class="contact-box">
+            <h3>Contacto Editorial</h3>
+            <p>¿Tienes un manuscrito o una propuesta de investigación? Estamos abiertos a nuevas voces en el pensamiento crítico.</p>
+            <a href="mailto:contacto@tectonicaeditorial.com" class="btn-email">Enviar Correo</a>
+        </div>
     </div>
+
+    <footer style="text-align: center;">
+        &copy; 2026 Tectónica Editorial | México
+    </footer>
+
 </body>
 </html>

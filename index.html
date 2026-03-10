@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial | El Codex</title>
+    <title>Tectónica Editorial | Lanzamiento 01: Therians</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
@@ -11,7 +11,8 @@
         :root {
             --azul-tectonico: #1a3a6c;
             --papel: #f4f1ea;
-            --mesa: #121212; /* Fondo oscuro para que el libro resalte */
+            --mesa: #121212;
+            --rojo-lacre: #a31d1d;
         }
 
         body {
@@ -26,104 +27,115 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* El Libro */
         .book {
             width: 90%;
-            max-width: 1000px;
+            max-width: 1100px;
             background: var(--papel);
-            box-shadow: 
-                0 0 100px rgba(0,0,0,0.5),
-                20px 20px 60px rgba(0,0,0,0.8),
-                inset 0 0 100px rgba(0,0,0,0.05);
+            box-shadow: 0 0 100px rgba(0,0,0,0.5), 20px 20px 60px rgba(0,0,0,0.8);
             display: flex;
             position: relative;
             padding: 40px 0;
             border-radius: 5px;
-            overflow: hidden;
         }
 
-        /* La costura central del libro */
         .book::before {
             content: '';
             position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
+            left: 50%; top: 0; bottom: 0;
             width: 2px;
             background: rgba(0,0,0,0.1);
             box-shadow: 0 0 15px rgba(0,0,0,0.2);
             z-index: 10;
         }
 
-        /* Páginas */
         .page {
             flex: 1;
             padding: 40px 60px;
             position: relative;
+            z-index: 5;
         }
 
-        /* Textura de papel */
-        .page::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
-            opacity: 0.1;
-            pointer-events: none;
-        }
-
-        /* Columna Izquierda: Identidad */
+        /* Página Izquierda (Editorial) */
         .left-page {
             border-right: 1px solid rgba(0,0,0,0.05);
             text-align: center;
         }
 
         .logo {
-            max-width: 180px;
-            filter: grayscale(0.2) contrast(1.1);
-            margin-bottom: 30px;
-            transform: rotate(-1deg); /* Efecto orgánico */
+            max-width: 160px;
+            filter: contrast(1.1);
+            margin-bottom: 20px;
         }
 
-        h1 {
-            font-size: 2.2rem;
+        .editorial-title {
+            font-size: 2.5rem;
             color: var(--azul-tectonico);
-            margin: 10px 0;
-            border-bottom: 1px double rgba(0,0,0,0.1);
-            display: inline-block;
+            margin: 0;
+            line-height: 1;
         }
 
-        .edition-info {
+        .meta-info {
             font-family: 'Special Elite', cursive;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #777;
-            margin-top: 50px;
             text-align: left;
+            margin-top: 80px;
+            border-left: 2px solid var(--azul-tectonico);
+            padding-left: 15px;
         }
 
-        /* Columna Derecha: Manifiesto */
+        /* Página Derecha (El Libro) */
         .right-page {
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
-        .manifesto-text {
-            font-size: 1.5rem;
-            line-height: 1.4;
-            color: #333;
+        .book-cover {
+            max-width: 280px;
+            align-self: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            border-radius: 2px;
+            margin-bottom: 25px;
+        }
+
+        .book-title {
+            font-size: 2.2rem;
+            line-height: 1.1;
+            color: #111;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .book-subtitle {
+            font-size: 1.1rem;
+            color: #666;
             font-style: italic;
-            text-align: justify;
+            margin-bottom: 20px;
         }
 
-        /* El Separador de Libros (Botón de Contacto) */
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            text-align: justify;
+            color: #333;
+        }
+
+        .description p:first-child::first-letter {
+            float: left;
+            font-size: 3.2rem;
+            line-height: 1;
+            padding-right: 8px;
+            color: var(--azul-tectonico);
+        }
+
+        /* Botón/Separador */
         .bookmark {
             position: absolute;
             top: -10px;
-            right: 50px;
-            background: #a31d1d; /* Rojo clásico de separador */
+            right: 40px;
+            background: var(--rojo-lacre);
             color: white;
-            padding: 20px 15px 40px 15px;
+            padding: 15px 12px 35px 12px;
             text-decoration: none;
             font-family: 'Special Elite', cursive;
             font-size: 0.7rem;
@@ -135,58 +147,60 @@
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
         }
 
-        .bookmark:hover {
-            top: 0px;
-            background: var(--azul-tectonico);
-        }
+        .bookmark:hover { top: 0px; height: 120px; }
 
         footer {
-            position: absolute;
-            bottom: 20px;
-            right: 60px;
+            margin-top: auto;
             font-family: 'Special Elite', cursive;
             font-size: 0.7rem;
             color: #999;
+            text-align: right;
         }
 
-        /* Responsive para celulares (se apilan las hojas) */
-        @media (max-width: 800px) {
-            .book { flex-direction: column; padding: 20px 0; width: 95%; }
+        @media (max-width: 850px) {
+            .book { flex-direction: column; width: 95%; padding: 20px 0; }
             .book::before { display: none; }
-            .page { padding: 30px; }
-            .bookmark { writing-mode: horizontal-tb; clip-path: none; top: 0; right: 0; width: 100%; text-align: center; padding: 10px; }
+            .page { padding: 40px; }
+            .bookmark { writing-mode: horizontal-tb; clip-path: none; top: 0; right: 0; width: 100%; text-align: center; }
+            .book-cover { max-width: 100%; }
         }
     </style>
 </head>
 <body>
 
     <div class="book">
-        <a href="mailto:contacto@tectonicaeditorial.com" class="bookmark">Enviar Manuscrito</a>
+        <a href="mailto:contacto@tectonicaeditorial.com" class="bookmark">Contactar Autor</a>
 
         <div class="page left-page">
             <img src="logo.png" alt="Tectónica Logo" class="logo">
-            <br>
-            <h1>Tectónica</h1>
-            <p style="letter-spacing: 3px; color: #666; font-size: 0.9rem;">E D I T O R I A L</p>
+            <h1 class="editorial-title">Tectónica</h1>
+            <p style="letter-spacing: 4px; color: #888; font-size: 0.8rem; margin-top: 5px;">EDITORIAL</p>
             
-            <div class="edition-info">
-                <p>REGISTRO: 2026-MX</p>
-                <p>TEMAS: FILOSOFÍA, SOCIEDAD, ANTROPOCENO.</p>
-                <p>ESTADO: EN PRENSA.</p>
+            <div class="meta-info">
+                <p>COLECCIÓN: Territorios Emergentes</p>
+                <p>VOLUMEN: 001</p>
+                <p>CIUDAD: MÉXICO, 2026</p>
+                <p>ESTADO: DISPONIBLE PARA REVISIÓN</p>
             </div>
         </div>
 
         <div class="page right-page">
-            <div class="manifesto-text">
-                "La realidad no es un suelo firme, sino una serie de capas en fricción. Nuestra misión es documentar el ruido que hacen los paradigmas al romperse."
-            </div>
+            <img src="https://image-placeholder.com/image_6.png" alt="Portada THERIANS: Identidad animal en la era digital" class="book-cover">
             
-            <p style="margin-top: 30px; font-size: 1.1rem; color: #555;">
-                Buscamos autores que no teman al sismo intelectual. Si tu obra desafía la estructura, tiene un lugar en nuestro catálogo.
-            </p>
+            <h2 class="book-title">THERIANS</h2>
+            <p class="book-subtitle">Identidad animal en la era digital</p>
+            
+            <div class="description">
+                <p>
+                    La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto.
+                </p>
+                <p style="font-size: 1rem; color: #555; text-align: left; margin-top: 15px;">
+                    Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian, que para muchos adultos aparece como una novedad desconcertante en el entorno digital o escolar, es en realidad una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.
+                </p>
+            </div>
 
             <footer>
-                MÉXICO &bull; MMXXVI
+                Tectónica Editorial &bull; MMXXVI
             </footer>
         </div>
     </div>

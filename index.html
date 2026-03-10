@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -57,17 +57,27 @@
         }
 
         .libro-objeto {
-            width: 300px;
+            /* --- AJUSTE ELÁSTICO --- */
+            width: 100%; /* Forzamos a que sea elástico en la flexbox */
+            max-width: 300px; /* Mantenemos el tamaño máximo original de 300px */
             cursor: pointer;
             text-align: center;
             transition: transform 0.3s;
+            box-sizing: border-box; /* Importante para padding/border */
         }
         .libro-objeto:hover { transform: translateY(-15px); }
+
         .libro-objeto img {
             width: 100%;
+            /* --- NUEVO: TAMAÑO UNIFORME Y ELÁSTICO --- */
+            aspect-ratio: 3 / 4; /* Proporción estándar de portada de libro vertical. */
+            object-fit: cover; /* Asegura que la imagen llene el espacio sin estirarse desproporcionadamente. Recortará el exceso. */
+            object-position: center; /* Centramos el recorte. */
+            /* --- FIN NUEVO --- */
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             border-left: 10px solid rgba(0,0,0,0.2);
+            box-sizing: border-box; /* Importante para el borde */
         }
         .libro-objeto p { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.4rem; color: var(--dorado); }
 
@@ -112,7 +122,6 @@
             color: var(--texto);
         }
 
-        /* Ficha Técnica */
         .ficha-tecnica {
             padding: 40px;
             background: #eeebe3;
@@ -131,7 +140,6 @@
             line-height: 1.6;
         }
 
-        /* Contenido del Libro */
         .contenido-libro {
             padding: 50px 40px;
             position: relative;
@@ -174,7 +182,6 @@
         .btn-pdf { border: 4px solid var(--azul); color: var(--azul); }
         .btn-mail { background: var(--azul); color: white; }
 
-        /* --- RESPONSIVE PARA PC --- */
         @media (min-width: 1000px) {
             .contenedor-dual { flex-direction: row; min-height: 900px; }
             .ficha-tecnica { width: 35%; border-bottom: 0; border-right: 3px solid #ddd; }

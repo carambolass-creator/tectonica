@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial | Interactivo Pro</title>
+    <title>Tectónica Editorial | Edición Final</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -20,21 +20,22 @@
             align-items: center;
             min-height: 100vh;
             font-family: 'Cormorant Garamond', serif;
-            perspective: 2500px; /* Profundidad para el giro */
+            /* Eliminamos overflow hidden para evitar que la página desaparezca */
         }
 
-        /* Contenedor del Libro */
+        /* El Contenedor Principal (El Libro) */
         .book {
             display: flex;
             width: 95%;
             max-width: 1100px;
-            height: 850px;
+            height: 850px; /* Altura fija para mantener proporciones de libro */
             position: relative;
-            transform-style: preserve-3d;
+            perspective: 2000px;
+            background: transparent;
         }
 
-        /* Página Izquierda (Estatica) */
-        .left-page {
+        /* Página Izquierda (Siempre visible y estática) */
+        .page-left {
             flex: 1;
             background: var(--papel);
             padding: 60px;
@@ -48,8 +49,8 @@
             z-index: 1;
         }
 
-        /* La Hoja que Gira */
-        .flip-page {
+        /* El mecanismo de la hoja derecha */
+        .page-right-wrapper {
             flex: 1;
             position: relative;
             transform-style: preserve-3d;
@@ -59,49 +60,123 @@
             z-index: 10;
         }
 
-        /* Estado Girado */
-        .flipped {
+        .is-flipped {
             transform: rotateY(-180deg);
-            z-index: 20; /* Se asegura de estar sobre la pagina izquierda */
         }
 
-        /* Caras de la Hoja */
+        /* Las caras de la hoja derecha */
         .face {
             position: absolute;
             width: 100%;
             height: 100%;
-            backface-visibility: hidden; /* Oculta la espalda mientras gira */
-            padding: 60px 60px 100px 60px; /* Márgenes editoriales */
+            backface-visibility: hidden; /* Esto evita que se transparente */
+            padding: 50px 60px 100px 60px; /* Margen inferior de seguridad */
             box-sizing: border-box;
             background: var(--papel);
             display: flex;
             flex-direction: column;
-        }
-
-        .front {
-            border-radius: 0 5px 5px 0;
             box-shadow: inset 15px 0 30px rgba(0,0,0,0.05), 10px 10px 30px rgba(0,0,0,0.3);
         }
 
-        .back {
-            transform: rotateY(180deg); /* Volteamos el contenido del reverso */
-            background: #ebe8df;
+        .face-front {
+            border-radius: 0 5px 5px 0;
+        }
+
+        .face-back {
+            transform: rotateY(180deg);
+            background: #ebe8df; /* Color un poco más oscuro para el reverso */
             border-radius: 5px 0 0 5px;
             box-shadow: inset -15px 0 30px rgba(0,0,0,0.05);
         }
 
-        /* Contenido */
+        /* Elementos Internos */
         .logo { max-width: 140px; margin-bottom: 20px; }
-        .book-cover { max-height: 220px; align-self: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-bottom: 30px; }
+        .cover-img { max-height: 250px; align-self: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-bottom: 30px; }
         
-        .description { 
-            font-size: 1.25rem; 
-            line-height: 1.6; 
-            text-align: justify; 
+        .text-block {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            text-align: justify;
             color: #222;
         }
 
         .capitular::first-letter {
             float: left;
             font-size: 3.5rem;
-            line-height: 0
+            line-height: 0.8;
+            padding-top: 10px;
+            padding-right: 12px;
+            color: var(--azul);
+            font-weight: 600;
+        }
+
+        /* El Dedo Indicador (Animado) */
+        .finger-hint {
+            position: absolute;
+            bottom: 40px;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: pointing 2s infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pointing {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-15px); }
+        }
+
+        .btn-contact {
+            background: var(--azul);
+            color: white;
+            padding: 18px;
+            text-decoration: none;
+            font-family: 'Special Elite', cursive;
+            text-align: center;
+            border-radius: 2px;
+            margin-top: auto;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 850px) {
+            .book { flex-direction: column; height: auto; }
+            .page-right-wrapper { height: 750px; transform-origin: top; }
+            .is-flipped { transform: rotateX(-180deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book">
+        
+        <div class="page-left">
+            <div>
+                <img src="logo.png" alt="Tectónica Logo" class="logo">
+                <h1 style="color: var(--azul); margin: 0; font-size: 2.2rem;">Tectónica</h1>
+                <p style="letter-spacing: 5px; font-size: 0.7rem; color: #888;">EDITORIAL</p>
+            </div>
+            
+            <div style="text-align: left; font-family: 'Special Elite'; font-size: 0.75rem; color: #666; border-left: 2px solid var(--azul); padding-left: 20px;">
+                <p>VOL: 001</p>
+                <p>COLECCIÓN: Territorios Emergentes</p>
+                <p>AUTOR: G. ALCÁNTARA TOVAR</p>
+                <p>MÉXICO, 2026</p>
+                <p style="color:var(--azul); margin-top:20px; font-weight: bold;">[ EN PRENSA ]</p>
+            </div>
+        </div>
+
+        <div class="page-right-wrapper" id="pageElement" onclick="handleFlip()">
+            
+            <div class="face face-front">
+                <img src="portada-therians.jpg" alt="Portada Libro" class="cover-img">
+                <h2 style="margin: 0; font-size: 1.8rem;">THERIANS</h2>
+                <p style="font-style: italic; color: #777; margin-bottom: 25px;">Identidad animal en la era digital</p>
+                
+                <div class="text-block capitular">
+                    La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje es vasto.
+                </div>
+                
+                <div class="finger-hint" style="right: 40px;">👈</div>
+            </div>
+
+            <div class="face face-back">
+                <h3 style="font-family:

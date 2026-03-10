@@ -61,18 +61,24 @@
             transform: rotateY(-180deg);
         }
 
-        /* Caras */
+        /* Caras de la hoja (Con scroll oculto para evitar desbordamiento) */
         .face {
             position: absolute;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            padding: 50px 60px 120px 60px; /* Margen inferior extra para dignidad editorial */
+            padding: 50px 60px 100px 60px; 
             box-sizing: border-box;
             background: var(--papel);
             display: flex;
             flex-direction: column;
             box-shadow: inset 15px 0 30px rgba(0,0,0,0.05), 10px 10px 40px rgba(0,0,0,0.4);
+            overflow-y: auto; /* Permite scroll interno si es necesario */
+            scrollbar-width: none; /* Oculta scrollbar en Firefox */
+        }
+        
+        .face::-webkit-scrollbar {
+            display: none; /* Oculta scrollbar en Chrome/Safari */
         }
 
         .front { border-radius: 0 5px 5px 0; }
@@ -82,7 +88,7 @@
             background: #ebe8df;
         }
 
-        /* Elementos */
+        /* Elementos editoriales */
         .logo { max-width: 140px; margin-bottom: 20px; }
         .cover { max-height: 230px; align-self: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-bottom: 30px; }
         
@@ -91,29 +97,48 @@
             float: left; font-size: 3.5rem; line-height: 0.8; padding-top: 10px; padding-right: 12px; color: var(--azul); font-weight: 600;
         }
 
-        /* El área de clic (Gatillo) */
-        .click-trigger {
+        /* --- NUEVO INDICADOR GRÁFICO ANIMADO --- */
+        .indicador-giro {
             position: absolute;
             bottom: 30px;
-            right: 30px;
-            width: 80px;
-            height: 80px;
-            background: rgba(26, 58, 108, 0.1);
-            border-radius: 50%;
-            cursor: pointer;
+            right: 40px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 2rem;
+            gap: 10px;
+            cursor: pointer;
+            font-family: 'Special Elite', monospace;
+            font-size: 0.9rem;
+            color: #666;
+            transition: color 0.3s;
             z-index: 100;
-            transition: all 0.3s;
-            border: 1px dashed var(--azul);
         }
 
-        .click-trigger:hover {
-            background: var(--azul);
-            color: white;
-            transform: scale(1.1);
+        .indicador-giro:hover { color: var(--azul); }
+
+        /* Animación para la cara frontal (empuja a la derecha) */
+        .dedo-frente {
+            font-size: 1.8rem;
+            animation: empujar-der 1.2s infinite alternate ease-in-out;
+        }
+        @keyframes empujar-der {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(8px); }
+        }
+
+        /* Animación para la cara trasera (empuja a la izquierda) */
+        .indicador-reverso {
+            right: auto;
+            left: 40px;
+            flex-direction: row-reverse;
+        }
+        .dedo-reverso {
+            font-size: 1.8rem;
+            transform: scaleX(-1);
+            animation: empujar-izq 1.2s infinite alternate ease-in-out;
+        }
+        @keyframes empujar-izq {
+            0% { transform: scaleX(-1) translateX(0); }
+            100% { transform: scaleX(-1) translateX(-8px); } /* Nota: el movimiento se invierte por el scaleX */
         }
 
         .btn-contacto {
@@ -124,70 +149,16 @@
             font-family: 'Special Elite';
             text-align: center;
             border-radius: 2px;
-            margin-top: auto;
+            margin-top: 40px;
         }
 
+        /* --- OPTIMIZACIÓN MÓVIL --- */
         @media (max-width: 850px) {
-            .book { flex-direction: column; height: auto; }
+            .book { flex-direction: column; height: auto; margin-top: 20px; margin-bottom: 20px;}
+            .page-left { padding: 40px 30px; border-radius: 5px 5px 0 0; border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
             .flip-container { height: 750px; transform-origin: top; }
             .flipped { transform: rotateX(-180deg); }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="book">
-        
-        <div class="page-left">
-            <div>
-                <img src="logo.png" alt="Logo" class="logo">
-                <h1 style="color: var(--azul); margin: 0; font-size: 2.2rem;">Tectónica</h1>
-                <p style="letter-spacing: 5px; font-size: 0.7rem; color: #888;">EDITORIAL</p>
-            </div>
             
-            <div style="text-align: left; font-family: 'Special Elite'; font-size: 0.75rem; color: #666; border-left: 2px solid var(--azul); padding-left: 20px;">
-                <p>VOL: 001</p>
-                <p>AUTOR: GABRIEL ALCÁNTARA T.</p>
-                <p>MÉXICO, 2026</p>
-                <p style="color:var(--azul); margin-top:20px; font-weight: bold;">[ EN PRENSA ]</p>
-            </div>
-        </div>
-
-        <div class="flip-container" id="bookSheet">
-            
-            <div class="face front">
-                <img src="portada-therians.jpg" alt="Portada" class="cover">
-                <h2 style="margin:0;">THERIANS</h2>
-                <p style="font-style:italic; color:#666; margin-bottom:20px;">Identidad animal en la era digital</p>
-                
-                <div class="description capitular">
-                    La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje es vasto.
-                </div>
-
-                <div class="click-trigger" onclick="giro()">👈</div>
-            </div>
-
-            <div class="face back">
-                <h3 style="font-family:'Special Elite'; color:var(--azul); margin-top:0;">CONTINUACIÓN</h3>
-                
-                <div class="description">
-                    Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian es una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.
-                </div>
-
-                <a href="mailto:contacto@tectonicaeditorial.com" class="btn-contacto">CONTACTAR AUTOR</a>
-
-                <div class="click-trigger" style="left: 30px; transform: scaleX(-1);" onclick="giro()">👈</div>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
-        function giro() {
-            const hoja = document.getElementById('bookSheet');
-            hoja.classList.toggle('flipped');
-        }
-    </script>
-
-</body>
-</html>
+            /* Ajustes de espacio para que no desborde */
+            .face { padding: 30px 25px 80px 25px; }
+            .cover

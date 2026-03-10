@@ -3,77 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Special+Elite&display=swap" rel="stylesheet">
+    <title>Tectónica Editorial | Therians</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --azul: #1a3a6c;
+            --papel: #f4f1ea;
+            --mesa: #121212;
+            --rojo-lacre: #a31d1d;
+        }
+
         body {
-            background-color: #121212; /* La mesa oscura */
+            background-color: var(--mesa);
             margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 40px 0;
             font-family: 'Cormorant Garamond', serif;
         }
 
         .book {
             width: 90%;
-            max-width: 1000px;
-            background: #f4f1ea; /* El papel claro */
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            max-width: 1050px;
+            background: var(--papel);
+            box-shadow: 0 0 80px rgba(0,0,0,0.6);
             display: flex;
             position: relative;
-            min-height: 600px;
             border-radius: 5px;
+            height: auto;
+            min-height: 700px;
         }
 
-        /* Costura central */
         .book::before {
             content: '';
             position: absolute;
             left: 50%; top: 0; bottom: 0;
             width: 2px;
-            background: rgba(0,0,0,0.1);
+            background: rgba(0,0,0,0.05);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
             z-index: 10;
         }
 
         .page {
             flex: 1;
-            padding: 40px;
+            padding: 60px;
             z-index: 5;
+            display: flex;
+            flex-direction: column;
         }
 
-        .left-page { border-right: 1px solid rgba(0,0,0,0.05); text-align: center; }
-        
-        .logo { max-width: 150px; margin-bottom: 20px; }
-        
-        .right-page { display: flex; flex-direction: column; }
+        /* Página Izquierda */
+        .left-page {
+            border-right: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+            justify-content: space-between;
+        }
+
+        .logo { max-width: 150px; filter: contrast(1.1); }
+
+        .meta-info {
+            text-align: left;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.75rem;
+            color: #666;
+            border-left: 2px solid var(--azul);
+            padding-left: 15px;
+        }
+
+        /* Página Derecha */
+        .right-page { position: relative; }
 
         .book-cover {
-            max-width: 250px;
+            max-width: 260px;
             align-self: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
         }
 
-        .description { font-size: 1.1rem; line-height: 1.4; text-align: justify; color: #333; }
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            text-align: justify;
+            color: #222;
+        }
 
+        .description::first-letter {
+            float: left;
+            font-size: 3.5rem;
+            line-height: 1;
+            padding-right: 10px;
+            color: var(--azul);
+            font-weight: 600;
+        }
+
+        /* ANIMACIÓN DE CAMBIO DE PÁGINA (El Botón Pro) */
+        .page-flip-container {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 30;
+        }
+
+        /* La esquina que se dobla */
+        .page-flip-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            background: linear-gradient(135deg, #dcd9d0 0%, #bab7ae 50%, #f4f1ea 100%);
+            box-shadow: -5px -5px 15px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        /* El texto oculto bajo el doblez */
+        .flip-text {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            font-family: 'Special Elite';
+            font-size: 0.7rem;
+            color: var(--azul);
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: right;
+            pointer-events: none;
+        }
+
+        /* Estado Hover: El doblez crece */
+        .page-flip-container:hover .page-flip-btn {
+            width: 80px;
+            height: 80px;
+            box-shadow: -10px -10px 20px rgba(0,0,0,0.2);
+        }
+
+        .page-flip-container:hover .flip-text {
+            opacity: 1;
+        }
+
+        /* El Marcador Rojo (Contacto) */
         .bookmark {
             position: absolute;
             top: 0; right: 40px;
-            background: #a31d1d;
+            background: var(--rojo-lacre);
             color: white;
-            padding: 10px 10px 30px 10px;
+            padding: 15px 12px 35px 12px;
             text-decoration: none;
             font-family: 'Special Elite', cursive;
             font-size: 0.7rem;
             writing-mode: vertical-rl;
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+            z-index: 20;
+            transition: transform 0.3s;
+        }
+        .bookmark:hover { transform: translateY(10px); }
+
+        footer {
+            margin-top: auto;
+            font-family: 'Special Elite';
+            font-size: 0.7rem;
+            color: #aaa;
+            text-align: right;
         }
 
-        @media (max-width: 800px) {
-            .book { flex-direction: column; height: auto; }
+        @media (max-width: 850px) {
+            .book { flex-direction: column; margin: 20px; }
             .book::before { display: none; }
+            .page-flip-container { display: none; } /* En móvil mejor un botón simple */
         }
     </style>
 </head>
@@ -83,24 +185,40 @@
         <a href="mailto:contacto@tectonicaeditorial.com" class="bookmark">CONTACTO</a>
 
         <div class="page left-page">
-            <img src="logo.png" alt="Logo" class="logo">
-            <h1 style="color:#1a3a6c; margin:0;">Tectónica</h1>
-            <p style="letter-spacing:3px; font-size:0.8rem;">EDITORIAL</p>
-            <div style="text-align:left; margin-top:100px; font-family:'Special Elite'; font-size:0.7rem; color:#666;">
+            <div>
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1 style="color: var(--azul); font-size: 2.5rem; margin: 0;">Tectónica</h1>
+                <p style="letter-spacing: 4px; font-size: 0.8rem; color: #888;">EDITORIAL</p>
+            </div>
+
+            <div class="meta-info">
                 <p>VOL: 001</p>
-                <p>AUTOR: G. ALCÁNTARA</p>
+                <p>COLECCIÓN: Territorios Emergentes</p>
+                <p>AUTOR: Gabriel Alcántara Tovar</p>
                 <p>MÉXICO, 2026</p>
             </div>
         </div>
 
         <div class="page right-page">
             <img src="portada-therians.jpg" alt="Portada" class="book-cover">
-            <h2 style="margin:0;">THERIANS</h2>
-            <p style="font-style:italic; color:#666; margin-bottom:15px;">Identidad animal en la era digital</p>
+            
+            <h2 style="font-size: 2.2rem; margin: 0;">THERIANS</h2>
+            <p style="font-style: italic; color: #666; margin-bottom: 20px;">Identidad animal en la era digital</p>
+            
             <div class="description">
-                La identidad es el territorio más complejo que un ser humano debe cartografiar. 
-                Este libro nace para tender puentes donde el desconocimiento ha levantado muros.
+                La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto.
+                <br><br>
+                Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros.
             </div>
+
+            <div class="page-flip-container" onclick="window.location.href='mailto:contacto@tectonicaeditorial.com'">
+                <div class="page-flip-btn"></div>
+                <div class="flip-text">HOJEAR<br>FRAGMENTO</div>
+            </div>
+
+            <footer>
+                Tectónica Editorial &bull; MMXXVI
+            </footer>
         </div>
     </div>
 

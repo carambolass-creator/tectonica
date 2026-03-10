@@ -3,22 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial | Lanzamiento 01: Therians</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <title>Tectónica Editorial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --azul-tectonico: #1a3a6c;
-            --papel: #f4f1ea;
-            --mesa: #121212;
-            --rojo-lacre: #a31d1d;
-        }
-
         body {
-            background-color: var(--mesa);
-            background-image: radial-gradient(#222 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-color: #121212; /* La mesa oscura */
             margin: 0;
             display: flex;
             justify-content: center;
@@ -29,101 +18,91 @@
 
         .book {
             width: 90%;
-            max-width: 1100px;
-            background: var(--papel);
-            box-shadow: 0 0 100px rgba(0,0,0,0.5), 20px 20px 60px rgba(0,0,0,0.8);
+            max-width: 1000px;
+            background: #f4f1ea; /* El papel claro */
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
             display: flex;
             position: relative;
-            padding: 40px 0;
+            min-height: 600px;
             border-radius: 5px;
-            margin: 20px;
         }
 
+        /* Costura central */
         .book::before {
             content: '';
             position: absolute;
             left: 50%; top: 0; bottom: 0;
             width: 2px;
             background: rgba(0,0,0,0.1);
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
             z-index: 10;
         }
 
         .page {
             flex: 1;
-            padding: 40px 60px;
-            position: relative;
+            padding: 40px;
             z-index: 5;
         }
 
-        /* Página Izquierda (Editorial) */
-        .left-page {
-            border-right: 1px solid rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .logo {
-            max-width: 160px;
-            filter: contrast(1.1);
-            margin-bottom: 20px;
-        }
-
-        .editorial-title {
-            font-size: 2.5rem;
-            color: var(--azul-tectonico);
-            margin: 0;
-            line-height: 1;
-        }
-
-        .meta-info {
-            font-family: 'Special Elite', cursive;
-            font-size: 0.75rem;
-            color: #777;
-            text-align: left;
-            margin-top: 80px;
-            border-left: 2px solid var(--azul-tectonico);
-            padding-left: 15px;
-        }
-
-        /* Página Derecha (El Libro) */
-        .right-page {
-            display: flex;
-            flex-direction: column;
-        }
+        .left-page { border-right: 1px solid rgba(0,0,0,0.05); text-align: center; }
+        
+        .logo { max-width: 150px; margin-bottom: 20px; }
+        
+        .right-page { display: flex; flex-direction: column; }
 
         .book-cover {
-            max-width: 280px;
+            max-width: 250px;
             align-self: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border-radius: 2px;
-            margin-bottom: 25px;
-            transition: transform 0.3s ease;
-        }
-
-        .book-cover:hover {
-            transform: scale(1.02);
-        }
-
-        .book-title {
-            font-size: 2.2rem;
-            line-height: 1.1;
-            color: #111;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .book-subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            font-style: italic;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             margin-bottom: 20px;
         }
 
-        .description {
-            font-size: 1.15rem;
-            line-height: 1.5;
-            text-align: justify;
-            color: #333;
+        .description { font-size: 1.1rem; line-height: 1.4; text-align: justify; color: #333; }
+
+        .bookmark {
+            position: absolute;
+            top: 0; right: 40px;
+            background: #a31d1d;
+            color: white;
+            padding: 10px 10px 30px 10px;
+            text-decoration: none;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.7rem;
+            writing-mode: vertical-rl;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
         }
 
-        .description p:first-child
+        @media (max-width: 800px) {
+            .book { flex-direction: column; height: auto; }
+            .book::before { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="book">
+        <a href="mailto:contacto@tectonicaeditorial.com" class="bookmark">CONTACTO</a>
+
+        <div class="page left-page">
+            <img src="logo.png" alt="Logo" class="logo">
+            <h1 style="color:#1a3a6c; margin:0;">Tectónica</h1>
+            <p style="letter-spacing:3px; font-size:0.8rem;">EDITORIAL</p>
+            <div style="text-align:left; margin-top:100px; font-family:'Special Elite'; font-size:0.7rem; color:#666;">
+                <p>VOL: 001</p>
+                <p>AUTOR: G. ALCÁNTARA</p>
+                <p>MÉXICO, 2026</p>
+            </div>
+        </div>
+
+        <div class="page right-page">
+            <img src="portada-therians.jpg" alt="Portada" class="book-cover">
+            <h2 style="margin:0;">THERIANS</h2>
+            <p style="font-style:italic; color:#666; margin-bottom:15px;">Identidad animal en la era digital</p>
+            <div class="description">
+                La identidad es el territorio más complejo que un ser humano debe cartografiar. 
+                Este libro nace para tender puentes donde el desconocimiento ha levantado muros.
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

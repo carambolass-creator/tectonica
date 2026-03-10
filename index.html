@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial | Interactivo</title>
+    <title>Tectónica Editorial | Coleccionista</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
         :root {
             --azul: #1a3a6c;
             --papel: #f4f1ea;
             --mesa: #121212;
+            --rojo-lacre: #a31d1d;
         }
 
         body {
@@ -19,156 +20,196 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            perspective: 1500px; /* Profundidad de campo */
-            overflow: hidden;
+            padding: 40px 0;
             font-family: 'Cormorant Garamond', serif;
         }
 
-        /* El contenedor del libro */
         .book {
+            width: 90%;
+            max-width: 1050px;
+            background: var(--papel);
+            box-shadow: 0 0 80px rgba(0,0,0,0.6);
             display: flex;
-            width: 95%;
-            max-width: 1100px;
-            height: 700px;
             position: relative;
-            transform-style: preserve-3d;
+            border-radius: 5px;
+            height: auto; 
+            min-height: 700px;
         }
 
-        /* Hoja Izquierda (Fija) */
-        .static-page {
+        .book::before {
+            content: '';
+            position: absolute;
+            left: 50%; top: 0; bottom: 0;
+            width: 2px;
+            background: rgba(0,0,0,0.1);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .page {
             flex: 1;
-            background: var(--papel);
-            padding: 50px;
-            border-radius: 5px 0 0 5px;
-            box-shadow: inset -10px 0 20px rgba(0,0,0,0.1), -10px 10px 30px rgba(0,0,0,0.5);
+            padding: 50px 60px;
+            z-index: 5;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            text-align: center;
+        }
+
+        .left-page {
             border-right: 1px solid rgba(0,0,0,0.05);
-        }
-
-        /* Contenedor del giro (Hoja Derecha) */
-        .flipping-page {
-            flex: 1;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-            transform-origin: left;
-            cursor: pointer;
-        }
-
-        /* La clase que activa el giro */
-        .flipped {
-            transform: rotateY(-180deg);
-        }
-
-        /* Caras de la hoja */
-        .face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden; /* Clave: oculta la espalda */
-            padding: 50px;
-            box-sizing: border-box;
-            background: var(--papel);
-            border-radius: 0 5px 5px 0;
-            box-shadow: inset 10px 0 20px rgba(0,0,0,0.1), 10px 10px 30px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Cara de atrás (el reverso) */
-        .back {
-            transform: rotateY(180deg);
-            background: #ebe8df;
-            border-radius: 5px 0 0 5px;
-        }
-
-        /* Elementos internos */
-        .logo { max-width: 150px; margin-bottom: 20px; }
-        .book-cover { max-width: 250px; align-self: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); margin-bottom: 20px; }
-        .description { font-size: 1.1rem; line-height: 1.5; text-align: justify; color: #222; }
-        
-        /* Botón de descarga en el reverso */
-        .btn {
-            background: var(--azul);
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            font-family: 'Special Elite';
             text-align: center;
-            margin-top: auto;
-            border-radius: 3px;
+            justify-content: space-between;
         }
 
-        .click-hint {
+        .logo { max-width: 160px; margin-bottom: 20px; }
+
+        .meta-info {
+            text-align: left;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.75rem;
+            color: #666;
+            line-height: 1.8;
+            border-left: 2px solid var(--azul);
+            padding-left: 15px;
+            margin-top: 50px;
+        }
+
+        .right-page {
+            justify-content: space-between;
+        }
+
+        .book-cover {
+            max-width: 280px;
+            align-self: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .book-title {
+            font-size: 2.2rem;
+            color: #111;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .book-subtitle {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            text-align: justify;
+            color: #222;
+        }
+
+        .description p:first-child::first-letter {
+            float: left;
+            font-size: 3.5rem;
+            line-height: 1;
+            padding-right: 10px;
+            color: var(--azul);
+            font-weight: 600;
+        }
+
+        /* La "fricción": Dedo levantando la página (El Botón Pro) */
+        .page-peel-interaction {
             position: absolute;
-            bottom: 20px; right: 20px;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 30;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .page-peel-interaction:hover {
+            opacity: 1;
+        }
+
+        /* Marcador de Contacto */
+        .bookmark {
+            position: absolute;
+            top: 0; right: 40px;
+            background: var(--rojo-lacre);
+            color: white;
+            padding: 15px 12px 35px 12px;
+            text-decoration: none;
+            font-family: 'Special Elite', cursive;
+            font-size: 0.7rem;
+            writing-mode: vertical-rl;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+            z-index: 20;
+            transition: transform 0.3s;
+        }
+        .bookmark:hover { transform: translateY(10px); }
+
+        footer {
+            margin-top: auto;
             font-family: 'Special Elite';
             font-size: 0.7rem;
-            color: var(--azul);
-            animation: bounce 2s infinite;
+            color: #aaa;
+            text-align: right;
         }
 
-        @keyframes bounce { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
-
         @media (max-width: 850px) {
-            .book { flex-direction: column; height: auto; perspective: none; }
-            .flipping-page { height: 600px; transform-origin: top; }
-            .flipped { transform: rotateX(-180deg); }
+            .book { flex-direction: column; margin: 20px; height: auto; }
+            .book::before { display: none; }
+            .page { padding: 40px; }
+            .bookmark { writing-mode: horizontal-tb; clip-path: none; width: 100%; right: 0; text-align: center; }
+            .page-peel-interaction { width: 100%; height: auto; right: 0; text-align: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="book">
-        
-        <div class="static-page">
+        <a href="mailto:contacto@tectonicaeditorial.com" class="bookmark">CONTACTAR AUTOR</a>
+
+        <div class="page left-page">
             <div>
-                <img src="logo.png" alt="Editorial" class="logo">
-                <h1 style="color: var(--azul); margin: 0; font-size: 2.2rem;">Tectónica</h1>
+                <img src="logo.png" alt="Tectónica Logo" class="logo">
+                <h1 style="color: var(--azul); font-size: 2.5rem; margin: 0;">Tectónica</h1>
                 <p style="letter-spacing: 4px; font-size: 0.8rem; color: #888;">EDITORIAL</p>
             </div>
-            
-            <div style="text-align: left; font-family: 'Special Elite'; font-size: 0.7rem; color: #666; border-left: 2px solid var(--azul); padding-left: 15px;">
+
+            <div class="meta-info">
                 <p>VOL: 001</p>
-                <p>AUTOR: GABRIEL ALCÁNTARA T.</p>
+                <p>COLECCIÓN: Territorios Emergentes</p>
+                <p>AUTOR: Gabriel Alcántara Tovar</p>
                 <p>MÉXICO, 2026</p>
             </div>
         </div>
 
-        <div class="flipping-page" id="bookPage" onclick="toggleFlip()">
+        <div class="page right-page">
+            <img src="portada-therians.jpg" alt="Portada de Therians" class="book-cover">
             
-            <div class="face front">
-                <img src="portada-therians.jpg" alt="Portada" class="book-cover">
-                <h2 style="margin: 0;">THERIANS</h2>
-                <p style="font-style: italic; color: #666; margin-bottom: 10px;">Identidad animal en la era digital</p>
-                <p class="description">
-                    "La identidad es el territorio más complejo que un ser humano debe cartografiar durante su vida..."
+            <h2 class="book-title">THERIANS</h2>
+            <p class="book-subtitle">Identidad animal en la era digital</p>
+            
+            <div class="description">
+                <p>
+                    La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto.
                 </p>
-                <div class="click-hint">HAZ CLIC AQUÍ →</div>
+                <p style="font-size: 1rem; color: #555; margin-top: 15px;">
+                    Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian, que para muchos adultos aparece como una novedad desconcertante en el entorno digital o escolar, es en realidad una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.
+                </p>
             </div>
 
-            <div class="face back">
-                <h3 style="font-family: 'Special Elite'; color: var(--azul);">EL PROYECTO</h3>
-                <p class="description" style="font-size: 1rem;">
-                    Este libro nace de una necesidad urgente: tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian es una manifestación profunda de la búsqueda de sentido contemporánea.
-                </p>
-                <a href="mailto:contacto@tectonicaeditorial.com" class="btn">SOLICITAR COPIA DE PRENSA</a>
-                <div class="click-hint" style="right: auto; left: 20px;">← VOLVER</div>
+            <div class="page-peel-interaction" onclick="window.location.href='mailto:contacto@tectonicaeditorial.com'">
+                <img src="https://image-placeholder.com/page-peel-finger.png" alt="Girar Página" style="width:100%;">
             </div>
 
+            <footer style="margin-top: 40px;">
+                Tectónica Editorial &bull; MMXXVI
+            </footer>
         </div>
     </div>
-
-    <script>
-        function toggleFlip() {
-            // Esta es la función mágica que hace el giro
-            const page = document.getElementById('bookPage');
-            page.classList.toggle('flipped');
-        }
-    </script>
 
 </body>
 </html>

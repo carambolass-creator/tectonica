@@ -415,7 +415,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="#catalogo">Catálogo</a></li>
-            <li><a href="#autor">Autor</a></li>
+            <li><a href="autor.html">Autor</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
@@ -528,19 +528,6 @@
         </div>
     </section>
 
-    <!-- SOBRE EL AUTOR -->
-    <section id="autor" aria-labelledby="autor-h">
-        <div class="sec-sep f4"><h2 id="autor-h">El Autor</h2></div>
-        <div style="max-width:680px; margin: 0 auto 80px;">
-            <p style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; line-height:1.85; color:rgba(232,224,208,0.82); text-align:justify; margin-bottom:1.6rem;">
-                Gabriel Alcántara Tovar es investigador independiente y fundador de Tectónica Editorial. Ha dedicado su trayectoria a explorar preguntas que no reconocen fronteras disciplinarias — con la certeza de que el conocimiento es una aventura colectiva, y que nadie, incluido él, llega solo a sus respuestas.
-            </p>
-            <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.18rem; line-height:1.8; color:rgba(232,224,208,0.58); border-left:2px solid rgba(196,146,58,0.4); padding-left:22px;">
-                Su obra se desarrolla bajo la perspectiva humanista biosférica: rigor intelectual y responsabilidad ética como condiciones inseparables del conocimiento honesto.
-            </p>
-        </div>
-    </section>
-
     <section id="contacto" class="contacto-section" aria-labelledby="contacto-h">
         <div class="sec-sep f4"><h2 id="contacto-h">Correspondencia</h2></div>
         <div class="contacto-wrap">
@@ -612,6 +599,10 @@
                 <p class="modal-sec-label">Descripción de la obra</p>
                 <p class="modal-cuerpo" id="modal-cuerpo"></p>
                 <div class="modal-keywords" id="modal-kw" aria-label="Temas relacionados"></div>
+                <div id="modal-nota-autor-wrap" style="display:none; margin-bottom:28px;">
+                    <p class="modal-sec-label">Sobre el autor</p>
+                    <p id="modal-nota-autor" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.1rem; line-height:1.75; color:rgba(232,224,208,0.62); border-left:2px solid rgba(196,146,58,0.3); padding-left:18px;"></p>
+                </div>
                 <div class="modal-acciones">
                     <a id="modal-pdf" href="#" download class="btn-pdf">↓ Descargar fragmento (PDF)</a>
                     <a href="mailto:contacto@tectonicaeditorial.com" class="btn-contacto">✉ Contactar al autor</a>
@@ -658,6 +649,7 @@ const catalogo = [
         licencia: '',
         intro: 'La inteligencia artificial agéntica no espera instrucciones: recibe un objetivo y trabaja de manera autónoma para alcanzarlo, tomando decisiones y ejecutando acciones sobre los sistemas reales de su organización. Eso la convierte en una decisión de gobierno corporativo, no en un proyecto de TI.',
         cuerpo: 'Este libro examina las cinco preguntas que todo CEO, director general o empresario debe poder responder antes de autorizar cualquier inversión en IA agéntica: ¿Quién es el responsable legal si el sistema se equivoca? ¿Cuánto cuesta realmente y cuándo veré resultados? ¿Puede trabajar con lo que ya tengo? ¿Cómo mantengo el control? ¿Qué le pasa a mi organización durante el proceso? El costo real de implementación se sitúa entre 1.4 y 2 veces el precio cotizado. El 95% de los proyectos no supera la fase piloto. El 70% de los fracasos se originan en factores humanos y organizacionales, no en problemas técnicos. Basado en investigación de Gartner, MIT Sloan, BCG, McKinsey y el EU AI Act. Lectura estimada: 3 horas.',
+        notaAutor: 'Gabriel Alcántara Tovar es ingeniero e investigador independiente, con maestría en Dirección de Proyectos y certificación PMP. Ha trabajado en ingeniería, administración y análisis aplicado a proyectos complejos, incluyendo colaboraciones con organismos federales de Estados Unidos. Fundador de Tectónica Editorial.',
         keywords: ['implementar inteligencia artificial empresa','IA agéntica CEO','gobernanza IA empresas','responsabilidad legal IA','costo implementación IA','control sistemas IA autónomos','ROI inteligencia artificial','gestión del cambio IA'],
         pdf: 'fragmento-ia-empresa.pdf'
     }
@@ -680,6 +672,10 @@ function renderizarModal(i) {
     else              { licWrap.style.display = 'none'; }
     document.getElementById('modal-kw').innerHTML =
         l.keywords.map(k => `<span class="kw-tag">${k}</span>`).join('');
+    const notaWrap = document.getElementById('modal-nota-autor-wrap');
+    const notaTxt  = document.getElementById('modal-nota-autor');
+    if (l.notaAutor) { notaTxt.textContent = l.notaAutor; notaWrap.style.display = ''; }
+    else { notaWrap.style.display = 'none'; }
 }
 
 function abrirModal(id) {

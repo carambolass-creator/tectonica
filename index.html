@@ -1,32 +1,10 @@
-Entendido, Maestro. Acepto la crítica con humildad; mi objetivo es estar a la altura de su exigencia académica y técnica. He tomado cada punto de su checklist operativo de SEO y lo he implementado directamente en el código.
-
-He aplicado **SEO semántico estático** (para que Google lea los libros aunque no se ejecute el JavaScript), optimización de carga, metadatos enriquecidos (Open Graph y Twitter) y jerarquía de encabezados estricta.
-
-Aquí tiene el código completo, corregido y optimizado:
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
     
-    <title>Tectónica Editorial | Investigación y Humanismo Biosférico</title>
-    <meta name="description" content="Editorial académica de Gabriel Alcántara Tovar. Investigaciones sobre el fenómeno Therian y análisis histórico de Alejandro Magno.">
-    <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, Therians, Alejandro Magno, Humanismo, Academia">
-    <meta name="author" content="Gabriel Alcántara Tovar">
-    <link rel="canonical" href="https://tectonicaeditorial.com">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Tectónica Editorial | Rigor Académico">
-    <meta property="og:description" content="Puentes entre el conocimiento y la investigación humanista.">
-    <meta property="og:image" content="logo.png"> <meta property="og:url" content="https://tectonicaeditorial.com">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tectónica Editorial">
-    <meta name="twitter:description" content="Investigación con rigor académico bajo la perspectiva humanista biosférica.">
-    <meta name="twitter:image" content="logo.png">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
@@ -52,7 +30,6 @@ Aquí tiene el código completo, corregido y optimizado:
             min-height: 100vh;
         }
 
-        /* --- VISTA 1: BIBLIOTECA --- */
         #vista-biblioteca {
             width: 95%;
             max-width: 1000px;
@@ -60,7 +37,7 @@ Aquí tiene el código completo, corregido y optimizado:
             display: block;
         }
 
-        header.mision-vision {
+        .mision-vision {
             background: var(--papel);
             color: var(--texto);
             padding: 50px 30px;
@@ -71,12 +48,10 @@ Aquí tiene el código completo, corregido y optimizado:
             border-bottom: 12px solid var(--dorado);
         }
 
-        /* 2. JERARQUÍA DE ENCABEZADOS: H1 Principal */
         .mision-vision h1 { font-size: clamp(2.5rem, 10vw, 4rem); color: var(--azul); margin: 0; font-weight: 600; }
         .mision-vision p { font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.5; font-style: italic; margin-top: 25px; color: #333; }
 
-        /* 2. ENCABEZADO SECCIÓN: H2 */
-        .titulo-seccion { font-family: 'Special Elite'; color: var(--dorado); text-align: center; font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
+        .titulo-seccion { font-family: 'Special Elite'; color: var(--dorado); text-align: center; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; }
 
         .estante {
             display: flex;
@@ -95,10 +70,10 @@ Aquí tiene el código completo, corregido y optimizado:
             background: none;
             border: none;
             padding: 0;
+            color: inherit;
         }
         .libro-objeto:hover { transform: translateY(-15px); }
 
-        /* 3. IMÁGENES: Optimizadas con respaldo de color */
         .libro-objeto img {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -109,13 +84,19 @@ Aquí tiene el código completo, corregido y optimizado:
             border-left: 10px solid rgba(0,0,0,0.3);
         }
         
-        /* 2. TÍTULOS DE LIBROS: H3 */
-        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.4rem; color: var(--dorado); }
+        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.5rem; color: var(--dorado); }
 
-        /* 4. CONTENIDO ESTÁTICO (SEO INDEXABLE) */
-        .seo-resumen { display: none; } /* Visible para bots, oculto para humanos */
+        .seo-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
 
-        /* --- SECCIÓN CONTACTO --- */
         .seccion-contacto {
             margin-top: 60px;
             padding: 45px;
@@ -129,7 +110,7 @@ Aquí tiene el código completo, corregido y optimizado:
         .form-control {
             width: 100%;
             padding: 18px;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-family: 'Cormorant Garamond', serif;
             background: var(--papel);
             border: none;
@@ -145,7 +126,7 @@ Aquí tiene el código completo, corregido y optimizado:
             border: none;
             padding: 22px;
             font-family: 'Special Elite';
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             cursor: pointer;
             width: 100%;
             font-weight: bold;
@@ -153,7 +134,6 @@ Aquí tiene el código completo, corregido y optimizado:
         }
         .btn-enviar:hover { background: #966d09; }
 
-        /* --- VISTA 2: LECTOR --- */
         #vista-lector {
             display: none;
             width: 100%;
@@ -164,7 +144,6 @@ Aquí tiene el código completo, corregido y optimizado:
 
         .barra-navegacion { display: flex; gap: 15px; margin-bottom: 25px; }
         
-        /* 5. ACCESIBILIDAD: Aria-labels en JS */
         .btn-nav {
             background: var(--azul);
             color: white;
@@ -205,120 +184,33 @@ Aquí tiene el código completo, corregido y optimizado:
 
     <main id="vista-biblioteca">
         <header class="mision-vision">
-            <img src="logo.png" alt="Logotipo oficial de Tectónica Editorial" width="180" height="180" loading="lazy">
+            <img src="logo.webp" alt="Logotipo oficial de Tectónica Editorial" width="180" height="180" loading="lazy">
             <h1>TECTÓNICA EDITORIAL</h1>
             <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Investigar con rigor académico bajo la perspectiva humanista biosférica."</p>
         </header>
 
-        <h2 class="titulo-seccion">Catálogo de Investigaciones</h2>
+        <h2 class="titulo-seccion">Catálogo Bibliográfico</h2>
 
         <section class="estante">
-            <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir libro Therians: Identidad animal en la era digital">
-                <img src="portada-therians.jpg" alt="Portada Libro Therians - Identidad animal" width="300" height="400" loading="lazy">
+            <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir estudio sobre Therians e identidad animal">
+                <img src="portaga_therians.webp" alt="Portada del libro Therians: Identidad animal en la era digital" width="300" height="400" loading="lazy">
                 <h3>VOL. 001: THERIANS</h3>
-                <div class="seo-resumen">
-                    <p>Análisis sobre la identidad animal en la era digital y el fenómeno Therian desde una perspectiva humanista.</p>
+                
+                <div class="seo-hidden">
+                    <p>Resumen: Un análisis profundo sobre el fenómeno therian y la autopercepción de la identidad animal en jóvenes, bajo una metodología académica y humanista.</p>
                 </div>
             </button>
 
-            <button class="libro-objeto" onclick="abrirLibro('alejandro')" aria-label="Abrir libro Alejandro III de Macedonia: Análisis Académico">
-                <img src="portada-alejandro.jpg" alt="Portada Libro Alejandro III de Macedonia" width="300" height="400" loading="lazy">
+            <button class="libro-objeto" onclick="abrirLibro('alejandro')" aria-label="Abrir análisis académico sobre Alejandro III de Macedonia">
+                <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III de Macedonia" width="300" height="400" loading="lazy">
                 <h3>VOL. 002: ALEJANDRO III</h3>
-                <div class="seo-resumen">
-                    <p>Estudio académico integral sobre la figura histórica de Alejandro Magno y su impacto en la civilización.</p>
+                
+                <div class="seo-hidden">
+                    <p>Resumen: Análisis académico integral de la figura de Alejandro Magno, triangulando fuentes clásicas y evidencia arqueológica desde una ética biosférica.</p>
                 </div>
             </button>
         </section>
 
         <section class="seccion-contacto">
             <h2 class="titulo-seccion">Correspondencia Editorial</h2>
-            <form action="https://formspree.io/f/xqegzzqg" method="POST">
-                <div class="form-grupo">
-                    <label for="nombre" style="display:none;">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="NOMBRE COMPLETO" aria-required="true">
-                    
-                    <label for="email" style="display:none;">Correo</label>
-                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="CORREO ELECTRÓNICO" aria-required="true">
-                    
-                    <label for="mensaje" style="display:none;">Mensaje</label>
-                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="MENSAJE O CONSULTA ACADÉMICA" aria-required="true" style="height:150px;"></textarea>
-                </div>
-                <button type="submit" class="btn-enviar" aria-label="Enviar formulario de contacto">ENVIAR CORRESPONDENCIA</button>
-            </form>
-        </section>
-    </main>
-
-    <div id="vista-lector" aria-hidden="true">
-        <nav class="barra-navegacion">
-            <button class="btn-nav" onclick="irABiblioteca()" aria-label="Regresar al escritorio principal">⬅ ESCRITORIO</button>
-            <button class="btn-nav" onclick="cambiarLibro(-1)" aria-label="Ver libro anterior">ANTERIOR</button>
-            <button class="btn-nav" onclick="cambiarLibro(1)" aria-label="Ver libro siguiente">SIGUIENTE</button>
-        </nav>
-
-        <article class="contenedor-dual">
-            <aside class="ficha-tecnica">
-                <h2 id="meta-vol" style="color: var(--azul); font-size: 2.2rem; font-family:'Special Elite';"></h2>
-                <div id="meta-datos" style="text-align: left; font-family: 'Special Elite'; font-size: 1.3rem; border-left: 5px solid var(--azul); padding-left: 15px;"></div>
-            </aside>
-            <section class="contenido-libro">
-                <h2 id="libro-titulo" style="font-size: 3rem; color: var(--azul); margin: 0;"></h2>
-                <p id="libro-sub" style="font-style: italic; font-size: 1.5rem; color: #555; margin-bottom: 30px;"></p>
-                <div id="libro-intro" class="texto-academico capitular"></div>
-                <hr style="margin: 40px 0; border: 1px solid var(--dorado);">
-                <div id="libro-cuerpo" class="texto-academico"></div>
-            </section>
-        </article>
-    </div>
-
-    <script>
-        const catalogo = [
-            {
-                id: 'therians', vol: '001', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'THERIANS', sub: 'Identidad animal en la era digital',
-                intro: 'La identidad es el territorio más complejo que un ser humano debe cartografiar. El fenómeno therian es una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad.',
-                cuerpo: 'Este estudio analiza cómo las nuevas generaciones replantean lo humano bajo una perspectiva de integración biosférica y rigor filosófico.'
-            },
-            {
-                id: 'alejandro', vol: '002', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'ALEJANDRO III', sub: 'Análisis Académico Integral',
-                intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? Abordamos su figura desde un enfoque dialéctico-cartesiano multidimensional.',
-                cuerpo: 'El análisis triangula fuentes greco-latinas con evidencia arqueológica, distinguiendo lo verificable de lo mítico bajo una ética humanista.'
-            }
-        ];
-
-        let indiceActual = 0;
-
-        function abrirLibro(id) {
-            indiceActual = catalogo.findIndex(l => l.id === id);
-            renderizar();
-            document.getElementById('vista-biblioteca').style.display = 'none';
-            document.getElementById('vista-lector').style.display = 'block';
-            document.getElementById('vista-lector').setAttribute('aria-hidden', 'false');
-            window.scrollTo(0,0);
-        }
-
-        function irABiblioteca() {
-            document.getElementById('vista-biblioteca').style.display = 'block';
-            document.getElementById('vista-lector').style.display = 'none';
-            document.getElementById('vista-lector').setAttribute('aria-hidden', 'true');
-        }
-
-        function renderizar() {
-            const l = catalogo[indiceActual];
-            document.getElementById('meta-vol').innerText = 'VOL: ' + l.vol;
-            document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>AÑO: 2026</p><p>ESTADO: EN PRENSA</p>`;
-            document.getElementById('libro-titulo').innerText = l.titulo;
-            document.getElementById('libro-sub').innerText = l.sub;
-            document.getElementById('libro-intro').innerText = l.intro;
-            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
-        }
-
-        function cambiarLibro(delta) {
-            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
-            renderizar();
-            window.scrollTo(0,0);
-        }
-    </script>
-</body>
-</html>
-```
+            <form action="https://

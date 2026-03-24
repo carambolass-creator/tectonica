@@ -57,29 +57,89 @@
         }
 
         .libro-objeto {
-            /* --- AJUSTE ELÁSTICO --- */
-            width: 100%; /* Forzamos a que sea elástico en la flexbox */
-            max-width: 300px; /* Mantenemos el tamaño máximo original de 300px */
+            width: 100%; 
+            max-width: 300px; 
             cursor: pointer;
             text-align: center;
             transition: transform 0.3s;
-            box-sizing: border-box; /* Importante para padding/border */
+            box-sizing: border-box; 
         }
         .libro-objeto:hover { transform: translateY(-15px); }
 
         .libro-objeto img {
             width: 100%;
-            /* --- NUEVO: TAMAÑO UNIFORME Y ELÁSTICO --- */
-            aspect-ratio: 3 / 4; /* Proporción estándar de portada de libro vertical. */
-            object-fit: contain; /* Asegura que la imagen completa llene el espacio sin cortarse desproporcionadamente. */
-            object-position: center; /* Centramos la imagen. */
-            /* --- FIN NUEVO --- */
+            aspect-ratio: 3 / 4; 
+            object-fit: contain; 
+            object-position: center; 
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             border-left: 10px solid rgba(0,0,0,0.2);
-            box-sizing: border-box; /* Importante para el borde */
+            box-sizing: border-box; 
         }
         .libro-objeto p { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.4rem; color: var(--dorado); }
+
+        /* --- NUEVA SECCIÓN: FORMULARIO DE CONTACTO --- */
+        .seccion-contacto {
+            margin-top: 80px;
+            padding: 50px;
+            background: #1a1a1a;
+            border: 2px solid var(--dorado);
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .seccion-contacto h2 {
+            font-family: 'Special Elite';
+            color: var(--dorado);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .form-grupo {
+            margin-bottom: 25px;
+        }
+
+        .form-grupo label {
+            display: block;
+            font-family: 'Special Elite';
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--papel);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--papel);
+            border: none;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn-enviar {
+            background: var(--dorado);
+            color: white;
+            border: none;
+            padding: 20px;
+            font-family: 'Special Elite';
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-enviar:hover {
+            background: #966d09;
+        }
 
         /* --- VISTA 2: LECTOR (Mesa de Trabajo) --- */
         #vista-lector {
@@ -209,6 +269,25 @@
                 <img src="portada-alejandro.jpg" alt="Vol. 002">
                 <p>VOL. 002: ALEJANDRO III</p>
             </div>
+        </div>
+
+        <div class="seccion-contacto">
+            <h2>CORRESPONDENCIA EDITORIAL</h2>
+            <form action="https://formspree.io/f/contacto@tectonicaeditorial.com" method="POST">
+                <div class="form-grupo">
+                    <label>NOMBRE COMPLETO:</label>
+                    <input type="text" name="nombre" class="form-control" required placeholder="Escriba su nombre...">
+                </div>
+                <div class="form-grupo">
+                    <label>CORREO ELECTRÓNICO:</label>
+                    <input type="email" name="_replyto" class="form-control" required placeholder="Su correo para recibir respuesta...">
+                </div>
+                <div class="form-grupo">
+                    <label>MENSAJE O CONSULTA:</label>
+                    <textarea name="mensaje" class="form-control" required placeholder="Escriba su mensaje aquí..."></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">ENVIAR CORRESPONDENCIA</button>
+            </form>
         </div>
     </div>
 

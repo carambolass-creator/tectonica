@@ -1,5 +1,15 @@
+# Archivo de directivas para rastreadores web
+# Sitio: Tectónica Editorial (www.tectonicaeditorial.com)
+
 User-agent: *
 Allow: /
 
-# Enlace al sitemap para facilitar la indexación
-Sitemap: https://tectonicaeditorial.com/sitemap.xml
+# Permitir explícitamente el rastreo de los fragmentos de libros
+Allow: /*.pdf$
+Allow: /*.webp$
+
+# Bloquear directorios internos o scripts si los hubiera en el futuro
+Disallow: /cgi-bin/
+
+# Enlace directo al mapa del sitio para acelerar la indexación
+Sitemap: https://www.tectonicaeditorial.com/sitemap.xml

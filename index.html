@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
+    
     <meta name="description" content="Editorial académica de Gabriel Alcántara Tovar. Investigaciones sobre el fenómeno Therian y análisis histórico de Alejandro Magno bajo la perspectiva humanista biosférica.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,9 +52,9 @@
         }
 
         .mision-vision h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); color: var(--azul); margin: 0; font-weight: 600; }
-        .mision-vision p { font-size: clamp(1.5rem, 6vw, 2.2rem); line-height: 1.4; font-style: italic; margin-top: 30px; color: #333; }
+        .mision-vision p { font-size: clamp(1.5rem, 6vw, 2rem); line-height: 1.4; font-style: italic; margin-top: 30px; color: #333; }
 
-        .titulo-seccion { font-family: 'Special Elite'; color: var(--dorado); text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; }
+        .titulo-seccion { font-family: 'Special Elite'; color: var(--dorado); text-align: center; font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
 
         .estante {
             display: flex;
@@ -85,9 +85,10 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             border-left: 10px solid rgba(0,0,0,0.3);
             display: block;
+            margin: 0 auto;
         }
         
-        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.8rem; color: var(--dorado); }
+        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.4rem; color: var(--dorado); }
 
         /* SEO Indexable oculto visualmente */
         .seo-hidden {
@@ -101,32 +102,35 @@
             border: 0;
         }
 
-        /* --- SECCIÓN CONTACTO (TAMAÑO NORMALIZADO) --- */
+        /* --- SECCIÓN CONTACTO (TAMAÑO NORMALIZADO PARA EL PÚBLICO) --- */
         .seccion-contacto {
             margin-top: 40px;
-            padding: 35px;
+            padding: 30px;
             background: #1a1a1a;
-            border: 2px solid var(--dorado);
+            border: 1px solid var(--dorado);
             border-radius: 4px;
             width: 100%;
-            max-width: 800px;
+            max-width: 600px; /* Ancho estándar de formulario */
             box-sizing: border-box;
             margin-left: auto;
             margin-right: auto;
         }
 
         .seccion-contacto h2 {
-            font-size: 2rem;
-            margin-bottom: 25px;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            font-family: 'Special Elite';
+            color: var(--dorado);
+            text-align: center;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px;
-            font-size: 1.2rem;
+            padding: 10px 15px;
+            font-size: 1rem; /* Tamaño de texto de formulario estándar */
             font-family: 'Cormorant Garamond', serif;
             background: var(--papel);
-            border: none;
+            border: 1px solid #ccc;
             border-radius: 4px;
             margin-bottom: 15px;
             box-sizing: border-box;
@@ -134,19 +138,21 @@
         }
 
         textarea.form-control {
-            height: 120px;
+            height: 100px;
+            resize: vertical;
         }
 
         .btn-enviar {
             background: var(--dorado);
             color: white;
             border: none;
-            padding: 15px;
+            padding: 12px 20px;
             font-family: 'Special Elite';
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             cursor: pointer;
             width: 100%;
             font-weight: bold;
+            border-radius: 4px;
             transition: background 0.3s;
         }
         .btn-enviar:hover { background: #966d09; }
@@ -167,9 +173,9 @@
             background: var(--azul);
             color: white;
             border: 3px solid var(--dorado);
-            padding: 20px;
+            padding: 15px 20px;
             font-family: 'Special Elite';
-            font-size: 1.4rem;
+            font-size: 1.1rem;
             cursor: pointer;
             flex: 1;
             min-width: 150px;
@@ -195,7 +201,7 @@
             border-left: 6px solid var(--azul);
             padding-left: 25px;
             margin-top: 25px;
-            font-size: 1.6rem;
+            font-size: 1.2rem;
             color: #444;
             line-height: 1.6;
         }
@@ -209,12 +215,11 @@
             margin: 0 auto 40px; 
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
             border-radius: 2px 8px 8px 2px;
-            border-left: 10px solid rgba(0,0,0,0.2);
         }
 
-        .texto-academico { font-size: 1.8rem; line-height: 1.6; text-align: justify; margin-bottom: 40px; }
+        .texto-academico { font-size: 1.4rem; line-height: 1.6; text-align: justify; margin-bottom: 40px; }
         .capitular::first-letter {
-            float: left; font-size: 6rem; line-height: 0.7; padding-top: 10px; padding-right: 20px; color: var(--azul); font-weight: bold;
+            float: left; font-size: 5rem; line-height: 0.8; padding-top: 5px; padding-right: 15px; color: var(--azul); font-weight: bold;
         }
 
         .separador {
@@ -223,29 +228,29 @@
             margin: 50px 0;
         }
 
-        .contenedor-botones { display: flex; flex-direction: column; gap: 20px; margin-top: 50px; }
+        .contenedor-botones { display: flex; flex-direction: column; gap: 15px; margin-top: 50px; }
         
         .btn-accion { 
-            padding: 25px; 
+            padding: 20px; 
             text-decoration: none; 
             font-family: 'Special Elite'; 
             text-align: center; 
-            font-size: 1.6rem; 
+            font-size: 1.2rem; 
             font-weight: bold;
             border-radius: 4px;
             transition: background 0.3s, color 0.3s;
         }
-        .btn-pdf { border: 4px solid var(--azul); color: var(--azul); }
+        .btn-pdf { border: 3px solid var(--azul); color: var(--azul); }
         .btn-pdf:hover { background: var(--azul); color: white; }
         .btn-mail { background: var(--azul); color: white; }
         .btn-mail:hover { background: #15305b; }
 
         @media (min-width: 1000px) {
-            .contenedor-dual { flex-direction: row; min-height: 900px; }
+            .contenedor-dual { flex-direction: row; min-height: auto; }
             .ficha-tecnica { width: 35%; border-bottom: 0; border-right: 3px solid #ddd; }
             .contenido-libro { width: 65%; padding: 60px 80px; }
             .barra-navegacion { flex-wrap: nowrap; }
-            .btn-nav { flex: none; width: 280px; }
+            .btn-nav { flex: none; width: 200px; }
         }
     </style>
 </head>
@@ -258,19 +263,17 @@
             <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Investigar con rigor académico bajo la perspectiva humanista biosférica."</p>
         </header>
 
-        <h2 class="titulo-seccion">Catálogo Bibliográfico</h2>
-
         <section class="estante">
-            <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir estudio sobre Therians e identidad animal">
-                <img src="portaga_therians.webp" alt="Portada del libro Therians: Identidad animal en la era digital" loading="lazy">
+            <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir estudio sobre Therians">
+                <img src="portaga_therians.webp" alt="Portada del libro Therians" loading="lazy">
                 <h3>THERIANS</h3>
                 <div class="seo-hidden">
                     <p>Análisis profundo sobre la identidad animal en la era digital y el fenómeno Therian desde una perspectiva humanista.</p>
                 </div>
             </button>
 
-            <button class="libro-objeto" onclick="abrirLibro('alejandro')" aria-label="Abrir análisis académico sobre Alejandro III de Macedonia">
-                <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III de Macedonia" loading="lazy">
+            <button class="libro-objeto" onclick="abrirLibro('alejandro')" aria-label="Abrir análisis académico sobre Alejandro III">
+                <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III" loading="lazy">
                 <h3>ALEJANDRO III</h3>
                 <div class="seo-hidden">
                     <p>Estudio académico integral sobre la figura histórica de Alejandro Magno, triangulando fuentes clásicas y evidencia arqueológica.</p>
@@ -279,19 +282,19 @@
         </section>
 
         <section class="seccion-contacto">
-            <h2 class="titulo-seccion">Correspondencia Editorial</h2>
+            <h2>Correspondencia Editorial</h2>
             <form action="https://formspree.io/f/xqegzzqg" method="POST">
                 <div class="form-grupo">
                     <label for="nombre" class="seo-hidden">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="NOMBRE COMPLETO" aria-required="true">
+                    <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Nombre completo" aria-required="true">
                     
                     <label for="email" class="seo-hidden">Correo electrónico</label>
-                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="CORREO ELECTRÓNICO DE RETORNO" aria-required="true">
+                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="Correo electrónico de contacto" aria-required="true">
                     
                     <label for="mensaje" class="seo-hidden">Mensaje o consulta</label>
-                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="MENSAJE O CONSULTA ACADÉMICA" aria-required="true"></textarea>
+                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="Mensaje o consulta académica" aria-required="true"></textarea>
                 </div>
-                <button type="submit" class="btn-enviar" aria-label="Enviar formulario de contacto">ENVIAR CORRESPONDENCIA</button>
+                <button type="submit" class="btn-enviar" aria-label="Enviar formulario de contacto">Enviar Mensaje</button>
             </form>
         </section>
     </main>
@@ -306,21 +309,20 @@
         <article class="contenedor-dual">
             <aside class="ficha-tecnica">
                 <img src="logo.webp" alt="Logo de Tectónica" style="max-width: 130px; margin: 0 auto; display: block;">
-                <h2 id="meta-vol" style="margin: 30px 0; color: var(--azul); font-size: 2.5rem; font-family:'Special Elite';"></h2>
-                <div id="meta-datos" class="meta-box"></div>
+                <h2 id="meta-vol" style="margin: 30px 0; color: var(--azul); font-size: 2rem; font-family:'Special Elite'; display:none;"></h2> <div id="meta-datos" class="meta-box"></div>
             </aside>
 
             <section class="contenido-libro">
                 <img id="libro-img" src="" class="portada-lector" alt="Portada del libro en lectura">
                 
-                <h2 id="libro-titulo" style="margin:0; font-size: 4rem; color: var(--azul); line-height: 1.1;"></h2>
-                <p id="libro-sub" style="font-style:italic; color:#666; font-size: 2rem; margin-bottom: 40px;"></p>
+                <h2 id="libro-titulo" style="margin:0; font-size: 3rem; color: var(--azul); line-height: 1.1;"></h2>
+                <p id="libro-sub" style="font-style:italic; color:#666; font-size: 1.5rem; margin-bottom: 40px;"></p>
                 
                 <div id="libro-intro" class="texto-academico capitular"></div>
                 
                 <div class="separador"></div>
                 
-                <h3 style="font-family:'Special Elite'; color:var(--azul); font-size: 2.2rem; margin-bottom:30px;">ANÁLISIS DE LA OBRA</h3>
+                <h3 style="font-family:'Special Elite'; color:var(--azul); font-size: 1.8rem; margin-bottom:30px;">ANÁLISIS DE LA OBRA</h3>
                 <div id="libro-cuerpo" class="texto-academico"></div>
                 
                 <div class="contenedor-botones">
@@ -334,7 +336,7 @@
     <script>
         const catalogo = [
             {
-                id: 'therians', vol: '001', autor: 'GABRIEL ALCÁNTARA TOVAR',
+                id: 'therians', autor: 'GABRIEL ALCÁNTARA TOVAR',
                 titulo: 'THERIANS', sub: 'Identidad animal en la era digital',
                 img: 'portaga_therians.webp',
                 intro: 'La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto.',
@@ -342,49 +344,5 @@
                 pdf: 'fragmento-therians.pdf'
             },
             {
-                id: 'alejandro', vol: '002', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'ALEJANDRO III', sub: 'Análisis Académico Integral',
-                img: 'portada-alejandro.webp',
-                intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder.',
-                cuerpo: 'Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo histórico y los diarios astronómicos de Babilonia. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética.',
-                pdf: 'fragmento-alejandro.pdf'
-            }
-        ];
-
-        let indiceActual = 0;
-
-        function abrirLibro(id) {
-            indiceActual = catalogo.findIndex(l => l.id === id);
-            renderizar();
-            document.getElementById('vista-biblioteca').style.display = 'none';
-            document.getElementById('vista-lector').style.display = 'block';
-            document.getElementById('vista-lector').setAttribute('aria-hidden', 'false');
-            window.scrollTo(0,0);
-        }
-
-        function irABiblioteca() {
-            document.getElementById('vista-biblioteca').style.display = 'block';
-            document.getElementById('vista-lector').style.display = 'none';
-            document.getElementById('vista-lector').setAttribute('aria-hidden', 'true');
-        }
-
-        function renderizar() {
-            const l = catalogo[indiceActual];
-            document.getElementById('meta-vol').innerText = ''; 
-            document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>PAÍS: MÉXICO</p><p>AÑO: 2026</p><p style="color:var(--azul); font-weight:bold; margin-top:20px;">[ ESTADO: EN PRENSA ]</p>`;
-            document.getElementById('libro-img').src = l.img;
-            document.getElementById('libro-titulo').innerText = l.titulo;
-            document.getElementById('libro-sub').innerText = l.sub;
-            document.getElementById('libro-intro').innerText = l.intro;
-            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
-            document.getElementById('btn-pdf').href = l.pdf;
-        }
-
-        function cambiarLibro(delta) {
-            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
-            renderizar();
-            window.scrollTo(0,0);
-        }
-    </script>
-</body>
-</html>
+                id: 'alejandro', autor: 'GABRIEL ALCÁNTARA TOVAR',
+                titulo: 'ALEJ

@@ -68,22 +68,77 @@
 
         .libro-objeto img {
             width: 100%;
-            /* --- CORRECCIÓN: ELIMINAR PROPORCIÓN RÍGIDA PARA EVITAR RECORTE --- */
-            /* aspect-ratio: 3 / 4; <- ELIMINADO */
-            /* object-fit: contain; <- ELIMINADO */
-            object-position: center;
-            /* --- FIN CORRECCIÓN --- */
+            /* Se eliminó aspect-ratio y object-fit para que la portada no se recorte */
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             border-left: 10px solid rgba(0,0,0,0.2);
             box-sizing: border-box;
-            /* --- NUEVOS AJUSTES DE ALTURA FLEXIBLE --- */
-            height: auto;
-            max-height: 400px; /* Limitar altura máxima para mantener consistencia visual */
-            display: block;
-            margin: 0 auto;
+            height: auto; /* Permite que la imagen tome su altura natural sin cortarse */
         }
         .libro-objeto p { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.4rem; color: var(--dorado); }
+
+        /* --- SECCIÓN CONTACTO --- */
+        .seccion-contacto {
+            margin-top: 80px;
+            padding: 50px;
+            background: #1a1a1a;
+            border: 2px solid var(--dorado);
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .seccion-contacto h2 {
+            font-family: 'Special Elite';
+            color: var(--dorado);
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .form-grupo {
+            margin-bottom: 25px;
+        }
+
+        .form-grupo label {
+            display: block;
+            font-family: 'Special Elite';
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--papel);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--papel);
+            border: none;
+            border-radius: 2px;
+            box-sizing: border-box;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn-enviar {
+            background: var(--dorado);
+            color: white;
+            border: none;
+            padding: 20px;
+            font-family: 'Special Elite';
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .btn-enviar:hover {
+            background: #966d09;
+        }
 
         /* --- VISTA 2: LECTOR (Mesa de Trabajo) --- */
         #vista-lector {
@@ -150,7 +205,10 @@
         }
 
         .portada-lector { 
-            max-height: 400px; 
+            height: auto;
+            max-height: 500px; /* Ajustado para que la portada quepa bien sin deformarse */
+            width: auto;
+            max-width: 100%;
             display: block; 
             margin: 0 auto 40px; 
             box-shadow: 0 15px 40px rgba(0,0,0,0.2); 
@@ -184,7 +242,6 @@
             border-radius: 4px;
         }
         .btn-pdf { border: 4px solid var(--azul); color: var(--azul); }
-        .btn-mail { background: var(--azul); color: white; }
 
         @media (min-width: 1000px) {
             .contenedor-dual { flex-direction: row; min-height: 900px; }
@@ -199,13 +256,40 @@
 
     <div id="vista-biblioteca">
         <div class="mision-vision">
-            <img src="logo.png" alt="Tectónica" style="max-width: 180px; margin-bottom: 30px;">
+            <img src="logo.webp" alt="Tectónica" style="max-width: 180px; margin-bottom: 30px;">
             <h1>TECTÓNICA EDITORIAL</h1>
             <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Investigar con rigor académico bajo la perspectiva humanista biosférica."</p>
         </div>
 
-        <div class="estante" id="estante-libros">
+        <div class="estante">
+            <div class="libro-objeto" onclick="abrirLibro('therians')">
+                <img src="portaga_therians.webp" alt="Vol. 001">
+                <p>VOL. 001: THERIANS</p>
             </div>
+            <div class="libro-objeto" onclick="abrirLibro('alejandro')">
+                <img src="portada-alejandro.webp" alt="Vol. 002">
+                <p>VOL. 002: ALEJANDRO III</p>
+            </div>
+        </div>
+
+        <div class="seccion-contacto">
+            <h2>CORRESPONDENCIA EDITORIAL</h2>
+            <form action="https://formspree.io/f/xqegzzqg" method="POST">
+                <div class="form-grupo">
+                    <label>NOMBRE COMPLETO:</label>
+                    <input type="text" name="nombre" class="form-control" required placeholder="Escriba su nombre...">
+                </div>
+                <div class="form-grupo">
+                    <label>CORREO ELECTRÓNICO:</label>
+                    <input type="email" name="_replyto" class="form-control" required placeholder="Su correo para recibir respuesta...">
+                </div>
+                <div class="form-grupo">
+                    <label>MENSAJE O CONSULTA:</label>
+                    <textarea name="mensaje" class="form-control" required placeholder="Escriba su mensaje aquí..."></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">ENVIAR CORRESPONDENCIA</button>
+            </form>
+        </div>
     </div>
 
     <div id="vista-lector">
@@ -217,7 +301,7 @@
 
         <div class="contenedor-dual">
             <div class="ficha-tecnica">
-                <img src="logo.png" alt="Tectónica" style="max-width: 130px;">
+                <img src="logo.webp" alt="Logo" style="max-width: 130px;">
                 <h2 id="meta-vol" style="margin: 30px 0; color: var(--azul); font-size: 2.5rem; font-family:'Special Elite';"></h2>
                 <div id="meta-datos" class="meta-box"></div>
             </div>
@@ -228,86 +312,4 @@
                 <h2 id="libro-titulo" style="margin:0; font-size: 3.5rem; color: var(--azul); line-height: 1.1;"></h2>
                 <p id="libro-sub" style="font-style:italic; color:#666; font-size: 1.5rem; margin-bottom: 40px;"></p>
                 
-                <div id="libro-intro" class="texto-academico capitular"></div>
-                
-                <div class="separador"></div>
-                
-                <h3 style="font-family:'Special Elite'; color:var(--azul); font-size: 2rem; margin-bottom:30px;">ANÁLISIS DE LA OBRA</h3>
-                <div id="libro-cuerpo" class="texto-academico"></div>
-                
-                <div class="contenedor-botones">
-                    <a id="btn-pdf" href="#" download class="btn-accion btn-pdf">📥 DESCARGAR FRAGMENTO (PDF)</a>
-                    <a href="mailto:contacto@tectonicaeditorial.com" class="btn-accion btn-mail">✉️ CONTACTAR AL AUTOR</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const catalogo = [
-            {
-                id: 'therians', vol: '001', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'THERIANS', sub: 'Identidad animal en la era digital',
-                img: 'portada-therians.jpg',
-                intro: 'La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto.',
-                cuerpo: 'Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian, que para muchos adultos aparece como una novedad desconcertante en el entorno digital o escolar, es en realidad una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.',
-                pdf: 'fragmento-therians.pdf'
-            },
-            {
-                id: 'alejandro', vol: '002', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'ALEJANDRO III', sub: 'Análisis Académico Integral',
-                img: 'portada-alejandro.jpg',
-                intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder.',
-                cuerpo: 'Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo histórico y los diarios astronómicos de Babilonia. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética.',
-                pdf: 'fragmento-alejandro.pdf'
-            }
-        ];
-
-        let indiceActual = 0;
-
-        function renderizarBiblioteca() {
-            const estante = document.getElementById('estante-libros');
-            estante.innerHTML = catalogo.map((l, index) => `
-                <div class="libro-objeto" onclick="abrirLibro('${l.id}')">
-                    <img src="${l.img}" alt="${l.titulo}">
-                    <p>${l.titulo}</p>
-                </div>
-            `).join('');
-        }
-
-        function abrirLibro(id) {
-            indiceActual = catalogo.findIndex(l => l.id === id);
-            renderizar();
-            document.getElementById('vista-biblioteca').style.display = 'none';
-            document.getElementById('vista-lector').style.display = 'block';
-            window.scrollTo(0,0);
-        }
-
-        function irABiblioteca() {
-            document.getElementById('vista-biblioteca').style.display = 'block';
-            document.getElementById('vista-lector').style.display = 'none';
-        }
-
-        function renderizar() {
-            const l = catalogo[indiceActual];
-            document.getElementById('meta-vol').innerText = 'VOL: ' + l.vol;
-            document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>PAÍS: MÉXICO</p><p>AÑO: 2026</p><p style="color:var(--azul); font-weight:bold; margin-top:20px;">[ ESTADO: EN PRENSA ]</p>`;
-            document.getElementById('libro-img').src = l.img;
-            document.getElementById('libro-titulo').innerText = l.titulo;
-            document.getElementById('libro-sub').innerText = l.sub;
-            document.getElementById('libro-intro').innerText = l.intro;
-            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
-            document.getElementById('btn-pdf').href = l.pdf;
-        }
-
-        function cambiarLibro(delta) {
-            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
-            renderizar();
-            window.scrollTo(0,0);
-        }
-
-        // Carga inicial
-        renderizarBiblioteca();
-    </script>
-</body>
-</html>
+                <div id="libro-intro" class="texto-academico

@@ -82,6 +82,38 @@
         }
         .libro-objeto p { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.4rem; color: var(--dorado); }
 
+        /* --- SECCIÓN CONTACTO (Formulario discreto) --- */
+        .seccion-contacto {
+            margin-top: 60px;
+            padding: 40px;
+            border-top: 1px solid #333;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .form-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-contacto input, .form-contacto textarea {
+            padding: 15px;
+            font-size: 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--papel);
+            border: 2px solid var(--dorado);
+        }
+        .btn-enviar {
+            background: var(--dorado);
+            color: white;
+            font-family: 'Special Elite';
+            padding: 20px;
+            font-size: 1.5rem;
+            border: none;
+            cursor: pointer;
+        }
+
         /* --- VISTA 2: LECTOR (Mesa de Trabajo) --- */
         #vista-lector {
             display: none;
@@ -110,9 +142,7 @@
             cursor: pointer;
             flex: 1;
             min-width: 150px;
-            transition: background 0.3s;
         }
-        .btn-nav:hover { background: #254d8c; }
 
         .contenedor-dual {
             display: flex;
@@ -153,38 +183,6 @@
             margin-bottom: 40px;
         }
 
-        /* --- FORMULARIO DISCRETO --- */
-        .seccion-contacto {
-            margin-top: 60px;
-            padding: 40px;
-            border-top: 1px solid #333;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .form-contacto {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-contacto input, .form-contacto textarea {
-            padding: 15px;
-            font-size: 1.4rem;
-            font-family: 'Cormorant Garamond', serif;
-            background: var(--papel);
-            border: 2px solid var(--dorado);
-        }
-        .btn-enviar {
-            background: var(--dorado);
-            color: white;
-            font-family: 'Special Elite';
-            padding: 15px;
-            font-size: 1.5rem;
-            border: none;
-            cursor: pointer;
-        }
-
         @media (min-width: 900px) {
             .contenedor-dual { flex-direction: row; }
             .ficha-tecnica { width: 400px; border-bottom: none; border-right: 3px solid #ddd; }
@@ -208,7 +206,7 @@
                 <input type="text" name="nombre" placeholder="Nombre completo" required>
                 <input type="email" name="_replyto" placeholder="Su correo electrónico" required>
                 <textarea name="mensaje" placeholder="Escriba su mensaje aquí..." rows="5" required></textarea>
-                <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+                <button type="submit" class="btn-enviar">ENVIAR CORRESPONDENCIA</button>
             </form>
         </div>
     </div>
@@ -222,7 +220,7 @@
 
         <div class="contenedor-dual">
             <div class="ficha-tecnica">
-                <img id="libro-img" src="" style="max-height: 400px; display: block; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                <img id="libro-img" src="" class="portada-lector" style="max-height: 400px; display: block; margin: 0 auto 40px;">
                 <h2 id="libro-titulo" style="font-size: 3rem; margin: 0; color: var(--azul);"></h2>
                 <h3 id="libro-sub" style="font-size: 1.8rem; font-style: italic; margin: 10px 0;"></h3>
                 <div class="meta-box">
@@ -230,15 +228,3 @@
                     <div id="meta-datos"></div>
                 </div>
             </div>
-            <div class="contenido-libro">
-                <div id="libro-intro" class="texto-academico" style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 30px; margin-bottom: 30px;"></div>
-                <div id="libro-cuerpo" class="texto-academico"></div>
-                <a id="btn-pdf" href="#" style="display: block; background: var(--dorado); color: white; text-align: center; padding: 25px; text-decoration: none; font-family: 'Special Elite'; font-size: 1.5rem; margin-top: 40px;" target="_blank">VERSIÓN PDF</a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const catalogo = [
-            {
-                id: 'alejandro

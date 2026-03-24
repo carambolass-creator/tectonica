@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
     
+    <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
     <meta name="description" content="Editorial académica de Gabriel Alcántara Tovar. Investigaciones sobre el fenómeno Therian y análisis histórico de Alejandro Magno bajo la perspectiva humanista biosférica.">
+    <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, Therians, Alejandro Magno, Humanismo, Academia">
+    <meta name="author" content="Gabriel Alcántara Tovar">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,7 +54,7 @@
         }
 
         .mision-vision h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); color: var(--azul); margin: 0; font-weight: 600; }
-        .mision-vision p { font-size: clamp(1.5rem, 6vw, 2rem); line-height: 1.4; font-style: italic; margin-top: 30px; color: #333; }
+        .mision-vision p { font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.5; font-style: italic; margin-top: 25px; color: #333; }
 
         .titulo-seccion { font-family: 'Special Elite'; color: var(--dorado); text-align: center; font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
 
@@ -79,16 +81,18 @@
 
         .libro-objeto img {
             width: 100%;
-            height: auto; 
-            background: #222;
+            height: auto; /* Permite que la imagen tome su proporción natural sin recortarse */
+            max-height: 400px;
+            object-fit: contain;
+            background: transparent;
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            border-left: 10px solid rgba(0,0,0,0.3);
+            border-left: 10px solid rgba(0,0,0,0.2);
             display: block;
             margin: 0 auto;
         }
         
-        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.4rem; color: var(--dorado); }
+        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.5rem; color: var(--dorado); }
 
         /* SEO Indexable oculto visualmente */
         .seo-hidden {
@@ -102,7 +106,7 @@
             border: 0;
         }
 
-        /* --- SECCIÓN CONTACTO (TAMAÑO NORMALIZADO PARA EL PÚBLICO) --- */
+        /* --- SECCIÓN CONTACTO (TAMAÑO NORMALIZADO) --- */
         .seccion-contacto {
             margin-top: 40px;
             padding: 30px;
@@ -123,22 +127,25 @@
             color: var(--dorado);
             text-align: center;
         }
+        
+        .form-grupo {
+            margin-bottom: 15px;
+        }
 
         .form-control {
             width: 100%;
-            padding: 10px 15px;
-            font-size: 1rem; /* Tamaño de texto de formulario estándar */
+            padding: 12px 15px;
+            font-size: 1.1rem; /* Tamaño de texto de formulario estándar */
             font-family: 'Cormorant Garamond', serif;
             background: var(--papel);
             border: 1px solid #ccc;
             border-radius: 4px;
-            margin-bottom: 15px;
             box-sizing: border-box;
             color: var(--texto);
         }
 
         textarea.form-control {
-            height: 100px;
+            height: 120px;
             resize: vertical;
         }
 
@@ -146,9 +153,9 @@
             background: var(--dorado);
             color: white;
             border: none;
-            padding: 12px 20px;
+            padding: 14px 20px;
             font-family: 'Special Elite';
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             width: 100%;
             font-weight: bold;
@@ -175,7 +182,7 @@
             border: 3px solid var(--dorado);
             padding: 15px 20px;
             font-family: 'Special Elite';
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             flex: 1;
             min-width: 150px;
@@ -201,7 +208,7 @@
             border-left: 6px solid var(--azul);
             padding-left: 25px;
             margin-top: 25px;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #444;
             line-height: 1.6;
         }
@@ -209,15 +216,16 @@
         .contenido-libro { padding: 50px 40px; position: relative; }
         
         .portada-lector { 
-            max-height: 400px; 
+            max-height: 450px; 
             width: auto;
             display: block; 
             margin: 0 auto 40px; 
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
             border-radius: 2px 8px 8px 2px;
+            border-left: 10px solid rgba(0,0,0,0.2);
         }
 
-        .texto-academico { font-size: 1.4rem; line-height: 1.6; text-align: justify; margin-bottom: 40px; }
+        .texto-academico { font-size: 1.6rem; line-height: 1.6; text-align: justify; margin-bottom: 40px; }
         .capitular::first-letter {
             float: left; font-size: 5rem; line-height: 0.8; padding-top: 5px; padding-right: 15px; color: var(--azul); font-weight: bold;
         }
@@ -235,7 +243,7 @@
             text-decoration: none; 
             font-family: 'Special Elite'; 
             text-align: center; 
-            font-size: 1.2rem; 
+            font-size: 1.3rem; 
             font-weight: bold;
             border-radius: 4px;
             transition: background 0.3s, color 0.3s;
@@ -250,7 +258,7 @@
             .ficha-tecnica { width: 35%; border-bottom: 0; border-right: 3px solid #ddd; }
             .contenido-libro { width: 65%; padding: 60px 80px; }
             .barra-navegacion { flex-wrap: nowrap; }
-            .btn-nav { flex: none; width: 200px; }
+            .btn-nav { flex: none; width: 220px; }
         }
     </style>
 </head>
@@ -263,12 +271,14 @@
             <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Investigar con rigor académico bajo la perspectiva humanista biosférica."</p>
         </header>
 
+        <h2 class="titulo-seccion">Catálogo Bibliográfico</h2>
+
         <section class="estante">
             <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir estudio sobre Therians">
                 <img src="portaga_therians.webp" alt="Portada del libro Therians" loading="lazy">
                 <h3>THERIANS</h3>
                 <div class="seo-hidden">
-                    <p>Análisis profundo sobre la identidad animal en la era digital y el fenómeno Therian desde una perspectiva humanista.</p>
+                    <p>La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto. Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian, que para muchos adultos aparece como una novedad desconcertante en el entorno digital o escolar, es en realidad una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.</p>
                 </div>
             </button>
 
@@ -276,7 +286,7 @@
                 <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III" loading="lazy">
                 <h3>ALEJANDRO III</h3>
                 <div class="seo-hidden">
-                    <p>Estudio académico integral sobre la figura histórica de Alejandro Magno, triangulando fuentes clásicas y evidencia arqueológica.</p>
+                    <p>¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder. Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo histórico y los diarios astronómicos de Babilonia. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética.</p>
                 </div>
             </button>
         </section>
@@ -287,10 +297,12 @@
                 <div class="form-grupo">
                     <label for="nombre" class="seo-hidden">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Nombre completo" aria-required="true">
-                    
+                </div>
+                <div class="form-grupo">
                     <label for="email" class="seo-hidden">Correo electrónico</label>
                     <input type="email" id="email" name="_replyto" class="form-control" required placeholder="Correo electrónico de contacto" aria-required="true">
-                    
+                </div>
+                <div class="form-grupo">
                     <label for="mensaje" class="seo-hidden">Mensaje o consulta</label>
                     <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="Mensaje o consulta académica" aria-required="true"></textarea>
                 </div>
@@ -308,21 +320,21 @@
 
         <article class="contenedor-dual">
             <aside class="ficha-tecnica">
-                <img src="logo.webp" alt="Logo de Tectónica" style="max-width: 130px; margin: 0 auto; display: block;">
-                <h2 id="meta-vol" style="margin: 30px 0; color: var(--azul); font-size: 2rem; font-family:'Special Elite'; display:none;"></h2> <div id="meta-datos" class="meta-box"></div>
+                <img src="logo.webp" alt="Logo de Tectónica Editorial" style="max-width: 130px; margin: 0 auto; display: block;">
+                <div id="meta-datos" class="meta-box"></div>
             </aside>
 
             <section class="contenido-libro">
                 <img id="libro-img" src="" class="portada-lector" alt="Portada del libro en lectura">
                 
-                <h2 id="libro-titulo" style="margin:0; font-size: 3rem; color: var(--azul); line-height: 1.1;"></h2>
-                <p id="libro-sub" style="font-style:italic; color:#666; font-size: 1.5rem; margin-bottom: 40px;"></p>
+                <h2 id="libro-titulo" style="margin:0; font-size: 3.5rem; color: var(--azul); line-height: 1.1;"></h2>
+                <p id="libro-sub" style="font-style:italic; color:#666; font-size: 1.6rem; margin-bottom: 40px;"></p>
                 
                 <div id="libro-intro" class="texto-academico capitular"></div>
                 
                 <div class="separador"></div>
                 
-                <h3 style="font-family:'Special Elite'; color:var(--azul); font-size: 1.8rem; margin-bottom:30px;">ANÁLISIS DE LA OBRA</h3>
+                <h3 style="font-family:'Special Elite'; color:var(--azul); font-size: 2rem; margin-bottom:30px;">ANÁLISIS DE LA OBRA</h3>
                 <div id="libro-cuerpo" class="texto-academico"></div>
                 
                 <div class="contenedor-botones">
@@ -334,6 +346,7 @@
     </div>
 
     <script>
+        // CONTENIDO ORIGINAL ÍNTEGRO
         const catalogo = [
             {
                 id: 'therians', autor: 'GABRIEL ALCÁNTARA TOVAR',
@@ -345,4 +358,47 @@
             },
             {
                 id: 'alejandro', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'ALEJ
+                titulo: 'ALEJANDRO III', sub: 'Análisis Académico Integral',
+                img: 'portada-alejandro.webp',
+                intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder.',
+                cuerpo: 'Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo histórico y los diarios astronómicos de Babilonia. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética.',
+                pdf: 'fragmento-alejandro.pdf'
+            }
+        ];
+
+        let indiceActual = 0;
+
+        function abrirLibro(id) {
+            indiceActual = catalogo.findIndex(l => l.id === id);
+            renderizar();
+            document.getElementById('vista-biblioteca').style.display = 'none';
+            document.getElementById('vista-lector').style.display = 'block';
+            document.getElementById('vista-lector').setAttribute('aria-hidden', 'false');
+            window.scrollTo(0,0);
+        }
+
+        function irABiblioteca() {
+            document.getElementById('vista-biblioteca').style.display = 'block';
+            document.getElementById('vista-lector').style.display = 'none';
+            document.getElementById('vista-lector').setAttribute('aria-hidden', 'true');
+        }
+
+        function renderizar() {
+            const l = catalogo[indiceActual];
+            document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>PAÍS: MÉXICO</p><p>AÑO: 2026</p><p style="color:var(--azul); font-weight:bold; margin-top:20px;">[ ESTADO: EN PRENSA ]</p>`;
+            document.getElementById('libro-img').src = l.img;
+            document.getElementById('libro-titulo').innerText = l.titulo;
+            document.getElementById('libro-sub').innerText = l.sub;
+            document.getElementById('libro-intro').innerText = l.intro;
+            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
+            document.getElementById('btn-pdf').href = l.pdf;
+        }
+
+        function cambiarLibro(delta) {
+            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
+            renderizar();
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>

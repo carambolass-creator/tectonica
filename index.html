@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
     
+    <meta name="description" content="Tectónica Editorial - Investigación con rigor académico bajo la perspectiva humanista biosférica por Gabriel Alcántara Tovar.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
@@ -30,11 +31,12 @@
             min-height: 100vh;
         }
 
+        /* --- VISTA 1: BIBLIOTECA --- */
         #vista-biblioteca {
             width: 95%;
             max-width: 1000px;
             padding: 40px 10px;
-            display: block;
+            display: block; /* Asegura visibilidad inicial */
         }
 
         .mision-vision {
@@ -97,6 +99,7 @@
             border: 0;
         }
 
+        /* --- SECCIÓN CONTACTO RESTAURADA --- */
         .seccion-contacto {
             margin-top: 60px;
             padding: 45px;
@@ -104,6 +107,7 @@
             border: 2px solid var(--dorado);
             border-radius: 4px;
             width: 100%;
+            display: block !important; /* Fuerza la visibilidad */
             box-sizing: border-box;
         }
 
@@ -134,6 +138,7 @@
         }
         .btn-enviar:hover { background: #966d09; }
 
+        /* --- VISTA 2: LECTOR --- */
         #vista-lector {
             display: none;
             width: 100%;
@@ -195,22 +200,108 @@
             <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir estudio sobre Therians e identidad animal">
                 <img src="portaga_therians.webp" alt="Portada del libro Therians: Identidad animal en la era digital" width="300" height="400" loading="lazy">
                 <h3>VOL. 001: THERIANS</h3>
-                
                 <div class="seo-hidden">
-                    <p>Resumen: Un análisis profundo sobre el fenómeno therian y la autopercepción de la identidad animal en jóvenes, bajo una metodología académica y humanista.</p>
+                    <p>Resumen: Análisis académico sobre el fenómeno therian y la autopercepción de la identidad animal.</p>
                 </div>
             </button>
 
             <button class="libro-objeto" onclick="abrirLibro('alejandro')" aria-label="Abrir análisis académico sobre Alejandro III de Macedonia">
                 <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III de Macedonia" width="300" height="400" loading="lazy">
                 <h3>VOL. 002: ALEJANDRO III</h3>
-                
                 <div class="seo-hidden">
-                    <p>Resumen: Análisis académico integral de la figura de Alejandro Magno, triangulando fuentes clásicas y evidencia arqueológica desde una ética biosférica.</p>
+                    <p>Resumen: Estudio integral de la figura de Alejandro Magno desde una ética biosférica.</p>
                 </div>
             </button>
         </section>
 
         <section class="seccion-contacto">
             <h2 class="titulo-seccion">Correspondencia Editorial</h2>
-            <form action="https://
+            <form action="https://formspree.io/f/xqegzzqg" method="POST">
+                <div class="form-grupo">
+                    <label for="nombre" class="seo-hidden">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="NOMBRE COMPLETO" aria-required="true">
+                    
+                    <label for="email" class="seo-hidden">Correo electrónico</label>
+                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="CORREO ELECTRÓNICO" aria-required="true">
+                    
+                    <label for="mensaje" class="seo-hidden">Mensaje o consulta</label>
+                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="MENSAJE O CONSULTA ACADÉMICA" aria-required="true" style="height:150px;"></textarea>
+                </div>
+                <button type="submit" class="btn-enviar" aria-label="Enviar correspondencia a la editorial">ENVIAR CORRESPONDENCIA</button>
+            </form>
+        </section>
+    </main>
+
+    <div id="vista-lector" aria-hidden="true">
+        <nav class="barra-navegacion">
+            <button class="btn-nav" onclick="irABiblioteca()" aria-label="Regresar al escritorio de la biblioteca">⬅ ESCRITORIO</button>
+            <button class="btn-nav" onclick="cambiarLibro(-1)" aria-label="Ver volumen anterior">ANTERIOR</button>
+            <button class="btn-nav" onclick="cambiarLibro(1)" aria-label="Ver volumen siguiente">SIGUIENTE</button>
+        </nav>
+
+        <article class="contenedor-dual">
+            <aside class="ficha-tecnica">
+                <h2 id="meta-vol" style="color: var(--azul); font-size: 2.2rem; font-family:'Special Elite';"></h2>
+                <div id="meta-datos" style="text-align: left; font-family: 'Special Elite'; font-size: 1.3rem; border-left: 5px solid var(--azul); padding-left: 15px;"></div>
+            </aside>
+            <section class="contenido-libro">
+                <h2 id="libro-titulo" style="font-size: 3rem; color: var(--azul); margin: 0;"></h2>
+                <p id="libro-sub" style="font-style: italic; font-size: 1.5rem; color: #555; margin-bottom: 30px;"></p>
+                <div id="libro-intro" class="texto-academico capitular"></div>
+                <hr style="margin: 40px 0; border: 1px solid var(--dorado);">
+                <div id="libro-cuerpo" class="texto-academico"></div>
+            </section>
+        </article>
+    </div>
+
+    <script>
+        const catalogo = [
+            {
+                id: 'therians', vol: '001', autor: 'GABRIEL ALCÁNTARA TOVAR',
+                titulo: 'THERIANS', sub: 'Identidad animal en la era digital',
+                intro: 'La identidad es el territorio más complejo que un ser humano debe cartografiar. El fenómeno therian es una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad.',
+                cuerpo: 'Este estudio analiza cómo las nuevas generaciones replantean lo humano bajo una perspectiva de integración biosférica y rigor filosófico.'
+            },
+            {
+                id: 'alejandro', vol: '002', autor: 'GABRIEL ALCÁNTARA TOVAR',
+                titulo: 'ALEJANDRO III', sub: 'Análisis Académico Integral',
+                intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? Abordamos su figura desde un enfoque dialéctico-cartesiano multidimensional.',
+                cuerpo: 'El análisis triangula fuentes greco-latinas con evidencia arqueológica, distinguiendo lo verificable de lo mítico bajo una ética humanista.'
+            }
+        ];
+
+        let indiceActual = 0;
+
+        function abrirLibro(id) {
+            indiceActual = catalogo.findIndex(l => l.id === id);
+            renderizar();
+            document.getElementById('vista-biblioteca').style.display = 'none';
+            document.getElementById('vista-lector').style.display = 'block';
+            document.getElementById('vista-lector').setAttribute('aria-hidden', 'false');
+            window.scrollTo(0,0);
+        }
+
+        function irABiblioteca() {
+            document.getElementById('vista-biblioteca').style.display = 'block';
+            document.getElementById('vista-lector').style.display = 'none';
+            document.getElementById('vista-lector').setAttribute('aria-hidden', 'true');
+        }
+
+        function renderizar() {
+            const l = catalogo[indiceActual];
+            document.getElementById('meta-vol').innerText = 'VOL: ' + l.vol;
+            document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>AÑO: 2026</p><p>ESTADO: EN PRENSA</p>`;
+            document.getElementById('libro-titulo').innerText = l.titulo;
+            document.getElementById('libro-sub').innerText = l.sub;
+            document.getElementById('libro-intro').innerText = l.intro;
+            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
+        }
+
+        function cambiarLibro(delta) {
+            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
+            renderizar();
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>

@@ -153,20 +153,7 @@
             margin-bottom: 40px;
         }
 
-        .btn-pdf {
-            display: block;
-            background: var(--dorado);
-            color: white;
-            text-align: center;
-            padding: 25px;
-            text-decoration: none;
-            font-family: 'Special Elite';
-            font-size: 1.5rem;
-            border-radius: 4px;
-            margin-top: 40px;
-        }
-
-        /* --- ESTILOS DEL FORMULARIO (NUEVOS, INTEGRADOS DISCRETAMENTE) --- */
+        /* --- FORMULARIO DISCRETO --- */
         .seccion-contacto {
             margin-top: 60px;
             padding: 40px;
@@ -198,7 +185,6 @@
             cursor: pointer;
         }
 
-        /* --- RESPONSIVO --- */
         @media (min-width: 900px) {
             .contenedor-dual { flex-direction: row; }
             .ficha-tecnica { width: 400px; border-bottom: none; border-right: 3px solid #ddd; }
@@ -214,8 +200,7 @@
             <p>"La fuerza que transforma el pensamiento en estructura perdurable."</p>
         </div>
 
-        <div class="estante" id="estante-libros">
-            </div>
+        <div class="estante" id="estante-libros"></div>
 
         <div class="seccion-contacto">
             <h2 style="text-align: center; font-family: 'Special Elite'; color: var(--dorado);">CONTACTO EDITORIAL</h2>
@@ -237,20 +222,18 @@
 
         <div class="contenedor-dual">
             <div class="ficha-tecnica">
-                <img id="libro-img" src="" class="portada-lector" style="max-height: 400px; display: block; margin: 0 auto 40px;">
+                <img id="libro-img" src="" style="max-height: 400px; display: block; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
                 <h2 id="libro-titulo" style="font-size: 3rem; margin: 0; color: var(--azul);"></h2>
                 <h3 id="libro-sub" style="font-size: 1.8rem; font-style: italic; margin: 10px 0;"></h3>
-                
                 <div class="meta-box">
                     <span id="meta-vol" style="color: var(--dorado); font-weight: bold;"></span>
                     <div id="meta-datos"></div>
                 </div>
             </div>
-
             <div class="contenido-libro">
                 <div id="libro-intro" class="texto-academico" style="font-weight: bold; border-bottom: 1px solid #ccc; padding-bottom: 30px; margin-bottom: 30px;"></div>
                 <div id="libro-cuerpo" class="texto-academico"></div>
-                <a id="btn-pdf" href="#" class="btn-pdf" target="_blank">DESCARGAR VERSIÓN COMPLETA (PDF)</a>
+                <a id="btn-pdf" href="#" style="display: block; background: var(--dorado); color: white; text-align: center; padding: 25px; text-decoration: none; font-family: 'Special Elite'; font-size: 1.5rem; margin-top: 40px;" target="_blank">VERSIÓN PDF</a>
             </div>
         </div>
     </div>
@@ -258,78 +241,4 @@
     <script>
         const catalogo = [
             {
-                id: 'alejandro',
-                vol: '01',
-                titulo: 'ALEJANDRO III DE MACEDONIA',
-                sub: 'Análisis Académico Integral',
-                autor: 'Gabriel Alcántara Tovar',
-                img: 'portada1.jpg',
-                intro: 'Este volumen analiza las estructuras de poder...',
-                cuerpo: 'El ascenso de Macedonia no fue un accidente...',
-                pdf: 'libros/alejandro_magno.pdf'
-            },
-            {
-                id: 'therian',
-                vol: '02',
-                titulo: 'EL MUNDO THERIAN',
-                sub: 'Perspectivas sobre Identidad No Humana',
-                autor: 'Gabriel Alcántara Tovar',
-                img: 'portada2.jpg',
-                intro: 'Exploración profunda sobre el fenómeno therian...',
-                cuerpo: 'La comprensión de la identidad requiere trascender...',
-                pdf: 'libros/therian.pdf'
-            }
-        ];
-
-        let indiceActual = 0;
-
-        function renderizarBiblioteca() {
-            const estante = document.getElementById('estante-libros');
-            estante.innerHTML = catalogo.map((l, index) => `
-                <div class="libro-objeto" onclick="abrirLibro('${l.id}')">
-                    <img src="${l.img}" alt="${l.titulo}">
-                    <p>${l.titulo}</p>
-                </div>
-            `).join('');
-        }
-
-        function abrirLibro(id) {
-            indiceActual = catalogo.findIndex(l => l.id === id);
-            renderizar();
-            document.getElementById('vista-biblioteca').style.display = 'none';
-            document.getElementById('vista-lector').style.display = 'block';
-            window.scrollTo(0,0);
-        }
-
-        function irABiblioteca() {
-            document.getElementById('vista-biblioteca').style.display = 'block';
-            document.getElementById('vista-lector').style.display = 'none';
-        }
-
-        function renderizar() {
-            const l = catalogo[indiceActual];
-            document.getElementById('meta-vol').innerText = 'VOL: ' + l.vol;
-            document.getElementById('meta-datos').innerHTML = `
-                <p>AUTOR: ${l.autor}</p>
-                <p>PAÍS: MÉXICO</p>
-                <p>AÑO: 2026</p>
-                <p style="color:var(--azul); font-weight:bold; margin-top:20px;">[ ESTADO: EN PRENSA ]</p>
-            `;
-            document.getElementById('libro-img').src = l.img;
-            document.getElementById('libro-titulo').innerText = l.titulo;
-            document.getElementById('libro-sub').innerText = l.sub;
-            document.getElementById('libro-intro').innerText = l.intro;
-            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
-            document.getElementById('btn-pdf').href = l.pdf;
-        }
-
-        function cambiarLibro(delta) {
-            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
-            renderizar();
-            window.scrollTo(0,0);
-        }
-
-        renderizarBiblioteca();
-    </script>
-</body>
-</html>
+                id: 'alejandro

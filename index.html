@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
+    
+    <title>Tectónica Editorial | Gabriel Alcántara Tovar - Investigación Humanista</title>
+    <meta name="description" content="Tectónica Editorial: Investigación con rigor académico bajo la perspectiva humanista biosférica. Obras de Gabriel Alcántara Tovar sobre Therians y Alejandro Magno.">
+    <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, Therians, Alejandro Magno, Filosofía de la Ciencia, Humanismo Biosférico">
+    <meta name="author" content="Gabriel Alcántara Tovar">
+    
+    <meta property="og:title" content="Tectónica Editorial | Rigor Académico y Humanismo">
+    <meta property="og:description" content="Explora las obras de investigación de Gabriel Alcántara Tovar.">
+    <meta property="og:type" content="website">
     
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     
@@ -28,15 +36,15 @@
             min-height: 100vh;
         }
 
-        /* --- VISTA 1: BIBLIOTECA / ESCRITORIO --- */
+        /* --- ACCESIBILIDAD Y SEO: TEXTO VISIBLE --- */
         #vista-biblioteca {
             width: 95%;
             max-width: 1000px;
             padding: 40px 10px;
-            display: block; /* Asegura que sea visible al cargar */
+            display: block;
         }
 
-        .mision-vision {
+        header.mision-vision {
             background: var(--papel);
             color: var(--texto);
             padding: 50px 30px;
@@ -47,8 +55,8 @@
             border-bottom: 12px solid var(--dorado);
         }
 
-        .mision-vision h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); color: var(--azul); margin: 0; font-weight: 600; }
-        .mision-vision p { font-size: clamp(1.5rem, 6vw, 2.2rem); line-height: 1.4; font-style: italic; margin-top: 30px; color: #333; }
+        .mision-vision h1 { font-size: clamp(2.5rem, 10vw, 4rem); color: var(--azul); margin: 0; font-weight: 600; }
+        .mision-vision p { font-size: clamp(1.5rem, 6vw, 2rem); line-height: 1.4; font-style: italic; margin-top: 30px; color: #333; }
 
         .estante {
             display: flex;
@@ -71,13 +79,12 @@
             width: 100%;
             aspect-ratio: 3 / 4;
             object-fit: cover;
-            background: #333; /* Color de respaldo si no carga la imagen */
+            background: #222;
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
             border-left: 10px solid rgba(0,0,0,0.2);
         }
-        
-        .libro-objeto p { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.6rem; color: var(--dorado); }
+        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.5rem; color: var(--dorado); }
 
         /* --- SECCIÓN CONTACTO --- */
         .seccion-contacto {
@@ -94,7 +101,7 @@
             font-family: 'Special Elite';
             color: var(--dorado);
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 30px;
         }
 
@@ -103,40 +110,36 @@
         .form-grupo label {
             display: block;
             font-family: 'Special Elite';
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
-            color: var(--papel);
         }
 
         .form-control {
             width: 100%;
             padding: 18px;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-family: 'Cormorant Garamond', serif;
             background: var(--papel);
             border: none;
             border-radius: 4px;
             box-sizing: border-box;
-            color: var(--texto);
         }
 
-        textarea.form-control { height: 200px; resize: vertical; }
+        textarea.form-control { height: 180px; resize: vertical; }
 
         .btn-enviar {
             background: var(--dorado);
             color: white;
             border: none;
-            padding: 25px;
+            padding: 22px;
             font-family: 'Special Elite';
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             cursor: pointer;
             width: 100%;
-            transition: background 0.3s;
             font-weight: bold;
         }
-        .btn-enviar:hover { background: #966d09; }
 
-        /* --- VISTA 2: LECTOR --- */
+        /* --- VISTA LECTOR --- */
         #vista-lector {
             display: none;
             width: 100%;
@@ -145,24 +148,16 @@
             box-sizing: border-box;
         }
 
-        .barra-navegacion {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 25px;
-            width: 100%;
-            flex-wrap: wrap;
-        }
-
+        .barra-navegacion { display: flex; gap: 15px; margin-bottom: 25px; }
         .btn-nav {
             background: var(--azul);
             color: white;
             border: 3px solid var(--dorado);
-            padding: 20px;
+            padding: 15px;
             font-family: 'Special Elite';
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             cursor: pointer;
             flex: 1;
-            min-width: 150px;
         }
 
         .contenedor-dual {
@@ -191,64 +186,64 @@
 </head>
 <body>
 
-    <div id="vista-biblioteca">
-        <div class="mision-vision">
-            <img src="logo.png" alt="Tectónica Logo" style="max-width: 180px; margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto;">
+    <main id="vista-biblioteca">
+        <header class="mision-vision">
+            <img src="logo.png" alt="Logotipo oficial de Tectónica Editorial" style="max-width: 180px; margin-bottom: 30px;">
             <h1>TECTÓNICA EDITORIAL</h1>
             <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Investigar con rigor académico bajo la perspectiva humanista biosférica."</p>
-        </div>
+        </header>
 
-        <div class="estante">
-            <div class="libro-objeto" onclick="abrirLibro('therians')">
-                <img src="portada-therians.jpg" alt="Vol. 001">
-                <p>VOL. 001: THERIANS</p>
-            </div>
-            <div class="libro-objeto" onclick="abrirLibro('alejandro')">
-                <img src="portada-alejandro.jpg" alt="Vol. 002">
-                <p>VOL. 002: ALEJANDRO III</p>
-            </div>
-        </div>
+        <section class="estante">
+            <article class="libro-objeto" onclick="abrirLibro('therians')">
+                <img src="portada-therians.jpg" alt="Portada del Libro Therians - Identidad animal en la era digital">
+                <h3>VOL. 001: THERIANS</h3>
+            </article>
+            <article class="libro-objeto" onclick="abrirLibro('alejandro')">
+                <img src="portada-alejandro.jpg" alt="Portada del Libro Alejandro III de Macedonia - Análisis Académico">
+                <h3>VOL. 002: ALEJANDRO III</h3>
+            </article>
+        </section>
 
-        <div class="seccion-contacto">
+        <section class="seccion-contacto">
             <h2>CORRESPONDENCIA EDITORIAL</h2>
             <form action="https://formspree.io/f/xqegzzqg" method="POST">
                 <div class="form-grupo">
-                    <label>NOMBRE COMPLETO:</label>
-                    <input type="text" name="nombre" class="form-control" required placeholder="Su nombre...">
+                    <label for="nombre">NOMBRE COMPLETO:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Escriba su nombre completo...">
                 </div>
                 <div class="form-grupo">
-                    <label>CORREO ELECTRÓNICO:</label>
-                    <input type="email" name="_replyto" class="form-control" required placeholder="Su correo...">
+                    <label for="email">CORREO ELECTRÓNICO:</label>
+                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="Su dirección de contacto...">
                 </div>
                 <div class="form-grupo">
-                    <label>MENSAJE:</label>
-                    <textarea name="mensaje" class="form-control" required placeholder="Escriba su mensaje aquí..."></textarea>
+                    <label for="mensaje">MENSAJE O CONSULTA:</label>
+                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="Escriba aquí su mensaje..."></textarea>
                 </div>
                 <button type="submit" class="btn-enviar">ENVIAR CORRESPONDENCIA</button>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <div id="vista-lector">
-        <div class="barra-navegacion">
-            <button class="btn-nav" onclick="irABiblioteca()">⬅ VOLVER</button>
-            <button class="btn-nav" onclick="cambiarLibro(-1)">ANTERIOR</button>
-            <button class="btn-nav" onclick="cambiarLibro(1)">SIGUIENTE</button>
-        </div>
+        <nav class="barra-navegacion">
+            <button class="btn-nav" onclick="irABiblioteca()">⬅ VOLVER AL ESCRITORIO</button>
+            <button class="btn-nav" onclick="cambiarLibro(-1)">LIBRO ANTERIOR</button>
+            <button class="btn-nav" onclick="cambiarLibro(1)">SIGUIENTE LIBRO</button>
+        </nav>
 
-        <div class="contenedor-dual">
-            <div class="ficha-tecnica">
-                <h2 id="meta-vol" style="color: var(--azul); font-size: 2.5rem; font-family:'Special Elite';"></h2>
-                <div id="meta-datos" style="text-align: left; font-family: 'Special Elite'; font-size: 1.4rem; border-left: 5px solid var(--azul); padding-left: 15px;"></div>
-            </div>
-            <div class="contenido-libro">
-                <h2 id="libro-titulo" style="font-size: 3.5rem; color: var(--azul); margin: 0;"></h2>
-                <p id="libro-sub" style="font-style: italic; font-size: 1.6rem; color: #555;"></p>
+        <article class="contenedor-dual">
+            <aside class="ficha-tecnica">
+                <h2 id="meta-vol" style="color: var(--azul); font-size: 2.2rem; font-family:'Special Elite';"></h2>
+                <div id="meta-datos" style="text-align: left; font-family: 'Special Elite'; font-size: 1.3rem; border-left: 5px solid var(--azul); padding-left: 15px;"></div>
+            </aside>
+            <section class="contenido-libro">
+                <h2 id="libro-titulo" style="font-size: 3rem; color: var(--azul); margin: 0;"></h2>
+                <p id="libro-sub" style="font-style: italic; font-size: 1.5rem; color: #555; margin-bottom: 30px;"></p>
                 <div id="libro-intro" class="texto-academico capitular"></div>
                 <hr style="margin: 40px 0; border: 1px solid var(--dorado);">
                 <div id="libro-cuerpo" class="texto-academico"></div>
-            </div>
-        </div>
+            </section>
+        </article>
     </div>
 
     <script>

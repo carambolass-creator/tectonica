@@ -3,428 +3,708 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Tectónica Editorial | Gabriel Alcántara Tovar</title>
-    <meta name="description" content="Editorial académica de Gabriel Alcántara Tovar. Investigaciones sobre el fenómeno Therian y análisis histórico de Alejandro Magno bajo la perspectiva humanista biosférica.">
-    <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, Therians, Alejandro Magno, Humanismo, Academia">
+    <meta name="description" content="Editorial académica mexicana. Obras sobre therianthropy, Alejandro III de Macedonia e inteligencia artificial agéntica. Perspectiva humanista biosférica.">
+    <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, therian, therianthropy, Alejandro Magno, inteligencia artificial empresas, IA agéntica CEO, humanismo biosférico">
     <meta name="author" content="Gabriel Alcántara Tovar">
     <link rel="canonical" href="https://www.tectonicaeditorial.com/">
-    
-    <meta property="og:title" content="Tectónica Editorial | Rigor Académico">
+    <meta property="og:title" content="Tectónica Editorial | Gabriel Alcántara Tovar">
     <meta property="og:description" content="Investigar con rigor académico bajo la perspectiva humanista biosférica.">
     <meta property="og:image" content="https://www.tectonicaeditorial.com/logo.webp">
     <meta property="og:url" content="https://www.tectonicaeditorial.com/">
     <meta property="og:type" content="website">
-
+    <meta property="og:locale" content="es_MX">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Tectónica Editorial">
-    <meta name="twitter:description" content="Investigaciones de Gabriel Alcántara Tovar.">
+    <meta name="twitter:description" content="Obras académicas de Gabriel Alcántara Tovar.">
     <meta name="twitter:image" content="https://www.tectonicaeditorial.com/logo.webp">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Publisher",
-      "name": "Tectónica Editorial",
-      "founder": {
-        "@type": "Person",
-        "name": "Gabriel Alcántara Tovar"
-      },
-      "url": "https://www.tectonicaeditorial.com",
-      "logo": "https://www.tectonicaeditorial.com/logo.webp"
-    }
-    </script>
-    
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tectónica Editorial","description":"Editorial académica dedicada a la investigación bajo perspectiva humanista biosférica","founder":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"url":"https://www.tectonicaeditorial.com","logo":"https://www.tectonicaeditorial.com/logo.webp"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Therians: la identidad salvaje que busca ser comprendida","author":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"publisher":{"@type":"Organization","name":"Tectónica Editorial"},"inLanguage":"es","datePublished":"2026","license":"https://creativecommons.org/licenses/by-nc-nd/4.0/","description":"Primera guía en español sobre therianthropy: qué es ser therian, psicología, historia y orientación para familias, educadores y profesionales.","keywords":"therian, therianthropy, identidad animal, alterhumanidad, otherkin","url":"https://www.tectonicaeditorial.com/#therians"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Alejandro III de Macedonia: Análisis Académico Integral","author":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"publisher":{"@type":"Organization","name":"Tectónica Editorial"},"inLanguage":"es","datePublished":"2026","description":"Análisis dialéctico-cartesiano de Alejandro III de Macedonia. Triangula fuentes greco-latinas con evidencia epigráfica, numismática y arqueológica.","url":"https://www.tectonicaeditorial.com/#alejandro"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"¿Qué necesito para implementar la Inteligencia Artificial en mi empresa?","author":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"publisher":{"@type":"Organization","name":"Tectónica Editorial"},"inLanguage":"es","datePublished":"2026","description":"Guía para CEOs sobre inteligencia artificial agéntica: responsabilidad legal, costos reales, control y gestión del cambio.","keywords":"implementar inteligencia artificial empresa, IA agéntica CEO, gobernanza IA","url":"https://www.tectonicaeditorial.com/#ia-empresa"}</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
     <style>
-        :root {
-            --azul: #1a3a6c;
-            --papel: #f4f1ea;
-            --mesa: #121212;
-            --dorado: #b8860b;
-            --texto: #1a1a1a;
-        }
+    :root {
+        --e1: #0d0b08;
+        --e2: #181410;
+        --e3: #252018;
+        --mineral: #c4923a;
+        --mineral-l: #ddb05a;
+        --caliza: #e8e0d0;
+        --caliza-s: rgba(232,224,208,0.52);
+        --azul: #1e3a5f;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+        background: var(--e1);
+        color: var(--caliza);
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+    /* Capas estratigráficas de fondo */
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        background: linear-gradient(180deg,
+            transparent 0%, rgba(196,146,58,.04) 18%, transparent 19%,
+            transparent 36%, rgba(30,58,95,.06) 37%, transparent 38%,
+            transparent 55%, rgba(196,146,58,.03) 56%, transparent 57%,
+            transparent 74%, rgba(37,32,24,.1) 75%, transparent 76%
+        );
+        pointer-events: none;
+    }
+    #app { position: relative; z-index: 1; max-width: 1140px; margin: 0 auto; padding: 0 28px; }
 
-        body {
-            background-color: var(--mesa);
-            margin: 0;
-            padding: 0;
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--papel);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-        }
+    /* NAV */
+    nav.site-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 30px 0 26px;
+        border-bottom: 1px solid rgba(196,146,58,.18);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo img { height: 36px; width: auto; }
+    .nav-wordmark {
+        font-family: 'Cinzel', serif; font-size: .85rem; font-weight: 600;
+        letter-spacing: .18em; color: var(--mineral); text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+        font-family: 'Cinzel', serif; font-size: .68rem; font-weight: 400;
+        letter-spacing: .15em; text-transform: uppercase; color: var(--caliza-s);
+        text-decoration: none; transition: color .25s;
+    }
+    .nav-links a:hover { color: var(--mineral); }
+    @media(max-width:600px){ .nav-links{display:none;} }
 
-        /* --- VISTA 1: BIBLIOTECA / ESCRITORIO --- */
-        #vista-biblioteca {
-            width: 95%;
-            max-width: 1000px;
-            padding: 40px 10px;
-            display: block;
-        }
+    /* HERO */
+    .hero { padding: 90px 0 80px; text-align: center; position: relative; }
+    .hero::before, .hero::after {
+        content: ''; position: absolute; top: 50%; transform: translateY(-50%);
+        width: 100px; height: 70px;
+        background: repeating-linear-gradient(180deg,
+            rgba(196,146,58,.14) 0, rgba(196,146,58,.14) 1px,
+            transparent 1px, transparent 10px
+        );
+    }
+    .hero::before { left: 0; }
+    .hero::after  { right: 0; }
+    .hero-eyebrow {
+        font-family: 'Cinzel', serif; font-size: .62rem; font-weight: 400;
+        letter-spacing: .35em; text-transform: uppercase;
+        color: var(--mineral); opacity: .7; margin-bottom: 26px;
+    }
+    .hero h1 {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(2.4rem,7vw,5rem);
+        font-weight: 900; letter-spacing: .06em; line-height: 1;
+        color: var(--caliza); margin-bottom: 12px;
+    }
+    .hero h1 span {
+        display: block; color: var(--mineral); font-weight: 400;
+        font-size: .52em; letter-spacing: .28em; margin-top: 10px;
+    }
+    .ornamento {
+        display: flex; align-items: center; gap: 18px;
+        justify-content: center; margin: 36px auto; max-width: 420px;
+    }
+    .ornamento::before { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg,transparent,rgba(196,146,58,.45)); }
+    .ornamento::after  { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg,rgba(196,146,58,.45),transparent); }
+    .ornamento-estrato { display: flex; flex-direction: column; gap: 4px; }
+    .ornamento-estrato b { display: block; height: 2px; background: var(--mineral); opacity: .7; border-radius: 1px; }
+    .ornamento-estrato b:nth-child(1){ width: 28px; }
+    .ornamento-estrato b:nth-child(2){ width: 20px; }
+    .ornamento-estrato b:nth-child(3){ width: 24px; }
+    .hero-mision {
+        font-family: 'Cormorant Garamond', serif; font-style: italic;
+        font-weight: 300; font-size: clamp(1.1rem,2.2vw,1.42rem);
+        line-height: 1.65; color: var(--caliza-s); max-width: 620px; margin: 0 auto;
+    }
 
-        header.mision-vision {
-            background: var(--papel);
-            color: var(--texto);
-            padding: 50px 30px;
-            border-radius: 4px;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.8);
-            margin-bottom: 50px;
-            text-align: center;
-            border-bottom: 12px solid var(--dorado);
-        }
+    /* SEC SEP */
+    .sec-sep { display: flex; align-items: center; gap: 20px; margin: 70px 0 48px; }
+    .sec-sep::before { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg,transparent,rgba(196,146,58,.28)); }
+    .sec-sep::after  { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg,rgba(196,146,58,.28),transparent); }
+    .sec-sep h2 {
+        font-family: 'Cinzel', serif; font-size: .63rem; font-weight: 600;
+        letter-spacing: .3em; text-transform: uppercase;
+        color: var(--mineral); opacity: .72; white-space: nowrap;
+    }
 
-        .mision-vision h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); color: var(--azul); margin: 0; font-weight: 600; }
-        .mision-vision p { font-size: clamp(1.5rem, 6vw, 2.2rem); line-height: 1.4; font-style: italic; margin-top: 30px; color: #333; }
+    /* CATÁLOGO */
+    .catalogo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        gap: 2px;
+        border: 1px solid rgba(196,146,58,.1);
+        margin-bottom: 2px;
+    }
 
-        .titulo-seccion { font-family: 'Special Elite'; color: var(--dorado); text-align: center; font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
+    /* TARJETA LIBRO */
+    article.libro-card {
+        background: var(--e2); cursor: pointer;
+        text-decoration: none; display: flex; flex-direction: column;
+        position: relative; overflow: hidden; transition: background .3s;
+        outline: none;
+    }
+    article.libro-card:hover { background: var(--e3); }
+    article.libro-card:focus-visible { box-shadow: inset 0 0 0 2px var(--mineral); }
+    /* Veta lateral */
+    article.libro-card::before {
+        content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+        background: linear-gradient(180deg,transparent,var(--mineral) 35%,var(--mineral-l) 50%,var(--mineral) 65%,transparent);
+        opacity: 0; transition: opacity .3s;
+    }
+    article.libro-card:hover::before { opacity: 1; }
 
-        .estante {
-            display: flex;
-            gap: 50px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 60px;
-        }
+    /* Portada — sin recorte */
+    .libro-portada-wrap {
+        background: #070503; height: 360px;
+        display: flex; align-items: center; justify-content: center;
+        overflow: hidden; position: relative;
+    }
+    .libro-portada-wrap img {
+        max-width: 100%; max-height: 100%;
+        width: auto; height: 100%;
+        object-fit: contain; display: block;
+        transition: transform .5s ease;
+    }
+    article.libro-card:hover .libro-portada-wrap img { transform: scale(1.04); }
+    .libro-estado {
+        position: absolute; bottom: 12px; right: 12px;
+        background: rgba(13,11,8,.85);
+        border: 1px solid rgba(196,146,58,.4);
+        color: var(--mineral);
+        font-family: 'Cinzel', serif; font-size: .58rem; font-weight: 400;
+        letter-spacing: .16em; padding: 5px 10px; text-transform: uppercase;
+        backdrop-filter: blur(4px);
+    }
 
-        /* Cambiado a etiqueta <a> para indexación correcta */
-        .libro-objeto {
-            width: 100%;
-            max-width: 300px;
-            text-align: center;
-            transition: transform 0.3s;
-            background: none;
-            border: none;
-            padding: 0;
-            color: inherit;
-            text-decoration: none;
-            display: block;
-        }
-        .libro-objeto:hover { transform: translateY(-15px); }
+    /* Cuerpo */
+    .libro-body {
+        padding: 26px 26px 30px; flex: 1;
+        display: flex; flex-direction: column;
+        border-top: 2px solid rgba(196,146,58,.07);
+    }
+    .libro-genero {
+        font-family: 'Cinzel', serif; font-size: .56rem; font-weight: 400;
+        letter-spacing: .18em; text-transform: uppercase;
+        color: var(--mineral); opacity: .62; margin-bottom: 11px;
+    }
+    .libro-titulo {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(1.1rem,1.8vw,1.45rem);
+        font-weight: 600; line-height: 1.2;
+        color: var(--caliza); margin-bottom: 8px;
+    }
+    .libro-sub {
+        font-family: 'Cormorant Garamond', serif; font-style: italic;
+        font-size: 1rem; font-weight: 300;
+        color: var(--caliza-s); margin-bottom: 16px;
+    }
+    /* TEXTO SEO — visible para bots, recortado visualmente */
+    .libro-resumen {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.05rem; line-height: 1.65;
+        color: rgba(232,224,208,.58); flex: 1;
+        display: -webkit-box; -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical; overflow: hidden;
+        margin-bottom: 22px;
+    }
+    .libro-cta {
+        display: inline-flex; align-items: center; gap: 8px;
+        font-family: 'Cinzel', serif; font-size: .62rem; font-weight: 600;
+        letter-spacing: .16em; text-transform: uppercase;
+        color: var(--mineral); align-self: flex-start;
+        border-bottom: 1px solid rgba(196,146,58,.32);
+        padding-bottom: 3px; transition: gap .25s, border-color .25s;
+    }
+    article.libro-card:hover .libro-cta { gap: 16px; border-color: var(--mineral); }
 
-        .libro-objeto img {
-            width: 100%;
-            height: auto; 
-            background: #222;
-            border-radius: 2px 8px 8px 2px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            border-left: 10px solid rgba(0,0,0,0.3);
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.6rem; color: var(--dorado); margin-bottom: 10px; }
-        
-        /* Resumen ahora visible para humanos y Google (evita penalización) */
-        .resumen-visible { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #aaa; line-height: 1.4; margin-top: 0; }
+    /* MODAL */
+    #modal-overlay {
+        display: none; position: fixed; inset: 0;
+        background: rgba(7,5,3,.96); z-index: 200;
+        overflow-y: auto; backdrop-filter: blur(14px);
+    }
+    #modal-overlay.open { display: block; }
+    #modal-container { max-width: 980px; margin: 0 auto; padding: 0 28px 80px; }
 
-        /* --- SECCIÓN CONTACTO (TAMAÑO NORMALIZADO) --- */
-        .seccion-contacto {
-            margin-top: 40px;
-            padding: 30px;
-            background: #1a1a1a;
-            border: 1px solid var(--dorado);
-            border-radius: 4px;
-            width: 100%;
-            max-width: 600px;
-            box-sizing: border-box;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    .modal-nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 26px 0 24px;
+        border-bottom: 1px solid rgba(196,146,58,.14);
+        margin-bottom: 48px;
+        position: sticky; top: 0;
+        background: rgba(7,5,3,.95); z-index: 10;
+        backdrop-filter: blur(8px);
+    }
+    .btn-volver {
+        display: flex; align-items: center; gap: 9px;
+        font-family: 'Cinzel', serif; font-size: .63rem; font-weight: 400;
+        letter-spacing: .14em; text-transform: uppercase;
+        color: var(--caliza-s); background: none; border: none;
+        cursor: pointer; transition: color .2s; padding: 0;
+    }
+    .btn-volver:hover { color: var(--mineral); }
+    .btn-volver svg { width: 14px; height: 14px; }
+    .modal-paginador { display: flex; gap: 8px; }
+    .btn-pag {
+        font-family: 'Cinzel', serif; font-size: .58rem; font-weight: 400;
+        letter-spacing: .1em; text-transform: uppercase;
+        color: var(--caliza-s); background: none;
+        border: 1px solid rgba(196,146,58,.2);
+        padding: 8px 15px; cursor: pointer; transition: all .2s;
+    }
+    .btn-pag:hover { color: var(--mineral); border-color: rgba(196,146,58,.5); }
 
-        .seccion-contacto h2 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            font-family: 'Special Elite';
-            color: var(--dorado);
-            text-align: center;
-        }
+    .modal-layout { display: grid; grid-template-columns: 230px 1fr; gap: 56px; align-items: start; }
+    @media(max-width:720px){ .modal-layout{ grid-template-columns:1fr; gap:32px; } }
 
-        .form-control {
-            width: 100%;
-            padding: 10px 15px;
-            font-size: 1.1rem;
-            font-family: 'Cormorant Garamond', serif;
-            background: var(--papel);
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            color: var(--texto);
-        }
+    .modal-sidebar img {
+        width: 100%; max-height: 340px; object-fit: contain;
+        display: block; background: #070503; margin-bottom: 28px;
+    }
+    .ficha-item { margin-bottom: 15px; }
+    .ficha-label {
+        font-family: 'Cinzel', serif; font-size: .56rem; font-weight: 600;
+        letter-spacing: .2em; text-transform: uppercase;
+        color: var(--mineral); opacity: .58; margin-bottom: 4px;
+    }
+    .ficha-valor {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: .98rem; color: var(--caliza-s);
+    }
 
-        textarea.form-control { height: 100px; resize: vertical; }
+    .modal-content h2 {
+        font-family: 'Cinzel', serif;
+        font-size: clamp(1.5rem,3.5vw,2.4rem);
+        font-weight: 600; line-height: 1.15;
+        color: var(--caliza); margin-bottom: 10px;
+    }
+    .modal-sub-txt {
+        font-family: 'Cormorant Garamond', serif; font-style: italic;
+        font-weight: 300; font-size: 1.12rem;
+        color: var(--caliza-s); margin-bottom: 28px;
+    }
+    .veta { height: 2px; width: 70px; background: linear-gradient(90deg,var(--mineral),transparent); margin-bottom: 30px; }
+    .modal-intro {
+        font-family: 'Cormorant Garamond', serif; font-size: 1.22rem;
+        line-height: 1.8; color: rgba(232,224,208,.85);
+        margin-bottom: 34px; text-align: justify;
+    }
+    .modal-intro::first-letter {
+        float: left; font-family: 'Cinzel', serif; font-size: 4rem;
+        font-weight: 900; line-height: .85;
+        padding-top: 5px; padding-right: 13px; color: var(--mineral);
+    }
+    .modal-sep { height: 1px; background: linear-gradient(90deg,transparent,rgba(196,146,58,.22),transparent); margin: 34px 0; }
+    .modal-sec-label {
+        font-family: 'Cinzel', serif; font-size: .6rem; font-weight: 600;
+        letter-spacing: .25em; text-transform: uppercase;
+        color: var(--mineral); opacity: .62; margin-bottom: 16px;
+    }
+    .modal-cuerpo {
+        font-family: 'Cormorant Garamond', serif; font-size: 1.16rem;
+        line-height: 1.8; color: rgba(232,224,208,.7);
+        text-align: justify; margin-bottom: 36px;
+    }
+    .modal-keywords { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 34px; }
+    .kw-tag {
+        font-family: 'Cormorant Garamond', serif; font-style: italic;
+        font-size: .88rem; color: var(--caliza-s);
+        background: rgba(196,146,58,.06);
+        border: 1px solid rgba(196,146,58,.14);
+        padding: 4px 12px;
+    }
+    .modal-acciones { display: flex; flex-direction: column; gap: 11px; }
+    .btn-pdf {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        padding: 15px 24px;
+        border: 1px solid rgba(196,146,58,.28);
+        color: var(--caliza-s); text-decoration: none;
+        font-family: 'Cinzel', serif; font-size: .63rem; font-weight: 400;
+        letter-spacing: .14em; text-transform: uppercase; transition: all .25s;
+    }
+    .btn-pdf:hover { background: rgba(196,146,58,.08); border-color: var(--mineral); color: var(--caliza); }
+    .btn-contacto {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        padding: 15px 24px; background: var(--mineral);
+        color: var(--e1); text-decoration: none;
+        font-family: 'Cinzel', serif; font-size: .63rem; font-weight: 600;
+        letter-spacing: .14em; text-transform: uppercase; transition: background .25s;
+    }
+    .btn-contacto:hover { background: var(--mineral-l); }
 
-        .btn-enviar {
-            background: var(--dorado);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            font-family: 'Special Elite';
-            font-size: 1.2rem;
-            cursor: pointer;
-            width: 100%;
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .btn-enviar:hover { background: #966d09; }
+    /* CONTACTO */
+    .contacto-section { margin-bottom: 80px; }
+    .contacto-wrap {
+        max-width: 540px; margin: 0 auto;
+        background: var(--e2); border: 1px solid rgba(196,146,58,.11);
+        padding: 46px 42px;
+    }
+    @media(max-width:600px){ .contacto-wrap{ padding:30px 22px; } }
+    .contacto-h {
+        font-family: 'Cinzel', serif; font-size: 1.25rem; font-weight: 600;
+        color: var(--caliza); margin-bottom: 6px;
+    }
+    .contacto-sub {
+        font-family: 'Cormorant Garamond', serif; font-style: italic;
+        font-size: .98rem; color: var(--caliza-s); margin-bottom: 30px;
+    }
+    .campo-grupo { margin-bottom: 18px; }
+    .campo-grupo label {
+        display: block; font-family: 'Cinzel', serif; font-size: .56rem;
+        font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+        color: var(--mineral); opacity: .62; margin-bottom: 7px;
+    }
+    .campo-grupo input, .campo-grupo textarea {
+        width: 100%; background: rgba(255,255,255,.03);
+        border: 1px solid rgba(196,146,58,.17);
+        padding: 12px 15px;
+        font-family: 'Cormorant Garamond', serif; font-size: 1.02rem;
+        color: var(--caliza); transition: border-color .25s; outline: none;
+    }
+    .campo-grupo input::placeholder, .campo-grupo textarea::placeholder { color: rgba(232,224,208,.18); }
+    .campo-grupo input:focus, .campo-grupo textarea:focus { border-color: rgba(196,146,58,.48); }
+    .campo-grupo textarea { height: 108px; resize: vertical; }
+    .btn-submit {
+        width: 100%; background: var(--mineral); color: var(--e1); border: none;
+        padding: 15px; font-family: 'Cinzel', serif; font-size: .68rem;
+        font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+        cursor: pointer; transition: background .25s; margin-top: 6px;
+    }
+    .btn-submit:hover { background: var(--mineral-l); }
 
-        /* --- VISTA 2: LECTOR --- */
-        #vista-lector {
-            display: none;
-            width: 100%;
-            max-width: 1300px;
-            min-height: 100vh;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(196,146,58,.11); padding: 34px 0; text-align: center; }
+    .footer-wordmark {
+        font-family: 'Cinzel', serif; font-size: .62rem; font-weight: 600;
+        letter-spacing: .3em; text-transform: uppercase;
+        color: var(--mineral); opacity: .35; margin-bottom: 9px;
+    }
+    .footer-copy { font-family: 'Cormorant Garamond', serif; font-size: .88rem; color: rgba(232,224,208,.2); }
+    .footer-copy a { color: inherit; text-decoration: none; }
+    .footer-copy a:hover { opacity: .55; }
 
-        .barra-navegacion { display: flex; gap: 15px; margin-bottom: 25px; width: 100%; flex-wrap: wrap; }
-        
-        .btn-nav {
-            background: var(--azul);
-            color: white;
-            border: 3px solid var(--dorado);
-            padding: 15px 20px;
-            font-family: 'Special Elite';
-            font-size: 1.2rem;
-            cursor: pointer;
-            flex: 1;
-            min-width: 150px;
-            transition: background 0.3s;
-        }
-        .btn-nav:hover { background: #254d8c; }
-
-        .contenedor-dual {
-            display: flex;
-            flex-direction: column;
-            background: var(--papel);
-            border-radius: 8px;
-            color: var(--texto);
-            overflow: hidden;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-        }
-
-        .ficha-tecnica { padding: 40px; background: #eeebe3; text-align: center; border-bottom: 3px solid #ddd; }
-        
-        .meta-box {
-            text-align: left;
-            font-family: 'Special Elite';
-            border-left: 6px solid var(--azul);
-            padding-left: 25px;
-            margin-top: 25px;
-            font-size: 1.4rem;
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .contenido-libro { padding: 50px 40px; position: relative; }
-        
-        .portada-lector { 
-            max-height: 400px; 
-            width: auto;
-            display: block; 
-            margin: 0 auto 40px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            border-radius: 2px 8px 8px 2px;
-        }
-
-        .texto-academico { font-size: 1.6rem; line-height: 1.6; text-align: justify; margin-bottom: 40px; }
-        .capitular::first-letter {
-            float: left; font-size: 5rem; line-height: 0.8; padding-top: 5px; padding-right: 15px; color: var(--azul); font-weight: bold;
-        }
-
-        .separador {
-            height: 2px;
-            background: linear-gradient(to right, transparent, var(--dorado), transparent);
-            margin: 50px 0;
-        }
-
-        .contenedor-botones { display: flex; flex-direction: column; gap: 15px; margin-top: 50px; }
-        
-        .btn-accion { 
-            padding: 20px; 
-            text-decoration: none; 
-            font-family: 'Special Elite'; 
-            text-align: center; 
-            font-size: 1.3rem; 
-            font-weight: bold;
-            border-radius: 4px;
-            transition: background 0.3s, color 0.3s;
-        }
-        .btn-pdf { border: 3px solid var(--azul); color: var(--azul); }
-        .btn-pdf:hover { background: var(--azul); color: white; }
-        .btn-mail { background: var(--azul); color: white; }
-        .btn-mail:hover { background: #15305b; }
-
-        @media (min-width: 1000px) {
-            .contenedor-dual { flex-direction: row; min-height: auto; }
-            .ficha-tecnica { width: 35%; border-bottom: 0; border-right: 3px solid #ddd; }
-            .contenido-libro { width: 65%; padding: 60px 80px; }
-            .barra-navegacion { flex-wrap: nowrap; }
-            .btn-nav { flex: none; width: 200px; }
-        }
+    /* ANIMACIONES */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+    .f1{animation:fadeUp .8s ease both}
+    .f2{animation:fadeUp .8s .14s ease both}
+    .f3{animation:fadeUp .8s .28s ease both}
+    .f4{animation:fadeUp .8s .42s ease both}
     </style>
 </head>
 <body>
 
-    <main id="vista-biblioteca">
-        <header class="mision-vision">
-            <img src="logo.webp" alt="Logotipo oficial de Tectónica Editorial" style="max-width: 180px; margin-bottom: 30px;" loading="lazy">
-            <h1>TECTÓNICA EDITORIAL</h1>
-            <p>"Tender puentes allí donde el desconocimiento ha levantado muros. Investigar con rigor académico bajo la perspectiva humanista biosférica."</p>
-        </header>
+<div id="app">
 
-        <h2 class="titulo-seccion">Catálogo Bibliográfico</h2>
+    <nav class="site-nav" aria-label="Navegación principal">
+        <a href="/" class="nav-logo" aria-label="Tectónica Editorial — inicio">
+            <img src="logo.webp" alt="Logotipo de Tectónica Editorial" width="36" height="36">
+            <span class="nav-wordmark">Tectónica Editorial</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
-        <section class="estante">
-            <a href="#therians" class="libro-objeto" onclick="abrirLibro(event, 'therians')" aria-label="Abrir estudio sobre Therians">
-                <img src="portaga_therians.webp" alt="Portada del libro Therians" loading="lazy">
-                <h3>THERIANS</h3>
-                <p class="resumen-visible">Identidad animal en la era digital.</p>
-            </a>
+    <header class="hero f1">
+        <p class="hero-eyebrow">México · 2026</p>
+        <h1>Tectónica <span>Editorial</span></h1>
+        <div class="ornamento">
+            <div class="ornamento-estrato"><b></b><b></b><b></b></div>
+            <div class="ornamento-estrato"><b></b><b></b><b></b></div>
+            <div class="ornamento-estrato"><b></b><b></b><b></b></div>
+        </div>
+        <p class="hero-mision">
+            "Tender puentes allí donde el desconocimiento ha levantado muros.
+            Investigar con rigor académico bajo la perspectiva humanista biosférica."
+        </p>
+    </header>
 
-            <a href="#alejandro" class="libro-objeto" onclick="abrirLibro(event, 'alejandro')" aria-label="Abrir análisis académico sobre Alejandro III">
-                <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III" loading="lazy">
-                <h3>ALEJANDRO III</h3>
-                <p class="resumen-visible">Análisis Académico Integral.</p>
-            </a>
-        </section>
+    <section id="catalogo" aria-labelledby="catalogo-h">
+        <div class="sec-sep f2"><h2 id="catalogo-h">Catálogo Bibliográfico</h2></div>
 
-        <section class="seccion-contacto">
-            <h2>Correspondencia Editorial</h2>
-            <form action="https://formspree.io/f/xqegzzqg" method="POST">
-                <div class="form-grupo">
-                    <label for="nombre" style="display:none;">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Nombre completo" aria-required="true">
+        <div class="catalogo f3">
+
+            <!-- THERIANS -->
+            <article class="libro-card" id="card-therians"
+                     role="button" tabindex="0"
+                     aria-label="Ver: Therians — la identidad salvaje que busca ser comprendida"
+                     onclick="abrirModal('therians')"
+                     onkeydown="if(event.key==='Enter'||event.key===' ')abrirModal('therians')">
+                <div class="libro-portada-wrap">
+                    <img src="portaga_therians.webp"
+                         alt="Portada del libro Therians de Gabriel Alcántara Tovar — primera guía en español sobre therianthropy"
+                         loading="lazy" width="400" height="360">
+                    <span class="libro-estado">En prensa · CC BY-NC-ND 4.0</span>
                 </div>
-                <div class="form-grupo">
-                    <label for="email" style="display:none;">Correo electrónico</label>
-                    <input type="email" id="email" name="_replyto" class="form-control" required placeholder="Correo electrónico de contacto" aria-required="true">
+                <div class="libro-body">
+                    <p class="libro-genero">Psicología · Identidad · Alterhumanidad · Ética Digital</p>
+                    <h3 class="libro-titulo">Therians: la identidad salvaje que busca ser comprendida</h3>
+                    <p class="libro-sub">La primera guía en español sobre therianthropy</p>
+                    <p class="libro-resumen">
+                        ¿Qué es ser therian? No es una moda ni un trastorno: es una forma de identidad
+                        que millones de personas en todo el mundo describen como la experiencia de
+                        identificarse, a nivel profundo, con un animal no humano. Con base en evidencia
+                        académica, 21 testimonios directos y análisis desde la psicología, la historia
+                        y la ética digital, este libro ofrece a padres, educadores, psicólogos e
+                        investigadores las herramientas para entender —no juzgar— a quien dice ser
+                        algo más que humano. Therianthropy, otherkin, identidad animal, alterhumanidad,
+                        comunidad therian en español, guía para familias, educadores y therianos.
+                    </p>
+                    <span class="libro-cta" aria-hidden="true">Leer más →</span>
                 </div>
-                <div class="form-grupo">
-                    <label for="mensaje" style="display:none;">Mensaje o consulta</label>
-                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="Mensaje o consulta académica" aria-required="true"></textarea>
+            </article>
+
+            <!-- ALEJANDRO III -->
+            <article class="libro-card" id="card-alejandro"
+                     role="button" tabindex="0"
+                     aria-label="Ver: Alejandro III de Macedonia — Análisis Académico Integral"
+                     onclick="abrirModal('alejandro')"
+                     onkeydown="if(event.key==='Enter'||event.key===' ')abrirModal('alejandro')">
+                <div class="libro-portada-wrap">
+                    <img src="portada-alejandro.webp"
+                         alt="Portada del libro Alejandro III de Macedonia de Gabriel Alcántara Tovar — análisis dialéctico-cartesiano"
+                         loading="lazy" width="400" height="360">
+                    <span class="libro-estado">En prensa</span>
                 </div>
-                <button type="submit" class="btn-enviar" aria-label="Enviar formulario de contacto">Enviar Mensaje</button>
+                <div class="libro-body">
+                    <p class="libro-genero">Historia · Metodología Cartesiana · Fuentes Greco-Latinas</p>
+                    <h3 class="libro-titulo">Alejandro III de Macedonia</h3>
+                    <p class="libro-sub">Análisis Académico Integral</p>
+                    <p class="libro-resumen">
+                        ¿Qué podemos conocer realmente sobre Alejandro Magno? Esta obra triangula el
+                        pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo,
+                        Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica.
+                        Enfoque dialéctico-cartesiano multidimensional. Los diarios astronómicos de
+                        Babilonia aportan perspectiva no helenizada. Alejandro Magno, Macedonia,
+                        historia helenística, método histórico crítico, humanismo biosférico.
+                    </p>
+                    <span class="libro-cta" aria-hidden="true">Leer más →</span>
+                </div>
+            </article>
+
+            <!-- IA EMPRESA -->
+            <article class="libro-card" id="card-ia-empresa"
+                     role="button" tabindex="0"
+                     aria-label="Ver: Implementar IA en tu empresa — las 5 preguntas que el CEO debe hacer"
+                     onclick="abrirModal('ia-empresa')"
+                     onkeydown="if(event.key==='Enter'||event.key===' ')abrirModal('ia-empresa')">
+                <div class="libro-portada-wrap">
+                    <img src="portada_provisional.png"
+                         alt="Portada del libro sobre implementación de inteligencia artificial agéntica para CEOs — Gabriel Alcántara Tovar"
+                         loading="lazy" width="400" height="360">
+                    <span class="libro-estado">En prensa</span>
+                </div>
+                <div class="libro-body">
+                    <p class="libro-genero">Inteligencia Artificial · Gobierno Corporativo · Gestión</p>
+                    <h3 class="libro-titulo">Implementar IA en tu empresa: las 5 preguntas que el CEO debe hacer</h3>
+                    <p class="libro-sub">Las cinco preguntas más apremiantes en la implementación de las IA agénticas</p>
+                    <p class="libro-resumen">
+                        La inteligencia artificial agéntica no espera instrucciones: recibe un objetivo
+                        y trabaja autónomamente, tomando decisiones sobre los sistemas reales de su
+                        organización. Una decisión de gobierno corporativo, no de TI. Guía para CEOs:
+                        responsabilidad legal IA, costos reales de implementación, control de sistemas
+                        autónomos, ROI inteligencia artificial, gestión del cambio. Basado en Gartner,
+                        MIT Sloan, BCG, McKinsey y EU AI Act. El 95% de los proyectos no supera el piloto.
+                    </p>
+                    <span class="libro-cta" aria-hidden="true">Leer más →</span>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto-section" aria-labelledby="contacto-h">
+        <div class="sec-sep f4"><h2 id="contacto-h">Correspondencia</h2></div>
+        <div class="contacto-wrap">
+            <h3 class="contacto-h">Correspondencia Editorial</h3>
+            <p class="contacto-sub">Consultas académicas, reseñas y colaboraciones</p>
+            <form action="https://formspree.io/f/xqegzzqg" method="POST" novalidate>
+                <div class="campo-grupo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Su nombre" autocomplete="name">
+                </div>
+                <div class="campo-grupo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="_replyto" required placeholder="correo@ejemplo.com" autocomplete="email">
+                </div>
+                <div class="campo-grupo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required placeholder="Consulta académica, reseña o propuesta..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar correspondencia</button>
             </form>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <div id="vista-lector" aria-hidden="true">
-        <nav class="barra-navegacion">
-            <button class="btn-nav" onclick="irABiblioteca()" aria-label="Regresar al escritorio de la biblioteca">⬅ ESCRITORIO</button>
-            <button class="btn-nav" onclick="cambiarLibro(-1)" aria-label="Ver volumen anterior">ANTERIOR</button>
-            <button class="btn-nav" onclick="cambiarLibro(1)" aria-label="Ver volumen siguiente">SIGUIENTE</button>
+    <footer>
+        <p class="footer-wordmark">Tectónica Editorial</p>
+        <p class="footer-copy">
+            © 2026 Gabriel Alcántara Tovar · México ·
+            <a href="mailto:contacto@tectonicaeditorial.com">contacto@tectonicaeditorial.com</a>
+        </p>
+    </footer>
+
+</div>
+
+
+<!-- MODAL -->
+<div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-titulo" aria-hidden="true">
+    <div id="modal-container">
+
+        <nav class="modal-nav" aria-label="Navegación del lector">
+            <button class="btn-volver" onclick="cerrarModal()" aria-label="Volver al catálogo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                Volver al catálogo
+            </button>
+            <div class="modal-paginador">
+                <button class="btn-pag" onclick="navegarModal(-1)" aria-label="Libro anterior">← Anterior</button>
+                <button class="btn-pag" onclick="navegarModal(1)"  aria-label="Libro siguiente">Siguiente →</button>
+            </div>
         </nav>
 
-        <article class="contenedor-dual">
-            <aside class="ficha-tecnica">
-                <img src="logo.webp" alt="Logo de Tectónica Editorial" style="max-width: 130px; margin: 0 auto; display: block;">
-                <div id="meta-datos" class="meta-box"></div>
+        <div class="modal-layout">
+            <aside class="modal-sidebar">
+                <img id="modal-img" src="" alt="" width="230">
+                <div class="ficha-item"><p class="ficha-label">Autor</p><p class="ficha-valor">Gabriel Alcántara Tovar</p></div>
+                <div class="ficha-item"><p class="ficha-label">Sello</p><p class="ficha-valor">Tectónica Editorial</p></div>
+                <div class="ficha-item"><p class="ficha-label">País</p><p class="ficha-valor">México</p></div>
+                <div class="ficha-item"><p class="ficha-label">Año</p><p class="ficha-valor">2026</p></div>
+                <div class="ficha-item" id="modal-lic-wrap" style="display:none">
+                    <p class="ficha-label">Licencia</p><p class="ficha-valor" id="modal-lic"></p>
+                </div>
+                <div class="ficha-item"><p class="ficha-label">Estado</p><p class="ficha-valor" style="color:var(--mineral)">En prensa</p></div>
             </aside>
 
-            <section class="contenido-libro">
-                <img id="libro-img" src="" class="portada-lector" alt="Portada del libro en lectura">
-                
-                <h2 id="libro-titulo" style="margin:0; font-size: 3.5rem; color: var(--azul); line-height: 1.1;"></h2>
-                <p id="libro-sub" style="font-style:italic; color:#666; font-size: 1.6rem; margin-bottom: 40px;"></p>
-                
-                <div id="libro-intro" class="texto-academico capitular"></div>
-                
-                <div class="separador"></div>
-                
-                <h3 style="font-family:'Special Elite'; color:var(--azul); font-size: 2rem; margin-bottom:30px;">ANÁLISIS DE LA OBRA</h3>
-                <div id="libro-cuerpo" class="texto-academico"></div>
-                
-                <div class="contenedor-botones">
-                    <a id="btn-pdf" href="#" download class="btn-accion btn-pdf" aria-label="Descargar fragmento en PDF">📥 DESCARGAR FRAGMENTO (PDF)</a>
-                    <a href="mailto:contacto@tectonicaeditorial.com" class="btn-accion btn-mail" aria-label="Contactar al autor">✉️ CONTACTAR AL AUTOR</a>
+            <div class="modal-content">
+                <h2 id="modal-titulo"></h2>
+                <p class="modal-sub-txt" id="modal-sub"></p>
+                <div class="veta"></div>
+                <p class="modal-intro" id="modal-intro"></p>
+                <div class="modal-sep"></div>
+                <p class="modal-sec-label">Descripción de la obra</p>
+                <p class="modal-cuerpo" id="modal-cuerpo"></p>
+                <div class="modal-keywords" id="modal-kw" aria-label="Temas relacionados"></div>
+                <div class="modal-acciones">
+                    <a id="modal-pdf" href="#" download class="btn-pdf">↓ Descargar fragmento (PDF)</a>
+                    <a href="mailto:contacto@tectonicaeditorial.com" class="btn-contacto">✉ Contactar al autor</a>
                 </div>
-            </section>
-        </article>
+            </div>
+        </div>
+
     </div>
+</div>
 
-    <script>
-        const catalogo = [
-            {
-                id: 'therians', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'THERIANS', sub: 'Identidad animal en la era digital',
-                img: 'portaga_therians.webp',
-                intro: 'La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto.',
-                cuerpo: 'Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian, que para muchos adultos aparece como una novedad desconcertante en el entorno digital o escolar, es en realidad una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.',
-                pdf: 'fragmento-therians.pdf'
-            },
-            {
-                id: 'alejandro', autor: 'GABRIEL ALCÁNTARA TOVAR',
-                titulo: 'ALEJANDRO III', sub: 'Análisis Académico Integral',
-                img: 'portada-alejandro.webp',
-                intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder.',
-                cuerpo: 'Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo histórico y los diarios astronómicos de Babilonia. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética.',
-                pdf: 'fragmento-alejandro.pdf'
-            }
-        ];
 
-        let indiceActual = 0;
+<script>
+const catalogo = [
+    {
+        id: 'therians',
+        titulo: 'Therians: la identidad salvaje que busca ser comprendida',
+        sub: 'La primera guía en español sobre therianthropy',
+        img: 'portaga_therians.webp',
+        imgAlt: 'Portada del libro Therians de Gabriel Alcántara Tovar',
+        licencia: 'CC BY-NC-ND 4.0 · Registrado en INDAUTOR',
+        intro: '¿Qué es ser therian? No es una moda ni un trastorno: es una forma de identidad que millones de personas en todo el mundo describen como la experiencia de identificarse, a nivel profundo, con un animal no humano.',
+        cuerpo: 'Con base en evidencia académica, 21 testimonios directos de personas therian y análisis desde la psicología, la historia y la ética digital, este libro ofrece a padres, educadores, psicólogos e investigadores las herramientas necesarias para entender —no juzgar— a quien dice ser algo más que humano. La obra aborda qué es la therianthropy y cómo se distingue de otros fenómenos; sus raíces históricas: del chamanismo y el nahualli hasta los foros digitales; las dimensiones psicológicas y espirituales documentadas con fuentes verificadas; el impacto de TikTok, el debate legal y los dilemas éticos actuales; y una guía práctica para acompañar a un joven therian en casa y en la escuela. Un libro que no explica la identidad therian: la describe. Porque el primer paso para acompañar es comprender.',
+        keywords: ['therian','therianthropy','identidad animal','alterhumanidad','otherkin','psicología therian','comunidad therian en español','guía para familias','educadores y therianos'],
+        pdf: 'fragmento-therians.pdf'
+    },
+    {
+        id: 'alejandro',
+        titulo: 'Alejandro III de Macedonia',
+        sub: 'Análisis Académico Integral',
+        img: 'portada-alejandro.webp',
+        imgAlt: 'Portada del libro Alejandro III de Macedonia de Gabriel Alcántara Tovar',
+        licencia: '',
+        intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder.',
+        cuerpo: 'Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo conjeturable. Los diarios astronómicos de Babilonia aportan una perspectiva no helenizada única que contrasta con la tradición grecocéntrica dominante. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética de la investigación histórica.',
+        keywords: ['Alejandro Magno','Alejandro III Macedonia','historia helenística','método cartesiano historia','fuentes greco-latinas','Arriano Plutarco','historia antigua crítica','Macedonia antigua'],
+        pdf: 'fragmento-alejandro.pdf'
+    },
+    {
+        id: 'ia-empresa',
+        titulo: 'Implementar IA en tu empresa: las 5 preguntas que el CEO debe hacer',
+        sub: 'Las cinco preguntas más apremiantes en la implementación de las IA agénticas',
+        img: 'portada_provisional.png',
+        imgAlt: 'Portada del libro sobre implementación de IA agéntica para CEOs de Gabriel Alcántara Tovar',
+        licencia: '',
+        intro: 'La inteligencia artificial agéntica no espera instrucciones: recibe un objetivo y trabaja de manera autónoma para alcanzarlo, tomando decisiones y ejecutando acciones sobre los sistemas reales de su organización. Eso la convierte en una decisión de gobierno corporativo, no en un proyecto de TI.',
+        cuerpo: 'Este libro examina las cinco preguntas que todo CEO, director general o empresario debe poder responder antes de autorizar cualquier inversión en IA agéntica: ¿Quién es el responsable legal si el sistema se equivoca? ¿Cuánto cuesta realmente y cuándo veré resultados? ¿Puede trabajar con lo que ya tengo? ¿Cómo mantengo el control? ¿Qué le pasa a mi organización durante el proceso? El costo real de implementación se sitúa entre 1.4 y 2 veces el precio cotizado. El 95% de los proyectos no supera la fase piloto. El 70% de los fracasos se originan en factores humanos y organizacionales, no en problemas técnicos. Basado en investigación de Gartner, MIT Sloan, BCG, McKinsey y el EU AI Act. Lectura estimada: 3 horas.',
+        keywords: ['implementar inteligencia artificial empresa','IA agéntica CEO','gobernanza IA empresas','responsabilidad legal IA','costo implementación IA','control sistemas IA autónomos','ROI inteligencia artificial','gestión del cambio IA'],
+        pdf: 'fragmento-ia-empresa.pdf'
+    }
+];
 
-        function abrirLibro(event, id) {
-            // Previene el salto brusco de la página al hacer clic
-            if(event) event.preventDefault(); 
-            
-            indiceActual = catalogo.findIndex(l => l.id === id);
-            
-            // Actualiza la URL para que Google y el usuario tengan un enlace único
-            window.history.pushState(null, null, '#' + id); 
-            
-            renderizar();
-            document.getElementById('vista-biblioteca').style.display = 'none';
-            document.getElementById('vista-lector').style.display = 'block';
-            document.getElementById('vista-lector').setAttribute('aria-hidden', 'false');
-            window.scrollTo(0,0);
-        }
+let idx = 0;
 
-        function irABiblioteca() {
-            // Limpia la URL al volver al inicio
-            window.history.pushState(null, null, window.location.pathname);
-            
-            document.getElementById('vista-biblioteca').style.display = 'block';
-            document.getElementById('vista-lector').style.display = 'none';
-            document.getElementById('vista-lector').setAttribute('aria-hidden', 'true');
-        }
+function renderizarModal(i) {
+    const l = catalogo[i];
+    document.getElementById('modal-titulo').textContent = l.titulo;
+    document.getElementById('modal-sub').textContent    = l.sub;
+    document.getElementById('modal-intro').textContent  = l.intro;
+    document.getElementById('modal-cuerpo').textContent = l.cuerpo;
+    document.getElementById('modal-pdf').href           = l.pdf;
+    const img = document.getElementById('modal-img');
+    img.src = l.img; img.alt = l.imgAlt;
+    const licWrap = document.getElementById('modal-lic-wrap');
+    const licVal  = document.getElementById('modal-lic');
+    if (l.licencia) { licVal.textContent = l.licencia; licWrap.style.display = ''; }
+    else              { licWrap.style.display = 'none'; }
+    document.getElementById('modal-kw').innerHTML =
+        l.keywords.map(k => `<span class="kw-tag">${k}</span>`).join('');
+}
 
-        function renderizar() {
-            const l = catalogo[indiceActual];
-            document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>PAÍS: MÉXICO</p><p>AÑO: 2026</p><p style="color:var(--azul); font-weight:bold; margin-top:20px;">[ ESTADO: EN PRENSA ]</p>`;
-            document.getElementById('libro-img').src = l.img;
-            document.getElementById('libro-img').alt = "Portada de " + l.titulo;
-            document.getElementById('libro-titulo').innerText = l.titulo;
-            document.getElementById('libro-sub').innerText = l.sub;
-            document.getElementById('libro-intro').innerText = l.intro;
-            document.getElementById('libro-cuerpo').innerText = l.cuerpo;
-            document.getElementById('btn-pdf').href = l.pdf;
-        }
+function abrirModal(id) {
+    idx = catalogo.findIndex(l => l.id === id);
+    renderizarModal(idx);
+    const ov = document.getElementById('modal-overlay');
+    ov.classList.add('open'); ov.setAttribute('aria-hidden','false');
+    ov.scrollTop = 0; document.body.style.overflow = 'hidden';
+    history.pushState({ libro: id }, '', '#' + id);
+}
 
-        function cambiarLibro(delta) {
-            indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
-            const nuevoId = catalogo[indiceActual].id;
-            window.history.pushState(null, null, '#' + nuevoId);
-            renderizar();
-            window.scrollTo(0,0);
-        }
+function cerrarModal() {
+    const ov = document.getElementById('modal-overlay');
+    ov.classList.remove('open'); ov.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    history.pushState(null, '', window.location.pathname);
+}
 
-        // Sistema de ruteo básico: Abre el libro automáticamente si alguien entra con el enlace directo
-        window.addEventListener('DOMContentLoaded', () => {
-            const hash = window.location.hash.substring(1);
-            if (hash && catalogo.some(l => l.id === hash)) {
-                abrirLibro(null, hash);
-            }
-        });
-    </script>
+function navegarModal(delta) {
+    idx = (idx + delta + catalogo.length) % catalogo.length;
+    renderizarModal(idx);
+    document.getElementById('modal-overlay').scrollTop = 0;
+    history.replaceState({ libro: catalogo[idx].id }, '', '#' + catalogo[idx].id);
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') cerrarModal(); });
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) cerrarModal();
+});
+window.addEventListener('DOMContentLoaded', () => {
+    const h = window.location.hash.slice(1);
+    if (h && catalogo.some(l => l.id === h)) abrirModal(h);
+});
+window.addEventListener('popstate', () => {
+    const h = window.location.hash.slice(1);
+    if (h && catalogo.some(l => l.id === h)) abrirModal(h);
+    else cerrarModal();
+});
+</script>
+
 </body>
 </html>

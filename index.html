@@ -79,7 +79,7 @@
 
         .libro-objeto img {
             width: 100%;
-            height: auto; /* Permite que la portada se vea completa sin recortes */
+            height: auto; 
             background: #222;
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
@@ -101,37 +101,49 @@
             border: 0;
         }
 
-        /* --- SECCIÓN CONTACTO --- */
+        /* --- SECCIÓN CONTACTO (TAMAÑO NORMALIZADO) --- */
         .seccion-contacto {
-            margin-top: 60px;
-            padding: 45px;
+            margin-top: 40px;
+            padding: 35px;
             background: #1a1a1a;
             border: 2px solid var(--dorado);
             border-radius: 4px;
             width: 100%;
+            max-width: 800px;
             box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .seccion-contacto h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
         }
 
         .form-control {
             width: 100%;
-            padding: 18px;
-            font-size: 1.8rem;
+            padding: 12px;
+            font-size: 1.2rem;
             font-family: 'Cormorant Garamond', serif;
             background: var(--papel);
             border: none;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-sizing: border-box;
             color: var(--texto);
+        }
+
+        textarea.form-control {
+            height: 120px;
         }
 
         .btn-enviar {
             background: var(--dorado);
             color: white;
             border: none;
-            padding: 22px;
+            padding: 15px;
             font-family: 'Special Elite';
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             cursor: pointer;
             width: 100%;
             font-weight: bold;
@@ -251,7 +263,7 @@
         <section class="estante">
             <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir estudio sobre Therians e identidad animal">
                 <img src="portaga_therians.webp" alt="Portada del libro Therians: Identidad animal en la era digital" loading="lazy">
-                <h3>VOL. 001: THERIANS</h3>
+                <h3>THERIANS</h3>
                 <div class="seo-hidden">
                     <p>Análisis profundo sobre la identidad animal en la era digital y el fenómeno Therian desde una perspectiva humanista.</p>
                 </div>
@@ -259,7 +271,7 @@
 
             <button class="libro-objeto" onclick="abrirLibro('alejandro')" aria-label="Abrir análisis académico sobre Alejandro III de Macedonia">
                 <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III de Macedonia" loading="lazy">
-                <h3>VOL. 002: ALEJANDRO III</h3>
+                <h3>ALEJANDRO III</h3>
                 <div class="seo-hidden">
                     <p>Estudio académico integral sobre la figura histórica de Alejandro Magno, triangulando fuentes clásicas y evidencia arqueológica.</p>
                 </div>
@@ -277,7 +289,7 @@
                     <input type="email" id="email" name="_replyto" class="form-control" required placeholder="CORREO ELECTRÓNICO DE RETORNO" aria-required="true">
                     
                     <label for="mensaje" class="seo-hidden">Mensaje o consulta</label>
-                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="MENSAJE O CONSULTA ACADÉMICA" aria-required="true" style="height:150px;"></textarea>
+                    <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="MENSAJE O CONSULTA ACADÉMICA" aria-required="true"></textarea>
                 </div>
                 <button type="submit" class="btn-enviar" aria-label="Enviar formulario de contacto">ENVIAR CORRESPONDENCIA</button>
             </form>
@@ -320,7 +332,6 @@
     </div>
 
     <script>
-        // CONTENIDO ORIGINAL ÍNTEGRO
         const catalogo = [
             {
                 id: 'therians', vol: '001', autor: 'GABRIEL ALCÁNTARA TOVAR',
@@ -359,7 +370,7 @@
 
         function renderizar() {
             const l = catalogo[indiceActual];
-            document.getElementById('meta-vol').innerText = 'VOL: ' + l.vol;
+            document.getElementById('meta-vol').innerText = ''; 
             document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>PAÍS: MÉXICO</p><p>AÑO: 2026</p><p style="color:var(--azul); font-weight:bold; margin-top:20px;">[ ESTADO: EN PRENSA ]</p>`;
             document.getElementById('libro-img').src = l.img;
             document.getElementById('libro-titulo').innerText = l.titulo;

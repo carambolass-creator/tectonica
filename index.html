@@ -8,6 +8,32 @@
     <meta name="description" content="Editorial académica de Gabriel Alcántara Tovar. Investigaciones sobre el fenómeno Therian y análisis histórico de Alejandro Magno bajo la perspectiva humanista biosférica.">
     <meta name="keywords" content="Tectónica Editorial, Gabriel Alcántara Tovar, Therians, Alejandro Magno, Humanismo, Academia">
     <meta name="author" content="Gabriel Alcántara Tovar">
+    <link rel="canonical" href="https://www.tectonicaeditorial.com/">
+    
+    <meta property="og:title" content="Tectónica Editorial | Rigor Académico">
+    <meta property="og:description" content="Investigar con rigor académico bajo la perspectiva humanista biosférica.">
+    <meta property="og:image" content="https://www.tectonicaeditorial.com/logo.webp">
+    <meta property="og:url" content="https://www.tectonicaeditorial.com/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tectónica Editorial">
+    <meta name="twitter:description" content="Investigaciones de Gabriel Alcántara Tovar.">
+    <meta name="twitter:image" content="https://www.tectonicaeditorial.com/logo.webp">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Publisher",
+      "name": "Tectónica Editorial",
+      "founder": {
+        "@type": "Person",
+        "name": "Gabriel Alcántara Tovar"
+      },
+      "url": "https://www.tectonicaeditorial.com",
+      "logo": "https://www.tectonicaeditorial.com/logo.webp"
+    }
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +80,7 @@
         }
 
         .mision-vision h1 { font-size: clamp(2.5rem, 10vw, 4.5rem); color: var(--azul); margin: 0; font-weight: 600; }
-        .mision-vision p { font-size: clamp(1.4rem, 5vw, 1.8rem); line-height: 1.5; font-style: italic; margin-top: 25px; color: #333; }
+        .mision-vision p { font-size: clamp(1.5rem, 6vw, 2.2rem); line-height: 1.4; font-style: italic; margin-top: 30px; color: #333; }
 
         .titulo-seccion { font-family: 'Special Elite'; color: var(--dorado); text-align: center; font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
 
@@ -66,45 +92,36 @@
             margin-bottom: 60px;
         }
 
+        /* Cambiado a etiqueta <a> para indexación correcta */
         .libro-objeto {
             width: 100%;
             max-width: 300px;
-            cursor: pointer;
             text-align: center;
             transition: transform 0.3s;
             background: none;
             border: none;
             padding: 0;
             color: inherit;
+            text-decoration: none;
+            display: block;
         }
         .libro-objeto:hover { transform: translateY(-15px); }
 
         .libro-objeto img {
             width: 100%;
-            height: auto; /* Permite que la imagen tome su proporción natural sin recortarse */
-            max-height: 400px;
-            object-fit: contain;
-            background: transparent;
+            height: auto; 
+            background: #222;
             border-radius: 2px 8px 8px 2px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.7);
-            border-left: 10px solid rgba(0,0,0,0.2);
+            border-left: 10px solid rgba(0,0,0,0.3);
             display: block;
             margin: 0 auto;
         }
         
-        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.5rem; color: var(--dorado); }
-
-        /* SEO Indexable oculto visualmente */
-        .seo-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
+        .libro-objeto h3 { margin-top: 20px; font-family: 'Special Elite'; font-size: 1.6rem; color: var(--dorado); margin-bottom: 10px; }
+        
+        /* Resumen ahora visible para humanos y Google (evita penalización) */
+        .resumen-visible { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #aaa; line-height: 1.4; margin-top: 0; }
 
         /* --- SECCIÓN CONTACTO (TAMAÑO NORMALIZADO) --- */
         .seccion-contacto {
@@ -114,7 +131,7 @@
             border: 1px solid var(--dorado);
             border-radius: 4px;
             width: 100%;
-            max-width: 600px; /* Ancho estándar de formulario */
+            max-width: 600px;
             box-sizing: border-box;
             margin-left: auto;
             margin-right: auto;
@@ -127,33 +144,27 @@
             color: var(--dorado);
             text-align: center;
         }
-        
-        .form-grupo {
-            margin-bottom: 15px;
-        }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
-            font-size: 1.1rem; /* Tamaño de texto de formulario estándar */
+            padding: 10px 15px;
+            font-size: 1.1rem;
             font-family: 'Cormorant Garamond', serif;
             background: var(--papel);
             border: 1px solid #ccc;
             border-radius: 4px;
+            margin-bottom: 15px;
             box-sizing: border-box;
             color: var(--texto);
         }
 
-        textarea.form-control {
-            height: 120px;
-            resize: vertical;
-        }
+        textarea.form-control { height: 100px; resize: vertical; }
 
         .btn-enviar {
             background: var(--dorado);
             color: white;
             border: none;
-            padding: 14px 20px;
+            padding: 12px 20px;
             font-family: 'Special Elite';
             font-size: 1.2rem;
             cursor: pointer;
@@ -216,13 +227,12 @@
         .contenido-libro { padding: 50px 40px; position: relative; }
         
         .portada-lector { 
-            max-height: 450px; 
+            max-height: 400px; 
             width: auto;
             display: block; 
             margin: 0 auto 40px; 
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
             border-radius: 2px 8px 8px 2px;
-            border-left: 10px solid rgba(0,0,0,0.2);
         }
 
         .texto-academico { font-size: 1.6rem; line-height: 1.6; text-align: justify; margin-bottom: 40px; }
@@ -258,7 +268,7 @@
             .ficha-tecnica { width: 35%; border-bottom: 0; border-right: 3px solid #ddd; }
             .contenido-libro { width: 65%; padding: 60px 80px; }
             .barra-navegacion { flex-wrap: nowrap; }
-            .btn-nav { flex: none; width: 220px; }
+            .btn-nav { flex: none; width: 200px; }
         }
     </style>
 </head>
@@ -274,36 +284,32 @@
         <h2 class="titulo-seccion">Catálogo Bibliográfico</h2>
 
         <section class="estante">
-            <button class="libro-objeto" onclick="abrirLibro('therians')" aria-label="Abrir estudio sobre Therians">
+            <a href="#therians" class="libro-objeto" onclick="abrirLibro(event, 'therians')" aria-label="Abrir estudio sobre Therians">
                 <img src="portaga_therians.webp" alt="Portada del libro Therians" loading="lazy">
                 <h3>THERIANS</h3>
-                <div class="seo-hidden">
-                    <p>La identidad es, quizás, el territorio más complejo que un ser humano debe cartografiar durante su vida. Históricamente, este mapa se dibujaba con líneas claras y fronteras inamovibles; sin embargo, en la contemporaneidad, las nuevas generaciones nos están demostrando que el paisaje de la autopercepción es mucho más vasto y diverso de lo que las instituciones educativas y familiares habían previsto. Este libro nace de una necesidad urgente: la de tender puentes allí donde el desconocimiento ha levantado muros. El fenómeno therian, que para muchos adultos aparece como una novedad desconcertante en el entorno digital o escolar, es en realidad una manifestación profunda de la búsqueda de sentido en una era de hiperconectividad y replanteamiento de lo humano.</p>
-                </div>
-            </button>
+                <p class="resumen-visible">Identidad animal en la era digital.</p>
+            </a>
 
-            <button class="libro-objeto" onclick="abrirLibro('alejandro')" aria-label="Abrir análisis académico sobre Alejandro III">
+            <a href="#alejandro" class="libro-objeto" onclick="abrirLibro(event, 'alejandro')" aria-label="Abrir análisis académico sobre Alejandro III">
                 <img src="portada-alejandro.webp" alt="Portada del libro Alejandro III" loading="lazy">
                 <h3>ALEJANDRO III</h3>
-                <div class="seo-hidden">
-                    <p>¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder. Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo histórico y los diarios astronómicos de Babilonia. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética.</p>
-                </div>
-            </button>
+                <p class="resumen-visible">Análisis Académico Integral.</p>
+            </a>
         </section>
 
         <section class="seccion-contacto">
             <h2>Correspondencia Editorial</h2>
             <form action="https://formspree.io/f/xqegzzqg" method="POST">
                 <div class="form-grupo">
-                    <label for="nombre" class="seo-hidden">Nombre completo</label>
+                    <label for="nombre" style="display:none;">Nombre completo</label>
                     <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Nombre completo" aria-required="true">
                 </div>
                 <div class="form-grupo">
-                    <label for="email" class="seo-hidden">Correo electrónico</label>
+                    <label for="email" style="display:none;">Correo electrónico</label>
                     <input type="email" id="email" name="_replyto" class="form-control" required placeholder="Correo electrónico de contacto" aria-required="true">
                 </div>
                 <div class="form-grupo">
-                    <label for="mensaje" class="seo-hidden">Mensaje o consulta</label>
+                    <label for="mensaje" style="display:none;">Mensaje o consulta</label>
                     <textarea id="mensaje" name="mensaje" class="form-control" required placeholder="Mensaje o consulta académica" aria-required="true"></textarea>
                 </div>
                 <button type="submit" class="btn-enviar" aria-label="Enviar formulario de contacto">Enviar Mensaje</button>
@@ -346,7 +352,6 @@
     </div>
 
     <script>
-        // CONTENIDO ORIGINAL ÍNTEGRO
         const catalogo = [
             {
                 id: 'therians', autor: 'GABRIEL ALCÁNTARA TOVAR',
@@ -368,8 +373,15 @@
 
         let indiceActual = 0;
 
-        function abrirLibro(id) {
+        function abrirLibro(event, id) {
+            // Previene el salto brusco de la página al hacer clic
+            if(event) event.preventDefault(); 
+            
             indiceActual = catalogo.findIndex(l => l.id === id);
+            
+            // Actualiza la URL para que Google y el usuario tengan un enlace único
+            window.history.pushState(null, null, '#' + id); 
+            
             renderizar();
             document.getElementById('vista-biblioteca').style.display = 'none';
             document.getElementById('vista-lector').style.display = 'block';
@@ -378,6 +390,9 @@
         }
 
         function irABiblioteca() {
+            // Limpia la URL al volver al inicio
+            window.history.pushState(null, null, window.location.pathname);
+            
             document.getElementById('vista-biblioteca').style.display = 'block';
             document.getElementById('vista-lector').style.display = 'none';
             document.getElementById('vista-lector').setAttribute('aria-hidden', 'true');
@@ -387,6 +402,7 @@
             const l = catalogo[indiceActual];
             document.getElementById('meta-datos').innerHTML = `<p>AUTOR: ${l.autor}</p><p>PAÍS: MÉXICO</p><p>AÑO: 2026</p><p style="color:var(--azul); font-weight:bold; margin-top:20px;">[ ESTADO: EN PRENSA ]</p>`;
             document.getElementById('libro-img').src = l.img;
+            document.getElementById('libro-img').alt = "Portada de " + l.titulo;
             document.getElementById('libro-titulo').innerText = l.titulo;
             document.getElementById('libro-sub').innerText = l.sub;
             document.getElementById('libro-intro').innerText = l.intro;
@@ -396,9 +412,19 @@
 
         function cambiarLibro(delta) {
             indiceActual = (indiceActual + delta + catalogo.length) % catalogo.length;
+            const nuevoId = catalogo[indiceActual].id;
+            window.history.pushState(null, null, '#' + nuevoId);
             renderizar();
             window.scrollTo(0,0);
         }
+
+        // Sistema de ruteo básico: Abre el libro automáticamente si alguien entra con el enlace directo
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && catalogo.some(l => l.id === hash)) {
+                abrirLibro(null, hash);
+            }
+        });
     </script>
 </body>
 </html>

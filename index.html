@@ -144,10 +144,13 @@
     /* CATÁLOGO */
     .catalogo {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 2px;
         border: 1px solid rgba(196,146,58,.1);
         margin-bottom: 2px;
+    }
+    @media(max-width:700px){
+        .catalogo { grid-template-columns: 1fr; }
     }
 
     /* TARJETA LIBRO */
@@ -482,7 +485,6 @@
                          alt="Portada del libro Therians de Gabriel Alcántara Tovar — primera guía en español sobre therianthropy"
                          loading="lazy" width="400" height="360">
                     <span class="libro-lang">Español</span>
-                    <span class="libro-estado">Disponible · CC BY-NC-ND 4.0</span>
                 </div>
                 <div class="libro-body">
                     <p class="libro-genero">Psicología · Identidad · Alterhumanidad · Ética Digital</p>
@@ -513,7 +515,6 @@
                          alt="Cover of Therians: The Wild Identity Seeking to Be Understood by Gabriel Alcántara Tovar"
                          loading="lazy" width="400" height="360">
                     <span class="libro-lang en">English</span>
-                    <span class="libro-estado">Available · CC BY-NC-ND 4.0</span>
                 </div>
                 <div class="libro-body">
                     <p class="libro-genero">Psychology · Identity · Alterhumanity · Digital Ethics</p>
@@ -542,7 +543,6 @@
                     <img src="portada-alejandro.webp"
                          alt="Portada del libro Alejandro III de Macedonia de Gabriel Alcántara Tovar — análisis dialéctico-cartesiano"
                          loading="lazy" width="400" height="360">
-                    <span class="libro-estado">En prensa</span>
                 </div>
                 <div class="libro-body">
                     <p class="libro-genero">Historia · Metodología Cartesiana · Fuentes Greco-Latinas</p>
@@ -570,7 +570,6 @@
                     <img src="portada_provisional.png"
                          alt="Portada del libro sobre implementación de inteligencia artificial agéntica para CEOs — Gabriel Alcántara Tovar"
                          loading="lazy" width="400" height="360">
-                    <span class="libro-estado">En prensa</span>
                 </div>
                 <div class="libro-body">
                     <p class="libro-genero">Inteligencia Artificial · Gobierno Corporativo · Gestión</p>
@@ -806,4 +805,12 @@ document.getElementById('modal-overlay').addEventListener('click', function(e) {
     if (e.target === this) cerrarModal();
 });
 window.addEventListener('DOMContentLoaded', () => {
-    
+    const hash = window.location.hash.replace('#','');
+    if (hash && catalogo.find(l => l.id === hash)) abrirModal(hash);
+});
+window.addEventListener('popstate', e => {
+    if (e.state && e.state.libro) abrirModal(e.state.libro);
+    else cerrarModal();
+});
+</script></body>
+</html>

@@ -22,6 +22,7 @@
 
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Tectónica Editorial","description":"Editorial académica dedicada a la investigación bajo perspectiva humanista biosférica","founder":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"url":"https://www.tectonicaeditorial.com","logo":"https://www.tectonicaeditorial.com/logo.webp"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Therians: la identidad salvaje que busca ser comprendida","author":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"publisher":{"@type":"Organization","name":"Tectónica Editorial"},"inLanguage":"es","datePublished":"2026","license":"https://creativecommons.org/licenses/by-nc-nd/4.0/","description":"Primera guía en español sobre therianthropy: qué es ser therian, psicología, historia y orientación para familias, educadores y profesionales.","keywords":"therian, therianthropy, identidad animal, alterhumanidad, otherkin","url":"https://www.tectonicaeditorial.com/#therians"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Therians: The Wild Identity Seeking to Be Understood","author":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"publisher":{"@type":"Organization","name":"Tectónica Editorial"},"inLanguage":"en","datePublished":"2026","license":"https://creativecommons.org/licenses/by-nc-nd/4.0/","description":"A comprehensive guide for parents, educators, psychologists, and researchers to understand therianthropy: its history, psychology, spiritual dimensions, and digital explosion. Based on academic research with 40+ verified sources.","keywords":"therianthropy, animal identity, alterhumanity, otherkin, species dysphoria, guide for parents, digital subcultures","url":"https://www.tectonicaeditorial.com/#therians-en"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"Alejandro III de Macedonia: Análisis Académico Integral","author":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"publisher":{"@type":"Organization","name":"Tectónica Editorial"},"inLanguage":"es","datePublished":"2026","description":"Análisis dialéctico-cartesiano de Alejandro III de Macedonia. Triangula fuentes greco-latinas con evidencia epigráfica, numismática y arqueológica.","url":"https://www.tectonicaeditorial.com/#alejandro"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Book","name":"¿Qué necesito para implementar la Inteligencia Artificial en mi empresa?","author":{"@type":"Person","name":"Gabriel Alcántara Tovar"},"publisher":{"@type":"Organization","name":"Tectónica Editorial"},"inLanguage":"es","datePublished":"2026","description":"Guía para CEOs sobre inteligencia artificial agéntica: responsabilidad legal, costos reales, control y gestión del cambio.","keywords":"implementar inteligencia artificial empresa, IA agéntica CEO, gobernanza IA","url":"https://www.tectonicaeditorial.com/#ia-empresa"}</script>
 
@@ -396,6 +397,37 @@
     .footer-copy a { color: inherit; text-decoration: none; }
     .footer-copy a:hover { opacity: .55; }
 
+    /* BADGE IDIOMA */
+    .libro-lang {
+        position: absolute; top: 12px; left: 12px;
+        background: rgba(13,11,8,.85);
+        border: 1px solid rgba(196,146,58,.4);
+        color: var(--mineral);
+        font-family: 'Cinzel', serif; font-size: .54rem; font-weight: 600;
+        letter-spacing: .18em; padding: 4px 9px; text-transform: uppercase;
+        backdrop-filter: blur(4px);
+    }
+    .libro-lang.en { border-color: rgba(30,58,95,.7); color: #7aa3d4; background: rgba(13,11,8,.85); }
+
+    /* BOTÓN COMPRAR EN MODAL */
+    .btn-comprar {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        padding: 15px 24px; background: var(--mineral);
+        color: var(--e1); text-decoration: none;
+        font-family: 'Cinzel', serif; font-size: .63rem; font-weight: 600;
+        letter-spacing: .14em; text-transform: uppercase; transition: background .25s;
+    }
+    .btn-comprar:hover { background: var(--mineral-l); }
+    .btn-coming-soon {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        padding: 15px 24px;
+        border: 1px solid rgba(196,146,58,.2);
+        color: rgba(196,146,58,.4); text-decoration: none;
+        font-family: 'Cinzel', serif; font-size: .63rem; font-weight: 400;
+        letter-spacing: .14em; text-transform: uppercase;
+        cursor: default;
+    }
+
     /* ANIMACIONES */
     @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
     .f1{animation:fadeUp .8s ease both}
@@ -439,7 +471,7 @@
 
         <div class="catalogo f3">
 
-            <!-- THERIANS -->
+            <!-- THERIANS ES -->
             <article class="libro-card" id="card-therians"
                      role="button" tabindex="0"
                      aria-label="Ver: Therians — la identidad salvaje que busca ser comprendida"
@@ -449,7 +481,8 @@
                     <img src="portaga_therians.webp"
                          alt="Portada del libro Therians de Gabriel Alcántara Tovar — primera guía en español sobre therianthropy"
                          loading="lazy" width="400" height="360">
-                    <span class="libro-estado">En prensa · CC BY-NC-ND 4.0</span>
+                    <span class="libro-lang">Español</span>
+                    <span class="libro-estado">Disponible · CC BY-NC-ND 4.0</span>
                 </div>
                 <div class="libro-body">
                     <p class="libro-genero">Psicología · Identidad · Alterhumanidad · Ética Digital</p>
@@ -466,6 +499,36 @@
                         comunidad therian en español, guía para familias, educadores y therianos.
                     </p>
                     <span class="libro-cta" aria-hidden="true">Leer más →</span>
+                </div>
+            </article>
+
+            <!-- THERIANS EN -->
+            <article class="libro-card" id="card-therians-en"
+                     role="button" tabindex="0"
+                     aria-label="View: Therians — The Wild Identity Seeking to Be Understood"
+                     onclick="abrirModal('therians-en')"
+                     onkeydown="if(event.key==='Enter'||event.key===' ')abrirModal('therians-en')">
+                <div class="libro-portada-wrap">
+                    <img src="portada_therians_en.webp"
+                         alt="Cover of Therians: The Wild Identity Seeking to Be Understood by Gabriel Alcántara Tovar"
+                         loading="lazy" width="400" height="360">
+                    <span class="libro-lang en">English</span>
+                    <span class="libro-estado">Available · CC BY-NC-ND 4.0</span>
+                </div>
+                <div class="libro-body">
+                    <p class="libro-genero">Psychology · Identity · Alterhumanity · Digital Ethics</p>
+                    <h3 class="libro-titulo">Therians: The Wild Identity Seeking to Be Understood</h3>
+                    <p class="libro-sub">A Practical Guide for Parents and Educators</p>
+                    <p class="libro-resumen">
+                        What does it mean to identify as a non-human animal? A serious study of a
+                        phenomenon as old as humanity, resurfacing today with a singularity that
+                        deserves to be understood before it is judged. Based on academic research,
+                        21 direct testimonies, and analysis from psychology, history, and digital
+                        ethics. A comprehensive guide for parents, educators, psychologists, and
+                        researchers. Therianthropy, otherkin, animal identity, alterhumanity,
+                        species dysphoria, guide for families.
+                    </p>
+                    <span class="libro-cta" aria-hidden="true">Read more →</span>
                 </div>
             </article>
 
@@ -555,7 +618,7 @@
         <p class="footer-wordmark">Tectónica Editorial</p>
         <p class="footer-copy">
             © 2026 Gabriel Alcántara Tovar · México ·
-            <a href="mailto:contacto@tectonicaeditorial.com">contacto@tectonicaeditorial.com</a>
+            <a href="/cdn-cgi/l/email-protection#42212d2c362321362d02362721362d2c2b212327262b362d302b232e6c212d2f"><span class="__cf_email__" data-cfemail="284b47465c494b5c47685c4d4b5c4746414b494d4c415c475a414944064b4745">[email&#160;protected]</span></a>
         </p>
     </footer>
 
@@ -604,8 +667,9 @@
                     <p id="modal-nota-autor" style="font-family:'Cormorant Garamond',serif; font-style:normal; font-size:1.2rem; line-height:1.8; color:rgba(232,224,208,0.95); border-left:2px solid rgba(196,146,58,0.45); padding-left:18px;"></p>
                 </div>
                 <div class="modal-acciones">
+                    <a id="modal-comprar" href="#" class="btn-coming-soon">Coming soon</a>
                     <a id="modal-pdf" href="#" download class="btn-pdf">↓ Descargar fragmento (PDF)</a>
-                    <a href="mailto:contacto@tectonicaeditorial.com" class="btn-contacto">✉ Contactar al autor</a>
+                    <a href="/cdn-cgi/l/email-protection#30535f5e445153445f70445553445f5e595351555459445f4259515c1e535f5d" class="btn-contacto">✉ Contactar al autor</a>
                 </div>
             </div>
         </div>
@@ -614,7 +678,7 @@
 </div>
 
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const catalogo = [
     {
         id: 'therians',
@@ -626,7 +690,23 @@ const catalogo = [
         intro: '¿Qué es ser therian? No es una moda ni un trastorno: es una forma de identidad que millones de personas en todo el mundo describen como la experiencia de identificarse, a nivel profundo, con un animal no humano.',
         cuerpo: 'Con base en evidencia académica, 21 testimonios directos de personas therian y análisis desde la psicología, la historia y la ética digital, este libro ofrece a padres, educadores, psicólogos e investigadores las herramientas necesarias para entender —no juzgar— a quien dice ser algo más que humano. La obra aborda qué es la therianthropy y cómo se distingue de otros fenómenos; sus raíces históricas: del chamanismo y el nahualli hasta los foros digitales; las dimensiones psicológicas y espirituales documentadas con fuentes verificadas; el impacto de TikTok, el debate legal y los dilemas éticos actuales; y una guía práctica para acompañar a un joven therian en casa y en la escuela. Un libro que no explica la identidad therian: la describe. Porque el primer paso para acompañar es comprender.',
         keywords: ['therian','therianthropy','identidad animal','alterhumanidad','otherkin','psicología therian','comunidad therian en español','guía para familias','educadores y therianos'],
-        pdf: 'fragmento-therians.pdf'
+        pdf: 'fragmento-therians.pdf',
+        comprar: 'https://books2read.com/u/3GnYkQ',
+        comprarLabel: '→ Adquirir en tiendas'
+    },
+    {
+        id: 'therians-en',
+        titulo: 'Therians: The Wild Identity Seeking to Be Understood',
+        sub: 'A Practical Guide for Parents and Educators to Understand an Emerging Phenomenon',
+        img: 'portada_therians_en.webp',
+        imgAlt: 'Cover of Therians: The Wild Identity Seeking to Be Understood by Gabriel Alcántara Tovar',
+        licencia: 'CC BY-NC-ND 4.0 · Registered at INDAUTOR',
+        intro: 'What does it mean to identify as a non-human animal? Is it a viral trend, a creative expression, or a legitimate identity experience? This book answers those questions with academic rigor and without prejudice.',
+        cuerpo: 'A serious study of a phenomenon as old as humanity itself, resurfacing today with a singularity that deserves to be understood before it is judged. Based on documentary and field academic research with more than 40 verified sources, 21 direct testimonies, and analysis from psychology, history, and digital ethics. This comprehensive guide covers the historical roots of therianthropy from prehistory to the contemporary digital community; psychological and spiritual dimensions; the impact of TikTok and algorithmic amplification; ethical and legal frameworks updated to 2026; and a practical guide for families and educators with concrete strategies. Includes a complete glossary of alterhuman vocabulary.',
+        keywords: ['therianthropy','animal identity','alterhumanity','otherkin','species dysphoria','digital subcultures','guide for parents','educators','non-human identity'],
+        pdf: 'fragmento-therians-en.pdf',
+        comprar: null,
+        comprarLabel: 'Coming soon'
     },
     {
         id: 'alejandro',
@@ -638,7 +718,9 @@ const catalogo = [
         intro: '¿Qué podemos conocer realmente sobre Alejandro Magno? La respuesta honesta, desde el rigor del método histórico, es que podemos conocer considerablemente menos de lo que las narrativas populares sugieren y, al mismo tiempo, más de lo que un escepticismo extremo estaría dispuesto a conceder.',
         cuerpo: 'Esta obra aborda la figura de Alejandro III de Macedonia desde un enfoque dialéctico-cartesiano multidimensional. El análisis triangula el pentagrama de fuentes greco-latinas —Arriano, Plutarco, Diodoro Sículo, Curcio Rufo y Justino— con evidencia epigráfica, numismática y arqueológica, distinguiendo en todo momento lo verificable de lo conjeturable. Los diarios astronómicos de Babilonia aportan una perspectiva no helenizada única que contrasta con la tradición grecocéntrica dominante. La perspectiva humanista biosférica asegura que el rigor metodológico no sacrifique la dimensión ética de la investigación histórica.',
         keywords: ['Alejandro Magno','Alejandro III Macedonia','historia helenística','método cartesiano historia','fuentes greco-latinas','Arriano Plutarco','historia antigua crítica','Macedonia antigua'],
-        pdf: 'fragmento-alejandro.pdf'
+        pdf: 'fragmento-alejandro.pdf',
+        comprar: null,
+        comprarLabel: 'Próximamente'
     },
     {
         id: 'ia-empresa',
@@ -651,7 +733,9 @@ const catalogo = [
         cuerpo: 'Este libro examina las cinco preguntas que todo CEO, director general o empresario debe poder responder antes de autorizar cualquier inversión en IA agéntica: ¿Quién es el responsable legal si el sistema se equivoca? ¿Cuánto cuesta realmente y cuándo veré resultados? ¿Puede trabajar con lo que ya tengo? ¿Cómo mantengo el control? ¿Qué le pasa a mi organización durante el proceso? El costo real de implementación se sitúa entre 1.4 y 2 veces el precio cotizado. El 95% de los proyectos no supera la fase piloto. El 70% de los fracasos se originan en factores humanos y organizacionales, no en problemas técnicos. Basado en investigación de Gartner, MIT Sloan, BCG, McKinsey y el EU AI Act. Lectura estimada: 3 horas.',
         notaAutor: 'Gabriel Alcántara Tovar es ingeniero e investigador independiente, con maestría en Dirección de Proyectos y certificación PMP. Ha trabajado en ingeniería, administración y análisis aplicado a proyectos complejos, incluyendo colaboraciones con organismos federales de Estados Unidos. Fundador de Tectónica Editorial.',
         keywords: ['implementar inteligencia artificial empresa','IA agéntica CEO','gobernanza IA empresas','responsabilidad legal IA','costo implementación IA','control sistemas IA autónomos','ROI inteligencia artificial','gestión del cambio IA'],
-        pdf: 'fragmento-ia-empresa.pdf'
+        pdf: 'fragmento-ia-empresa.pdf',
+        comprar: null,
+        comprarLabel: 'Próximamente'
     }
 ];
 
@@ -676,6 +760,22 @@ function renderizarModal(i) {
     const notaTxt  = document.getElementById('modal-nota-autor');
     if (l.notaAutor) { notaTxt.textContent = l.notaAutor; notaWrap.style.display = ''; }
     else { notaWrap.style.display = 'none'; }
+    // Botón comprar
+    const btnComprar = document.getElementById('modal-comprar');
+    if (l.comprar) {
+        btnComprar.href = l.comprar;
+        btnComprar.textContent = l.comprarLabel;
+        btnComprar.className = 'btn-comprar';
+        btnComprar.target = '_blank';
+        btnComprar.rel = 'noopener';
+        btnComprar.style.pointerEvents = '';
+    } else {
+        btnComprar.href = '#';
+        btnComprar.textContent = l.comprarLabel || 'Coming soon';
+        btnComprar.className = 'btn-coming-soon';
+        btnComprar.removeAttribute('target');
+        btnComprar.style.pointerEvents = 'none';
+    }
 }
 
 function abrirModal(id) {
@@ -706,15 +806,4 @@ document.getElementById('modal-overlay').addEventListener('click', function(e) {
     if (e.target === this) cerrarModal();
 });
 window.addEventListener('DOMContentLoaded', () => {
-    const h = window.location.hash.slice(1);
-    if (h && catalogo.some(l => l.id === h)) abrirModal(h);
-});
-window.addEventListener('popstate', () => {
-    const h = window.location.hash.slice(1);
-    if (h && catalogo.some(l => l.id === h)) abrirModal(h);
-    else cerrarModal();
-});
-</script>
-
-</body>
-</html>
+    

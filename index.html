@@ -421,6 +421,15 @@
         letter-spacing: .14em; text-transform: uppercase; transition: background .25s;
     }
     .btn-comprar:hover { background: var(--mineral-l); }
+    .btn-comprar-sec {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        padding: 15px 24px;
+        border: 1px solid rgba(196,146,58,.4);
+        color: var(--mineral); text-decoration: none;
+        font-family: 'Cinzel', serif; font-size: .63rem; font-weight: 400;
+        letter-spacing: .14em; text-transform: uppercase; transition: all .25s;
+    }
+    .btn-comprar-sec:hover { background: rgba(196,146,58,.08); border-color: var(--mineral); color: var(--caliza); }
     .btn-coming-soon {
         display: flex; align-items: center; justify-content: center; gap: 10px;
         padding: 15px 24px;
@@ -618,7 +627,7 @@
         <p class="footer-wordmark">Tectónica Editorial</p>
         <p class="footer-copy">
             © 2026 Gabriel Alcántara Tovar · México ·
-            <a href="/cdn-cgi/l/email-protection#42212d2c362321362d02362721362d2c2b212327262b362d302b232e6c212d2f"><span class="__cf_email__" data-cfemail="284b47465c494b5c47685c4d4b5c4746414b494d4c415c475a414944064b4745">[email&#160;protected]</span></a>
+            <a href="mailto:editorial@tectonicaeditorial.com">editorial@tectonicaeditorial.com</a>
         </p>
     </footer>
 
@@ -668,8 +677,9 @@
                 </div>
                 <div class="modal-acciones">
                     <a id="modal-comprar" href="#" class="btn-coming-soon">Coming soon</a>
+                    <a id="modal-comprar-sec" href="#" class="btn-comprar-sec" style="display:none" target="_blank" rel="noopener"></a>
                     <a id="modal-pdf" href="#" download class="btn-pdf">↓ Descargar fragmento (PDF)</a>
-                    <a href="/cdn-cgi/l/email-protection#30535f5e445153445f70445553445f5e595351555459445f4259515c1e535f5d" class="btn-contacto">✉ Contactar al autor</a>
+                    <a href="mailto:editorial@tectonicaeditorial.com" class="btn-contacto">✉ Contactar al autor</a>
                 </div>
             </div>
         </div>
@@ -678,7 +688,7 @@
 </div>
 
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const catalogo = [
     {
         id: 'therians',
@@ -692,7 +702,9 @@ const catalogo = [
         keywords: ['therian','therianthropy','identidad animal','alterhumanidad','otherkin','psicología therian','comunidad therian en español','guía para familias','educadores y therianos'],
         pdf: 'fragmento-therians.pdf',
         comprar: 'https://books2read.com/u/3GnYkQ',
-        comprarLabel: '→ Adquirir en tiendas'
+        comprarLabel: '→ Adquirir en tiendas',
+        comprarSec: null,
+        comprarSecLabel: null
     },
     {
         id: 'therians-en',
@@ -705,8 +717,10 @@ const catalogo = [
         cuerpo: 'A serious study of a phenomenon as old as humanity itself, resurfacing today with a singularity that deserves to be understood before it is judged. Based on documentary and field academic research with more than 40 verified sources, 21 direct testimonies, and analysis from psychology, history, and digital ethics. This comprehensive guide covers the historical roots of therianthropy from prehistory to the contemporary digital community; psychological and spiritual dimensions; the impact of TikTok and algorithmic amplification; ethical and legal frameworks updated to 2026; and a practical guide for families and educators with concrete strategies. Includes a complete glossary of alterhuman vocabulary.',
         keywords: ['therianthropy','animal identity','alterhumanity','otherkin','species dysphoria','digital subcultures','guide for parents','educators','non-human identity'],
         pdf: 'fragmento-therians-en.pdf',
-        comprar: null,
-        comprarLabel: 'Coming soon'
+        comprar: 'https://books2read.com/u/mqjGv2',
+        comprarLabel: '→ Buy on Books2Read',
+        comprarSec: 'https://play.google.com/store/books/details?id=dgvNEQAAQBAJ',
+        comprarSecLabel: '→ Buy on Google Play'
     },
     {
         id: 'alejandro',
@@ -720,7 +734,9 @@ const catalogo = [
         keywords: ['Alejandro Magno','Alejandro III Macedonia','historia helenística','método cartesiano historia','fuentes greco-latinas','Arriano Plutarco','historia antigua crítica','Macedonia antigua'],
         pdf: 'fragmento-alejandro.pdf',
         comprar: null,
-        comprarLabel: 'Próximamente'
+        comprarLabel: 'Próximamente',
+        comprarSec: null,
+        comprarSecLabel: null
     },
     {
         id: 'ia-empresa',
@@ -735,7 +751,9 @@ const catalogo = [
         keywords: ['implementar inteligencia artificial empresa','IA agéntica CEO','gobernanza IA empresas','responsabilidad legal IA','costo implementación IA','control sistemas IA autónomos','ROI inteligencia artificial','gestión del cambio IA'],
         pdf: 'fragmento-ia-empresa.pdf',
         comprar: null,
-        comprarLabel: 'Próximamente'
+        comprarLabel: 'Próximamente',
+        comprarSec: null,
+        comprarSecLabel: null
     }
 ];
 
@@ -760,7 +778,8 @@ function renderizarModal(i) {
     const notaTxt  = document.getElementById('modal-nota-autor');
     if (l.notaAutor) { notaTxt.textContent = l.notaAutor; notaWrap.style.display = ''; }
     else { notaWrap.style.display = 'none'; }
-    // Botón comprar
+
+    // Botón comprar principal
     const btnComprar = document.getElementById('modal-comprar');
     if (l.comprar) {
         btnComprar.href = l.comprar;
@@ -775,6 +794,18 @@ function renderizarModal(i) {
         btnComprar.className = 'btn-coming-soon';
         btnComprar.removeAttribute('target');
         btnComprar.style.pointerEvents = 'none';
+    }
+
+    // Botón comprar secundario (Google Play)
+    const btnSec = document.getElementById('modal-comprar-sec');
+    if (l.comprarSec) {
+        btnSec.href = l.comprarSec;
+        btnSec.textContent = l.comprarSecLabel;
+        btnSec.style.display = 'flex';
+        btnSec.target = '_blank';
+        btnSec.rel = 'noopener';
+    } else {
+        btnSec.style.display = 'none';
     }
 }
 
@@ -813,5 +844,6 @@ window.addEventListener('popstate', e => {
     if (e.state && e.state.libro) abrirModal(e.state.libro);
     else cerrarModal();
 });
-</script></body>
+</script>
+</body>
 </html>

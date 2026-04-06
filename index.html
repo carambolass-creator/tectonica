@@ -659,7 +659,7 @@
                 <div class="ficha-item" id="modal-lic-wrap" style="display:none">
                     <p class="ficha-label">Licencia</p><p class="ficha-valor" id="modal-lic"></p>
                 </div>
-                <div class="ficha-item"><p class="ficha-label">Estado</p><p class="ficha-valor" style="color:var(--mineral)">En prensa</p></div>
+                <div class="ficha-item"><p class="ficha-label">Estado</p><p class="ficha-valor" id="modal-estado" style="color:var(--mineral)"></p></div>
             </aside>
 
             <div class="modal-content">
@@ -678,8 +678,8 @@
                 <div class="modal-acciones">
                     <a id="modal-comprar" href="#" class="btn-coming-soon">Coming soon</a>
                     <a id="modal-comprar-sec" href="#" class="btn-comprar-sec" style="display:none" target="_blank" rel="noopener"></a>
-                    <a id="modal-pdf" href="#" download class="btn-pdf">↓ Descargar fragmento (PDF)</a>
-                    <a href="mailto:editorial@tectonicaeditorial.com" class="btn-contacto">✉ Contactar al autor</a>
+                    <a id="modal-pdf" href="#" download class="btn-pdf"></a>
+                    <a id="modal-contacto" href="mailto:editorial@tectonicaeditorial.com" class="btn-contacto"></a>
                 </div>
             </div>
         </div>
@@ -704,7 +704,10 @@ const catalogo = [
         comprar: 'https://books2read.com/u/3GnYkQ',
         comprarLabel: '→ Adquirir en tiendas',
         comprarSec: null,
-        comprarSecLabel: null
+        comprarSecLabel: null,
+        estado: 'Publicado',
+        pdfLabel: '↓ Descargar fragmento (PDF)',
+        contactoLabel: '✉ Contactar al autor'
     },
     {
         id: 'therians-en',
@@ -720,7 +723,10 @@ const catalogo = [
         comprar: 'https://books2read.com/u/mqjGv2',
         comprarLabel: '→ Buy on Books2Read',
         comprarSec: 'https://play.google.com/store/books/details?id=dgvNEQAAQBAJ',
-        comprarSecLabel: '→ Buy on Google Play'
+        comprarSecLabel: '→ Buy on Google Play',
+        estado: 'Published',
+        pdfLabel: '↓ Download excerpt (PDF)',
+        contactoLabel: '✉ Contact the author'
     },
     {
         id: 'alejandro',
@@ -736,7 +742,10 @@ const catalogo = [
         comprar: null,
         comprarLabel: 'Próximamente',
         comprarSec: null,
-        comprarSecLabel: null
+        comprarSecLabel: null,
+        estado: 'En prensa',
+        pdfLabel: '↓ Descargar fragmento (PDF)',
+        contactoLabel: '✉ Contactar al autor'
     },
     {
         id: 'ia-empresa',
@@ -753,7 +762,10 @@ const catalogo = [
         comprar: null,
         comprarLabel: 'Próximamente',
         comprarSec: null,
-        comprarSecLabel: null
+        comprarSecLabel: null,
+        estado: 'En prensa',
+        pdfLabel: '↓ Descargar fragmento (PDF)',
+        contactoLabel: '✉ Contactar al autor'
     }
 ];
 
@@ -778,6 +790,14 @@ function renderizarModal(i) {
     const notaTxt  = document.getElementById('modal-nota-autor');
     if (l.notaAutor) { notaTxt.textContent = l.notaAutor; notaWrap.style.display = ''; }
     else { notaWrap.style.display = 'none'; }
+
+    // Estado
+    document.getElementById('modal-estado').textContent = l.estado || 'En prensa';
+
+    // Botones PDF y contacto
+    document.getElementById('modal-pdf').textContent = l.pdfLabel;
+    document.getElementById('modal-pdf').href = l.pdf;
+    document.getElementById('modal-contacto').textContent = l.contactoLabel;
 
     // Botón comprar principal
     const btnComprar = document.getElementById('modal-comprar');
